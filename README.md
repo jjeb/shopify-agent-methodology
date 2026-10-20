@@ -18,12 +18,12 @@ It complements Shopify's official toolkit:
 
 ## MVP skills
 
-- `shopify-expert`: coordinates multi-role work.
-- `shopify-architect`: chooses the right Shopify surfaces and delivery shape.
-- `shopify-developer`: implements apps, themes, storefronts, extensions, Functions, and integrations.
-- `shopify-data-engineer`: designs operational data models, bulk work, imports, webhooks, and synchronization. ShopifyQL analytics is deferred to a future `shopify-analytics` skill.
-- `shopify-store-operator`: performs safe store-context workflows and maintenance.
-- `shopify-reviewer`: checks correctness, security, requirements, and release evidence.
+- `shopify-expert`: coordinates a Shopify request across roles, selects the smallest useful workflow, and enforces handoffs, approvals, and evidence boundaries.
+- `shopify-architect`: owns discovery and solution design—choosing between apps, themes, Hydrogen, APIs, extensions, Functions, integrations, and store workflows before implementation begins.
+- `shopify-developer`: implements Shopify application and storefront changes, including app code, Liquid, Hydrogen, APIs, webhooks, extensions, Functions, Polaris, configuration, and CLI-managed projects.
+- `shopify-data-engineer`: designs operational data systems—metafields/metaobjects, imports, bulk operations, webhooks, synchronization, external databases, migrations, and reconciliation. It does not own ShopifyQL analytics.
+- `shopify-store-operator`: performs approved, authenticated store work such as read-only inspection, products/content workflows, theme previews, publishing, maintenance, and store-scoped CLI operations.
+- `shopify-reviewer`: independently evaluates code, schemas, configuration, permissions, security, performance, tests, Shopify requirements, release readiness, and evidence for live changes.
 
 ## Requirements
 
@@ -96,16 +96,47 @@ Install one skill only:
 npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --skill shopify-expert
 ```
 
+Install all MVP skills specifically for Claude Code:
+
+```bash
+npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all -a claude-code
+```
+
+Install all MVP skills specifically for Pi:
+
+```bash
+npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all -a pi
+```
+
 ### Global installation
 
 ```bash
 npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all -g
 ```
 
+Install globally for Claude Code:
+
+```bash
+npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all -g -a claude-code
+```
+
+Install globally for Pi:
+
+```bash
+npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all -g -a pi
+```
+
 After this repository is public:
 
 ```bash
 npx skills add <github-owner>/shopify-expert-skills --all -g
+```
+
+For this public repository, the commands will be:
+
+```bash
+npx skills add jjeb/shopify-consulting-roles --all -g -a claude-code
+npx skills add jjeb/shopify-consulting-roles --all -g -a pi
 ```
 
 Install the future public package into the current project instead:
