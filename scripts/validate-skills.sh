@@ -43,7 +43,7 @@ for skill in "${required_skills[@]}"; do
   done
 done
 
-todo="$repo_root/TODO.md"
+todo="$repo_root/BACKLOG.md"
 for item in \
   'shopify-platform-engineer' \
   'shopify-commerce-strategist' \
@@ -51,7 +51,7 @@ for item in \
   'extension-engineer' \
   'app-engineer'; do
   if [[ ! -f "$todo" ]] || ! grep -q "$item" "$todo"; then
-    echo "FAIL: TODO.md does not track $item" >&2
+    echo "FAIL: BACKLOG.md does not track $item" >&2
     failures=$((failures + 1))
   fi
 done

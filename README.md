@@ -225,7 +225,7 @@ Use the data engineer for source of truth, bulk strategy, webhook behavior, retr
 
 ### Analyze store performance
 
-ShopifyQL reporting is not part of the current data-engineer role. Track it for the future `shopify-analytics` skill in [TODO.md](TODO.md). Keep analysis separate from record-level mutations.
+ShopifyQL reporting is not part of the current data-engineer role. Track it for the future `shopify-analytics` skill in [BACKLOG.md](BACKLOG.md). Keep analysis separate from record-level mutations.
 
 ## Safety boundaries
 
@@ -243,7 +243,7 @@ ShopifyQL reporting is not part of the current data-engineer role. Track it for 
 bash scripts/validate-skills.sh
 ```
 
-The validator checks that all six MVP skills exist, have required frontmatter and sections, and that the future-role TODO remains present.
+The validator checks that all six MVP skills exist, have required frontmatter and sections, and that the future-role backlog remains present.
 
 ## Repository layout
 
@@ -256,8 +256,8 @@ skills/                         Installable skill sources
   shopify-store-operator/       Named-store operations
   shopify-reviewer/             Quality and release review
 scripts/validate-skills.sh      Structural validation
-TODO.md                         Deferred roles and capability backlog
+BACKLOG.md                      Deferred roles and capability backlog
 docs/                            Design and implementation records
 ```
 
-Future roles and expansion tasks are tracked in [TODO.md](TODO.md).
+Future roles and expansion tasks are tracked in [BACKLOG.md](BACKLOG.md), which also contains a copy-ready prompt for future agents.
