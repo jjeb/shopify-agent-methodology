@@ -59,6 +59,16 @@ package. Do not create a role merely to mirror every Shopify product area.
 
 These items are intentionally deferred from the MVP. Keep them visible and promote one when real usage shows that the six core skills are too broad.
 
+## Completed foundation
+
+- [x] Define the shared Shopify work lifecycle, role contract, handoff record,
+  and development-store pilot boundary.
+- [x] Add coordinator routing for lifecycle state, role selection, handoffs,
+  explicit authorization, and evidence.
+- [x] Normalize the six MVP skills around consistent role contracts.
+- [x] Add initial development-store pressure scenarios for routing, safety, and
+  readback evidence.
+
 ## Deferred roles
 
 - [ ] `shopify-platform-engineer`: split out CI/CD, environments, secrets, observability, deployment, release automation, and incident response.

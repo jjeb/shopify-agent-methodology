@@ -29,5 +29,8 @@ jobs:
       - name: Run repository checks
         run: bash scripts/validate-skills.sh
 
+      - name: Validate store-pilot scenarios
+        run: bash scripts/validate-evaluation-scenarios.sh
+
       - name: Check whitespace
         run: git diff --check

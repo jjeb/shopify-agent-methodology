@@ -298,6 +298,12 @@ in [BACKLOG.md](BACKLOG.md).
 GitHub Actions runs both validation layers for pushes and pull requests to
 `main`.
 
+It also checks the development-store evaluation scenarios:
+
+```bash
+bash scripts/validate-evaluation-scenarios.sh
+```
+
 ## Repository layout
 
 ```text
