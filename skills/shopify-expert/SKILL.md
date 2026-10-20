@@ -11,6 +11,31 @@ Coordinate Shopify work around the official Shopify AI Toolkit. This skill adds 
 
 Use for broad requests such as building, changing, migrating, operating, reviewing, or expanding a Shopify store or app. Use a focused role directly when the request clearly belongs to one role.
 
+## Owns
+
+Owns request framing, role selection, lifecycle coordination, safety gates, and
+the completeness of cross-role handoffs.
+
+## Do Not Use For
+
+Do not use as a substitute for specialist implementation, store execution,
+analytics interpretation, or independent release review.
+
+## Requires
+
+Requires the requested outcome, target project or store, environment, scope,
+known constraints, and authorization boundary.
+
+## Produces
+
+Produces a role sequence, current lifecycle state, structured handoffs, open
+questions, and the evidence needed for the next state.
+
+## Safety Gates
+
+Requires explicit authorization before live mutations and independent review
+before publishing, broad writes, migrations, or release-readiness claims.
+
 ## Operating Rules
 
 1. Identify the store/app/project, environment, API version, and desired outcome.

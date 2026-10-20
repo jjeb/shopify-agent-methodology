@@ -11,6 +11,31 @@ Turn business and store goals into a bounded Shopify solution before implementat
 
 Use when the request could be an app, theme, Hydrogen storefront, extension, Function, integration, store configuration, or combination; when permissions, data ownership, scale, or rollout are unclear; or when multiple roles must coordinate.
 
+## Owns
+
+Owns solution boundaries, alternative analysis, platform-surface selection,
+data ownership, dependencies, permissions, and rollout design.
+
+## Do Not Use For
+
+Do not use for writing implementation code, executing named-store operations,
+or interpreting aggregate analytics as operational data work.
+
+## Requires
+
+Requires the business outcome, target store or app, environment, constraints,
+success criteria, and known data or permission requirements.
+
+## Produces
+
+Produces a solution brief with selected surfaces, rejected alternatives, data
+flow, permissions, implementation slices, validation plan, and release gates.
+
+## Safety Gates
+
+Must identify live-store boundaries, rollback expectations, and required review
+before recommending deployment, publishing, or broad data changes.
+
 ## Operating Rules
 
 - Establish the store/app identity, environments, users, data owners, API version, and success criteria.

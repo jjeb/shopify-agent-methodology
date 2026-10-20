@@ -46,6 +46,12 @@ for skill in "${required_skills[@]}"; do
       failures=$((failures + 1))
     fi
   done
+  for contract_heading in '## Owns' '## Do Not Use For' '## Requires' '## Produces' '## Safety Gates'; do
+    if ! grep -q "$contract_heading" "$file"; then
+      echo "FAIL: $file is missing contract heading: $contract_heading" >&2
+      failures=$((failures + 1))
+    fi
+  done
 done
 
 coordinator="$skills_root/shopify-expert/SKILL.md"
