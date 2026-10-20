@@ -16,6 +16,7 @@ Run:
 
 ```bash
 bash scripts/validate-skills.sh
+bash scripts/validate-repository-docs.sh
 git diff --check
 ```
 
