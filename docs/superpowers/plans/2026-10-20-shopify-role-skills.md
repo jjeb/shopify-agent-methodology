@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Build six installable Shopify role skills with validation and a future-work TODO.
+**Goal:** Build six installable Shopify role skills with validation and a future-work backlog.
 
 **Architecture:** Each role is a self-contained `SKILL.md` under `skills/`. The coordinator routes to the other roles and to Shopify's official toolkit; the role files provide judgment, safety, and handoff contracts rather than duplicated API reference.
 
@@ -15,7 +15,7 @@
 - Keep the initial package to six skills.
 - Complement, do not replace, Shopify's official `shopify` toolkit.
 - Do not claim live-store or deployment success without direct evidence.
-- Track deferred roles and future tasks in `TODO.md`.
+- Track deferred roles and future tasks in `BACKLOG.md`.
 
 ## Review Focus
 
@@ -27,7 +27,7 @@
 
 ### Task 1: Repository package
 
-**Files:** `README.md`, `TODO.md`, six `skills/*/SKILL.md` files.
+**Files:** `README.md`, `BACKLOG.md`, six `skills/*/SKILL.md` files.
 
 - [ ] Write the six role documents and installation guidance.
 - [x] Record deferred roles and future capability tasks.
@@ -36,5 +36,5 @@
 
 **Files:** `scripts/validate-skills.sh`.
 
-- [x] Add structural checks for frontmatter, required sections, and TODO coverage.
+- [x] Add structural checks for frontmatter, required sections, and backlog coverage.
 - [ ] Run the validator after the skill documents exist.

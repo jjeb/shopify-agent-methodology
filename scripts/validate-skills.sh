@@ -60,4 +60,4 @@ if (( failures > 0 )); then
   exit 1
 fi
 
-echo "PASS: six MVP skills and future-role TODO are present and structurally valid"
+echo "PASS: six MVP skills and future-role backlog are present and structurally valid"

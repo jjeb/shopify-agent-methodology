@@ -6,7 +6,7 @@ Create a public-ready, installable package of role-based Shopify skills that com
 
 ## MVP scope
 
-The first release contains six skills: expert coordinator, architect, developer, data engineer, store operator, and reviewer. Deferred roles and tasks remain in `TODO.md`.
+The first release contains six skills: expert coordinator, architect, developer, data engineer, store operator, and reviewer. Deferred roles and tasks remain in `BACKLOG.md`.
 
 ## Design
 
@@ -21,4 +21,4 @@ Every role separates proposed work, local changes, validation, deployment, and l
 - The coordinator documents common role combinations and escalation to deferred roles.
 - The repository explains local and future public installation.
 - `scripts/validate-skills.sh` passes.
-- `TODO.md` tracks all deferred roles and future work named during design.
+- `BACKLOG.md` tracks all deferred roles and future work named during design.
