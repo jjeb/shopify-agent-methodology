@@ -82,6 +82,14 @@ These items are intentionally deferred from the MVP. Keep them visible and promo
 
 ## Capability backlog
 
+- [ ] Add an explicit role-selection entrypoint so an agent can classify a
+  request and select the smallest appropriate skill set automatically instead
+  of requiring every user prompt to begin with `Use shopify-expert`. The
+  selector should identify the Shopify surface, lifecycle state, target
+  environment, permissions, and mutation risk; route directly to one role for
+  focused work; compose multiple roles when dependencies require it; and
+  escalate to `shopify-expert` only when coordination is needed. Add routing
+  scenarios and a clear fallback for ambiguous or unsafe requests.
 - [ ] Add explicit UCP and agent-commerce workflows when they become stable enough for a dedicated operating contract.
 - [ ] Keep ShopifyQL and aggregate analytics out of `shopify-data-engineer`; promote `shopify-analytics` when analytics work becomes a first-class workflow.
 - [ ] Add role-specific reference files only when repeated tasks exceed the useful size of `SKILL.md`.
