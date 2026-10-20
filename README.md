@@ -323,6 +323,7 @@ scripts/validate-skills.sh      Structural validation
 scripts/validate-skills-standard.sh  Official Agent Skills validation
 scripts/validate-methodology.sh Shared methodology reference validation
 scripts/validate-evaluation-scenarios.sh  Pilot pressure-scenario validation
+scripts/validate-role-documentation.sh  Role responsibility-link validation
 BACKLOG.md                      Deferred roles and capability backlog
 docs/methodology/               Lifecycle, contracts, handoffs, and pilot guide
 docs/evaluations/               Development-store behavioral scenarios

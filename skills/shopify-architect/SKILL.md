@@ -7,6 +7,13 @@ description: Use when choosing Shopify surfaces, designing a store or app soluti
 
 Turn business and store goals into a bounded Shopify solution before implementation. Use current Shopify documentation and the official toolkit rather than relying on memory for platform details.
 
+## Role Documentation
+
+See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#shopify-architect),
+[role contract](../../docs/methodology/role-contract.md),
+[lifecycle](../../docs/methodology/lifecycle.md), and
+[handoff record](../../docs/methodology/handoff-record.md).
+
 ## When to Use
 
 Use when the request could be an app, theme, Hydrogen storefront, extension, Function, integration, store configuration, or combination; when permissions, data ownership, scale, or rollout are unclear; or when multiple roles must coordinate.

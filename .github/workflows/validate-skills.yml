@@ -35,5 +35,8 @@ jobs:
       - name: Validate methodology references
         run: bash scripts/validate-methodology.sh
 
+      - name: Validate role documentation links
+        run: bash scripts/validate-role-documentation.sh
+
       - name: Check whitespace
         run: git diff --check

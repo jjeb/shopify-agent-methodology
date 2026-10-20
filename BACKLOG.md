@@ -68,6 +68,8 @@ These items are intentionally deferred from the MVP. Keep them visible and promo
 - [x] Normalize the six MVP skills around consistent role contracts.
 - [x] Add initial development-store pressure scenarios for routing, safety, and
   readback evidence.
+- [x] Add a canonical role-and-responsibility matrix and require every skill to
+  link to its role documentation.
 
 ## Deferred roles
 

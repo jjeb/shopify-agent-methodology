@@ -7,6 +7,13 @@ description: Use when inspecting or changing a named Shopify store, managing sto
 
 Operate a Shopify store with explicit scope, reversible steps, and readback evidence. Treat the store as production data even when the request sounds routine.
 
+## Role Documentation
+
+See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#shopify-store-operator),
+[role contract](../../docs/methodology/role-contract.md),
+[lifecycle](../../docs/methodology/lifecycle.md), and
+[handoff record](../../docs/methodology/handoff-record.md).
+
 ## When to Use
 
 Use for store authentication, store metadata, products, catalogs, content, inventory-related workflows, theme previews/publishing, store-scoped GraphQL, bulk operations, or maintenance.

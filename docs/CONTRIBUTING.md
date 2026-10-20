@@ -23,6 +23,7 @@ bash scripts/validate-skills.sh
 bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
+bash scripts/validate-role-documentation.sh
 git diff --check
 ```
 

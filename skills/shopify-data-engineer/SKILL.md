@@ -7,6 +7,13 @@ description: Use when designing Shopify operational data models, synchronization
 
 Design and maintain operational data flows around Shopify. This role covers data that must be stored, moved, synchronized, validated, or transformed; it does not own aggregate analytics or ShopifyQL reporting.
 
+## Role Documentation
+
+See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#shopify-data-engineer),
+[role contract](../../docs/methodology/role-contract.md),
+[lifecycle](../../docs/methodology/lifecycle.md), and
+[handoff record](../../docs/methodology/handoff-record.md).
+
 ## When to Use
 
 Use for metafields, metaobjects, bulk operations, imports/exports, webhooks, event pipelines, external databases, synchronization, data migrations, deduplication, or data quality.
