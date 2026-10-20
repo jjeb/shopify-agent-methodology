@@ -205,6 +205,10 @@ The expected result is a lifecycle state, selected roles, a structured handoff,
 validation evidence, unresolved questions, and the exact authorization still
 required. See [the development-store pilot guide](docs/methodology/store-pilot.md).
 
+See the [Mermaid Shopify lifecycle workflow](docs/workflows/shopify-lifecycle.md)
+for the role sequence and [copy-ready examples](docs/examples/) for a
+development-store preview and the analytics/data-engineering boundary.
+
 The complete pilot scenario set is in
 [docs/evaluations/store-pilot-scenarios.md](docs/evaluations/store-pilot-scenarios.md).
 Run the read-only scenario first. Only continue to a preview after the agent
@@ -327,6 +331,10 @@ scripts/validate-role-documentation.sh  Role responsibility-link validation
 BACKLOG.md                      Deferred roles and capability backlog
 docs/methodology/               Lifecycle, contracts, handoffs, and pilot guide
 docs/evaluations/               Development-store behavioral scenarios
+docs/workflows/                 Mermaid lifecycle and role workflows
+docs/examples/                  Copy-ready role and workflow examples
+docs/specs/                     Product and methodology design specifications
+docs/plans/                     Implementation plans
 docs/                            Maintainer and methodology documentation
   CONTRIBUTING.md                Maintainer and contributor guidance
 ```

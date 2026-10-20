@@ -10,9 +10,12 @@
    `Produces`, and `Safety Gates`.
 6. Link shared lifecycle, role-contract, and handoff guidance from
    `docs/methodology/` instead of duplicating it in every skill.
-7. Defer current Shopify API, schema, validation, and CLI details to Shopify's official toolkit and documentation.
-8. Preserve the boundaries between proposal, local implementation, validation, deployment, and live-store execution.
-9. Never include credentials, tokens, passwords, or unnecessary merchant data.
+7. Put workflow diagrams and copy-ready usage examples in `docs/workflows/`
+   and `docs/examples/`; keep design specifications in `docs/specs/` and
+   implementation plans in `docs/plans/`.
+8. Defer current Shopify API, schema, validation, and CLI details to Shopify's official toolkit and documentation.
+9. Preserve the boundaries between proposal, local implementation, validation, deployment, and live-store execution.
+10. Never include credentials, tokens, passwords, or unnecessary merchant data.
 
 ## Validate changes
 
