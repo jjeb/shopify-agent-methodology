@@ -14,8 +14,8 @@ AI Toolkit, developer documentation, schema validation, or Shopify CLI.
 Install the six MVP roles globally for your agent:
 
 ```bash
-npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code
-npx skills add jjeb/shopify-agent-methodology --all -g -a pi
+npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a claude-code -y
+npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a pi -y
 ```
 
 Install Shopify's official toolkit separately when it is not already available:

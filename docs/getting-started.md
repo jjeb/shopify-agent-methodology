@@ -17,13 +17,13 @@ access.
 Install the role package globally for Claude Code:
 
 ```bash
-npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code
+npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a claude-code -y
 ```
 
 Install globally for Pi:
 
 ```bash
-npx skills add jjeb/shopify-agent-methodology --all -g -a pi
+npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a pi -y
 ```
 
 Install into the current project instead:
@@ -37,6 +37,10 @@ Install Shopify's official toolkit separately when it is not already present:
 ```bash
 npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
 ```
+
+Use `--skill '*'` when selecting a specific agent. The `--all` shorthand means
+all skills for all agents, so combining it with `-a pi` or `-a claude-code` does
+not restrict the installation to that agent.
 
 The two packages are intended to work side by side. This repository supplies
 role boundaries and coordination; the official toolkit supplies current
