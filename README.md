@@ -9,6 +9,10 @@ This project adds role coordination, safety boundaries, handoffs, and evidence
 requirements around Shopify's official tools. It does not replace Shopify's
 AI Toolkit, developer documentation, schema validation, or Shopify CLI.
 
+The current package version is recorded in [`VERSION`](VERSION). See the
+[versioning and release policy](docs/versioning.md) for SemVer rules and tag
+creation.
+
 ## Quick start
 
 Install the six MVP roles globally for your agent:
@@ -198,6 +202,7 @@ structured metrics collection.
 - [Examples](docs/examples/): copy-ready role and workflow examples.
 - [Evaluation scenarios](docs/evaluations/): behavioral pressure tests and run-log guidance.
 - [Backlog](docs/BACKLOG.md): mission, vision, deferred roles, and future work.
+- [Versioning](docs/versioning.md): package versions, changelog, and releases.
 
 ## Validation
 

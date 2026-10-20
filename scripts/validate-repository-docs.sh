@@ -13,6 +13,7 @@ required_strings=(
   'vertical slice'
   'methodology budget'
   'store-pilot-scenarios.md'
+  'docs/versioning.md'
 )
 
 for required in "${required_strings[@]}"; do
@@ -53,6 +54,9 @@ fi
 
 for required_file in \
   CONVENTIONS.md \
+  VERSION \
+  CHANGELOG.md \
+  docs/versioning.md \
   docs/workflows/shopify-lifecycle.md \
   docs/examples/development-store-preview.md \
   docs/examples/analytics-and-operational-data.md; do

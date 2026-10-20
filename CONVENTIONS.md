@@ -25,6 +25,8 @@ the first project-specific guidance an agent should read before changing it.
 - Delivery sequencing and methodology limits:
   `docs/methodology/delivery-guardrails.md`.
 - Public installation and usage: `README.md`.
+- Package version and release policy: `VERSION`, `CHANGELOG.md`, and
+  `docs/versioning.md`.
 - Deferred work: `docs/BACKLOG.md`.
 - Contribution workflow: `docs/CONTRIBUTING.md`.
 
@@ -96,6 +98,7 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
+python3 scripts/validate-versioning.py
 python3 scripts/sync-skill-references.py --check
 python3 scripts/validate-skill-links.py
 git diff --check

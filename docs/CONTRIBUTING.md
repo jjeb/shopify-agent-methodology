@@ -31,6 +31,7 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
+python3 scripts/validate-versioning.py
 python3 scripts/sync-skill-references.py --check
 python3 scripts/validate-skill-links.py
 bash scripts/validate-coordination.sh
@@ -57,3 +58,6 @@ cannot cover the request. Keep future work in `docs/BACKLOG.md` as a separate,
 reviewable PR-sized item.
 
 Update `README.md`, `docs/getting-started.md`, and `docs/BACKLOG.md` when adding a role or changing installation and routing behavior. Use focused commits on `main` and describe validation results in the commit or pull request.
+
+For releases, follow [`docs/versioning.md`](versioning.md), update `VERSION`
+and `CHANGELOG.md` together, and use a matching `vX.Y.Z` tag.
