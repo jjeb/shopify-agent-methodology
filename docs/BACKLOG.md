@@ -82,6 +82,12 @@ These items are intentionally deferred from the MVP. Keep them visible and promo
 
 ## Capability backlog
 
+- [ ] Add an evidence-driven role-specificity process. Track when an MVP role
+  becomes too broad for reliable decisions, identify the repeated Shopify
+  surface or responsibility boundary, and split only when pilot evidence
+  justifies it. Each specialization must define non-overlapping ownership,
+  routing signals, required references, handoffs, and pressure scenarios while
+  preserving a useful fallback when the specialized skill is not installed.
 - [ ] Add an explicit role-selection entrypoint so an agent can classify a
   request and select the smallest appropriate skill set automatically instead
   of requiring every user prompt to begin with `Use shopify-expert`. The
