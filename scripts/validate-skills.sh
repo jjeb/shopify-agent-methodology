@@ -35,6 +35,11 @@ for skill in "${required_skills[@]}"; do
     echo "FAIL: $file has invalid required frontmatter" >&2
     failures=$((failures + 1))
   fi
+  declared_name="$(sed -n 's/^name: //p' "$file" | head -n 1)"
+  if [[ "$declared_name" != "$skill" ]]; then
+    echo "FAIL: $file declares name '$declared_name' (expected '$skill')" >&2
+    failures=$((failures + 1))
+  fi
   for heading in '## When to Use' '## Operating Rules' '## Handoffs'; do
     if ! grep -q "$heading" "$file"; then
       echo "FAIL: $file is missing heading: $heading" >&2
@@ -49,7 +54,8 @@ for item in \
   'shopify-commerce-strategist' \
   'storefront-engineer' \
   'extension-engineer' \
-  'app-engineer'; do
+  'app-engineer' \
+  'shopify-analytics'; do
   if [[ ! -f "$todo" ]] || ! grep -q "$item" "$todo"; then
     echo "FAIL: BACKLOG.md does not track $item" >&2
     failures=$((failures + 1))
@@ -61,3 +67,10 @@ if (( failures > 0 )); then
 fi
 
 echo "PASS: six MVP skills and future-role backlog are present and structurally valid"
+
+if command -v skills-ref >/dev/null 2>&1; then
+  echo "INFO: skills-ref found; running official Agent Skills validation"
+  bash "$repo_root/scripts/validate-skills-standard.sh"
+else
+  echo "INFO: skills-ref not installed; run scripts/validate-skills-standard.sh for official spec validation"
+fi

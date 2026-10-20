@@ -20,4 +20,4 @@ These items are intentionally deferred from the MVP. Keep them visible and promo
 - [ ] Add compatibility checks for supported agent targets and `npx skills` releases.
 - [ ] Add a release/versioning policy before the first public repository release.
 - [ ] Add contribution guidance and examples from sanitized, non-store-specific workflows.
-- [ ] Add a GitHub Actions validation job after the repository is initialized.
+- [x] Add a GitHub Actions validation job for the repository and the official Agent Skills specification.

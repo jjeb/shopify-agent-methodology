@@ -239,11 +239,35 @@ ShopifyQL reporting is not part of the current data-engineer role. Track it for 
 
 ## Validation
 
+Run the repository checks first:
+
 ```bash
 bash scripts/validate-skills.sh
 ```
 
-The validator checks that all six MVP skills exist, have required frontmatter and sections, and that the future-role backlog remains present.
+This checks that all six MVP skills exist, have the repository's required
+sections, use matching directory and frontmatter names, and that the future-role
+backlog remains present. If `skills-ref` is installed, it also runs the official
+Agent Skills validator automatically.
+
+For explicit validation against the Agent Skills specification, install the
+official reference validator in a virtual environment and run:
+
+```bash
+python -m venv .venv
+.venv/bin/python -m pip install \
+  "git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref"
+bash scripts/validate-skills-standard.sh
+```
+
+The official validator checks each `skills/<name>/` directory's `SKILL.md`
+frontmatter, naming rules, supported fields, and required structure. It does
+not prove that a role makes good decisions at runtime. Behavioral pressure
+tests for routing, handoffs, safety gates, and evidence claims remain tracked
+in [BACKLOG.md](BACKLOG.md).
+
+GitHub Actions runs both validation layers for pushes and pull requests to
+`main`.
 
 ## Repository layout
 
@@ -256,6 +280,7 @@ skills/                         Installable skill sources
   shopify-store-operator/       Named-store operations
   shopify-reviewer/             Quality and release review
 scripts/validate-skills.sh      Structural validation
+scripts/validate-skills-standard.sh  Official Agent Skills validation
 BACKLOG.md                      Deferred roles and capability backlog
 docs/                            Maintainer documentation
   CONTRIBUTING.md                Maintainer and contributor guidance
