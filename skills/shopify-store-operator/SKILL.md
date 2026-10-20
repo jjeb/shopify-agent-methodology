@@ -13,6 +13,8 @@ See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#s
 [role contract](../../docs/methodology/role-contract.md),
 [lifecycle](../../docs/methodology/lifecycle.md), and
 [handoff record](../../docs/methodology/handoff-record.md).
+Use the shared [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md)
+when deciding whether store work is the next safe step.
 
 ## When to Use
 
@@ -47,6 +49,9 @@ before writes and read back the affected resource after every approved change.
 
 - Confirm the exact store domain, environment, target resource, requested change, and authorization boundary before execution.
 - Prefer read-only inspection, development themes, previews, dry runs, and backups before writes.
+- When a named store is required for the outcome, perform safe read-only target
+  validation as early as possible instead of waiting for optional methodology
+  work to finish.
 - Use Shopify CLI command discovery and current toolkit guidance; never guess a command or omit a required store target.
 - Before destructive or broad writes, record scope, expected count, rollback path, and confirmation requirement.
 - Read back the affected resource after execution. A command succeeding is not proof that the intended state changed.

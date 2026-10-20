@@ -13,6 +13,8 @@ See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#s
 [role contract](../../docs/methodology/role-contract.md),
 [lifecycle](../../docs/methodology/lifecycle.md), and
 [handoff record](../../docs/methodology/handoff-record.md).
+Apply the shared [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md)
+to every broad workflow.
 
 ## When to Use
 
@@ -35,8 +37,10 @@ known constraints, and authorization boundary.
 
 ## Produces
 
-Produces a role sequence, current lifecycle state, structured handoffs, open
-questions, and the evidence needed for the next state.
+Produces a delivery brief, minimum role sequence, current lifecycle state,
+structured handoffs, open questions, and the evidence needed for the next
+state. The delivery brief must name the primary outcome, first visible
+deliverable, setup required, stop condition, and success evidence.
 
 ## Safety Gates
 
@@ -54,6 +58,7 @@ before publishing, broad writes, migrations, or release-readiness claims.
 7. Keep ShopifyQL analytics separate from operational data engineering; route reporting requests to the future `shopify-analytics` role when available.
 8. Use the [role contract](../../docs/methodology/role-contract.md) to keep ownership and exclusions clear.
 9. End every role transition with the [handoff record](../../docs/methodology/handoff-record.md), including evidence, unresolved questions, and the next owner.
+10. Apply the [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md): allow at most one setup task before product progress, require an early vertical slice, stop recursive methodology work, and request a human checkpoint after two consecutive methodology-only tasks.
 
 ## Routing and lifecycle
 

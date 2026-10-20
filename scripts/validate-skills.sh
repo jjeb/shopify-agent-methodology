@@ -59,6 +59,10 @@ for coordinator_requirement in \
   'docs/methodology/lifecycle.md' \
   'docs/methodology/role-contract.md' \
   'docs/methodology/handoff-record.md' \
+  'docs/methodology/delivery-guardrails.md' \
+  'delivery brief' \
+  'vertical slice' \
+  'human checkpoint' \
   'explicit authorization'; do
   if ! grep -Fqi "$coordinator_requirement" "$coordinator"; then
     echo "FAIL: shopify-expert is missing coordinator requirement: $coordinator_requirement" >&2

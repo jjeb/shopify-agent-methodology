@@ -13,6 +13,7 @@ See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#s
 [role contract](../../docs/methodology/role-contract.md),
 [lifecycle](../../docs/methodology/lifecycle.md), and
 [handoff record](../../docs/methodology/handoff-record.md).
+Apply the shared [proportional review guardrails](../../docs/methodology/delivery-guardrails.md#proportional-review).
 
 ## When to Use
 
@@ -50,6 +51,9 @@ rollback, validation, or readback evidence is missing.
 - Check authentication, authorization, data exposure, webhook handling, retries, idempotency, performance, accessibility, and rollback.
 - Distinguish confirmed, inferred, missing, and failed evidence. Mark unclear requirements as needs review.
 - Treat deployment, publishing, synchronization, and live-store mutation as separate claims requiring separate evidence.
+- Match review depth to risk: keep documentation and small isolated changes
+  focused, while requiring strict independent review for mutations, broad
+  writes, publishing, and release claims.
 - Do not edit around a failed check without understanding its cause; return a precise finding with owner and next action.
 
 ## Handoffs

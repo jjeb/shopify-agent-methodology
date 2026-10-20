@@ -31,4 +31,11 @@ for role in "${roles[@]}"; do
   fi
 done
 
+for role in shopify-architect shopify-developer shopify-reviewer shopify-store-operator; do
+  if ! grep -Fq '../../docs/methodology/delivery-guardrails.md' "$skills_root/$role/SKILL.md"; then
+    echo "FAIL: $skills_root/$role/SKILL.md does not link to delivery guardrails" >&2
+    exit 1
+  fi
+done
+
 echo "PASS: every role links to documented responsibilities"

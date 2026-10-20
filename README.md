@@ -160,6 +160,39 @@ npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
 
 The official toolkit and this package can be installed side by side. Role skills should defer to the official `shopify` skill for current Shopify-specific API details.
 
+## Delivery-first guardrails
+
+The role system is designed to help deliver a store or product outcome, not
+to create an ever-growing methodology project. `shopify-expert` applies the
+shared [delivery-first guardrails](docs/methodology/delivery-guardrails.md):
+
+- define the primary outcome and first visible deliverable;
+- select only the minimum roles needed for the current step;
+- allow at most one setup or methodology task before direct product or store
+  progress (the methodology budget);
+- prove a vertical slice before expanding broad foundations;
+- stop recursive validation and request a human checkpoint after repeated
+  methodology-only work; and
+- scale review to risk, with strict authorization and readback for store
+  mutations.
+
+Use the evaluation scenarios in
+[`docs/evaluations/store-pilot-scenarios.md`](docs/evaluations/store-pilot-scenarios.md)
+to pressure-test routing, delivery sequencing, safety, and evidence claims.
+
+Copy-ready prompt:
+
+```text
+Use the Shopify role system with delivery-first guardrails. Start by stating
+the primary outcome, first visible deliverable, environment, one setup task at
+most, stop condition, and success evidence. Select only the minimum roles.
+Prioritize one working vertical slice before optional methodology or generic
+tooling. Stop recursive validation and ask for a human checkpoint after two
+methodology-only tasks. Match review depth to risk, and require explicit
+authorization plus readback for named-store mutations. Do not claim completion
+without direct evidence.
+```
+
 ### Keeping installation instructions current
 
 The repository name and public installation examples are canonical. Do not add
@@ -181,15 +214,19 @@ For broad work, ask the agent to use `shopify-expert`:
 Use the Shopify Expert role system. Review this store and propose the safest way to add a subscription product flow. Do not change the live store yet.
 ```
 
-The coordinator will normally use:
+The coordinator selects only the roles required by the current outcome. A
+typical sequence is conditional rather than automatic:
 
 ```text
 shopify-expert
-  → shopify-architect
-  → shopify-developer and/or shopify-data-engineer
-  → shopify-reviewer
-  → shopify-store-operator
+  → architect when the surface or permissions are unclear
+  → developer or data-engineer when implementation or data work is required
+  → reviewer when the risk or readiness claim requires independent review
+  → store-operator when a named-store inspection or approved operation is required
 ```
+
+Skip roles whose boundary does not apply. Preserve the delivery brief and
+methodology-only task count in every [handoff record](docs/methodology/handoff-record.md).
 
 For a first development-store pilot, use a bounded request such as:
 

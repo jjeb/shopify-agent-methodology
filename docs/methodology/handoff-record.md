@@ -6,6 +6,12 @@ context.
 
 ```text
 Request:
+Primary outcome:
+First visible deliverable:
+Setup task used:
+Methodology-only task count:
+Stop condition:
+Success evidence:
 Current state:
 Target store/project/environment:
 Decision or work completed:
@@ -27,3 +33,7 @@ Explicit authorization still required:
   customer data.
 - A handoff is incomplete when the next role cannot identify the target,
   current state, required permission, unresolved risk, or next action.
+- Preserve the delivery brief across every handoff. Increment
+  `Methodology-only task count` only when the handoff advances support work
+  without producing direct product, store, or validation evidence; request a
+  human checkpoint at two consecutive tasks.

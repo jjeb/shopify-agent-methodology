@@ -13,6 +13,8 @@ See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#s
 [role contract](../../docs/methodology/role-contract.md),
 [lifecycle](../../docs/methodology/lifecycle.md), and
 [handoff record](../../docs/methodology/handoff-record.md).
+Follow the shared [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md)
+for implementation sequencing.
 
 ## When to Use
 
@@ -50,6 +52,9 @@ never publish or mutate a store without explicit authorization and review.
 - Keep app code, theme code, storefront code, extension code, and live-store operations distinct.
 - Prefer official libraries and current schemas; do not invent fields, targets, scopes, enum values, or CLI flags.
 - Test locally and report exactly what was validated. Treat deployment and live execution as separate explicit steps.
+- Prioritize the first working vertical slice from the delivery brief. Report
+  direct behavior or preview evidence before adding optional infrastructure,
+  generic tooling, or broad refactors.
 - Never expose credentials or place tokens in source, logs, prompts, or handoffs.
 
 ## Handoffs

@@ -70,6 +70,11 @@ These items are intentionally deferred from the MVP. Keep them visible and promo
   readback evidence.
 - [x] Add a canonical role-and-responsibility matrix and require every skill to
   link to its role documentation.
+- [x] Add delivery-first guardrails: primary outcome briefs, minimum-role
+  routing, a methodology budget, vertical-slice checkpoints, recursion stops,
+  human escalation, and proportional review.
+- [x] Add pressure scenarios and repository checks for methodology overhead,
+  delivery sequencing, and evidence quality.
 
 ## Deferred roles
 
@@ -86,6 +91,11 @@ These items are intentionally deferred from the MVP. Keep them visible and promo
 - [ ] Keep ShopifyQL and aggregate analytics out of `shopify-data-engineer`; promote `shopify-analytics` when analytics work becomes a first-class workflow.
 - [ ] Add role-specific reference files only when repeated tasks exceed the useful size of `SKILL.md`.
 - [ ] Add automated pressure tests for routing, handoffs, unsafe live-store mutations, and evidence claims.
+- [ ] Add executable scenario runners that evaluate coordinator responses against
+  the delivery-first guardrails without requiring a live store.
+- [ ] Extract generic delivery guardrails, evaluation templates, and runtime
+  evidence policy into a reusable upstream methodology package when real usage
+  demonstrates that the boundaries are stable.
 - [ ] Add compatibility checks for supported agent targets and `npx skills` releases.
 - [ ] Add a release/versioning policy before the first public repository release.
 - [ ] Add contribution guidance and examples from sanitized, non-store-specific workflows.

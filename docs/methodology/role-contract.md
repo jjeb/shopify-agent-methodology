@@ -35,6 +35,12 @@ Which role receives the result, what state is it in, and what remains unresolved
 Which actions require explicit confirmation, independent review, a named store,
 readback evidence, or a rollback plan?
 
+## Delivery contribution
+
+What is the smallest artifact or evidence this role can produce that advances
+the primary outcome? Roles must prefer that contribution over optional
+methodology, tooling, or reference work.
+
 ## Contract rules
 
 - Do not silently expand a role's scope because another role is unavailable.
@@ -43,3 +49,7 @@ readback evidence, or a rollback plan?
 - Preserve unresolved questions instead of converting them into assumptions.
 - The role that performs a change must not be the only role deciding that the
   change is ready for release when independent review is required.
+- Every role should preserve the first visible deliverable and the stop
+  condition from the coordinator's delivery brief.
+- A role must surface repeated methodology-only work as a delivery risk rather
+  than silently expanding its scope.

@@ -9,6 +9,10 @@ required_strings=(
   'npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code'
   'npx skills add jjeb/shopify-agent-methodology --all -g -a pi'
   'bash scripts/validate-repository-docs.sh'
+  'delivery-first guardrails'
+  'vertical slice'
+  'methodology budget'
+  'store-pilot-scenarios.md'
 )
 
 for required in "${required_strings[@]}"; do
@@ -22,6 +26,20 @@ if grep -Fq 'shopify-consulting-roles' "$readme"; then
   echo "FAIL: README.md still contains the old repository name" >&2
   exit 1
 fi
+
+if grep -Fq 'The coordinator will normally use:' "$readme"; then
+  echo "FAIL: README still presents a fixed all-role workflow" >&2
+  exit 1
+fi
+
+for required_file in \
+  docs/methodology/delivery-guardrails.md \
+  docs/evaluations/store-pilot-scenarios.md; do
+  if [[ ! -f "$repo_root/$required_file" ]]; then
+    echo "FAIL: README-linked documentation is missing: $required_file" >&2
+    exit 1
+  fi
+done
 
 if grep -Eq 'npx skills add (<github-owner>|/Users/|/home/)' "$readme"; then
   echo "FAIL: README.md contains a placeholder or personal installation path" >&2
