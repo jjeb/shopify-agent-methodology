@@ -32,5 +32,8 @@ jobs:
       - name: Validate store-pilot scenarios
         run: bash scripts/validate-evaluation-scenarios.sh
 
+      - name: Validate methodology references
+        run: bash scripts/validate-methodology.sh
+
       - name: Check whitespace
         run: git diff --check
