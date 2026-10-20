@@ -27,6 +27,7 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
+bash scripts/validate-coordination.sh
 git diff --check
 ```
 
