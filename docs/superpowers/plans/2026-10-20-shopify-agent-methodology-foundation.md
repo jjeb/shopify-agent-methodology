@@ -42,26 +42,26 @@
 - Consumes: the lifecycle states, role contract, handoff protocol, and pilot constraints from the design spec.
 - Produces: stable local references that each role can link to without duplicating the complete methodology.
 
-- [ ] **Step 1: Write reference acceptance checks**
+- [x] **Step 1: Write reference acceptance checks**
 
   Define a small Bash or text-based check that each reference exists, names the
   required states/fields, and includes the development-store safety boundary.
 
-- [ ] **Step 2: Run the checks and verify they fail**
+- [x] **Step 2: Run the checks and verify they fail**
 
   Run the check before creating the references. Expected: failure naming the
   missing reference files or required terms.
 
-- [ ] **Step 3: Write the four references**
+- [x] **Step 3: Write the four references**
 
   Keep them operational: lifecycle transitions and evidence; the role contract;
   the handoff record; and the safe development-store pilot procedure.
 
-- [ ] **Step 4: Run the checks and verify they pass**
+- [x] **Step 4: Run the checks and verify they pass**
 
   Expected: all required references and invariants pass.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
   `git commit -m "docs: add Shopify methodology references"`
 
@@ -76,30 +76,30 @@
 - Consumes: the shared lifecycle, role contract, and handoff references from Task 1.
 - Produces: coordinator behavior that selects the smallest role set, records lifecycle state, and emits a structured next handoff.
 
-- [ ] **Step 1: Add failing structural checks**
+- [x] **Step 1: Add failing structural checks**
 
   Require `shopify-expert` to reference lifecycle states, role boundaries,
   handoff records, and explicit authorization before mutations.
 
-- [ ] **Step 2: Run `bash scripts/validate-skills.sh` and verify it fails**
+- [x] **Step 2: Run `bash scripts/validate-skills.sh` and verify it fails**
 
   Expected: the new coordinator requirements are reported as missing.
 
-- [ ] **Step 3: Update `shopify-expert/SKILL.md`**
+- [x] **Step 3: Update `shopify-expert/SKILL.md`**
 
   Add routing signals, state transitions, role-selection rules, parallelization
   boundaries, and a required handoff output. Link to the shared references.
 
-- [ ] **Step 4: Add README pilot invocation examples**
+- [x] **Step 4: Add README pilot invocation examples**
 
   Document one read-only inspection and one reversible development-store preview
   request, including the expected role sequence and evidence.
 
-- [ ] **Step 5: Run validation and verify it passes**
+- [x] **Step 5: Run validation and verify it passes**
 
   Run the repository validator and official validator. Expected: PASS.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
   `git commit -m "feat: add Shopify methodology routing"`
 
@@ -116,25 +116,25 @@
 - Consumes: the role-contract and handoff references from Task 1.
 - Produces: consistent owns/use/do-not-use/requires/produces/handoffs/safety-gates sections for every role.
 
-- [ ] **Step 1: Add failing contract checks**
+- [x] **Step 1: Add failing contract checks**
 
   Extend the validator to require the role contract headings in all six MVP
   skills, while preserving the existing headings.
 
-- [ ] **Step 2: Run the validator and verify it fails**
+- [x] **Step 2: Run the validator and verify it fails**
 
   Expected: the five specialist roles report missing contract sections.
 
-- [ ] **Step 3: Add the contract sections**
+- [x] **Step 3: Add the contract sections**
 
   Keep each role specific. Do not copy Shopify API details. Preserve the
   data-engineer/analytics boundary and store-operator authorization boundary.
 
-- [ ] **Step 4: Run all structural and official validation**
+- [x] **Step 4: Run all structural and official validation**
 
   Expected: all six roles pass.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
   `git commit -m "docs: normalize Shopify role contracts"`
 
@@ -150,30 +150,30 @@
 - Consumes: coordinator routing and role contracts from Tasks 1–3.
 - Produces: copy-ready scenarios for a development-store pilot and deterministic checks that the scenarios cover safety-critical behaviors.
 
-- [ ] **Step 1: Write failing scenario checks**
+- [x] **Step 1: Write failing scenario checks**
 
   Check for scenarios covering read-only inspection, bounded preview, analytics
   routing, unsafe mutation refusal, and evidence/readback.
 
-- [ ] **Step 2: Run the checks and verify they fail**
+- [x] **Step 2: Run the checks and verify they fail**
 
   Expected: the missing scenario document is reported.
 
-- [ ] **Step 3: Write pressure scenarios**
+- [x] **Step 3: Write pressure scenarios**
 
   Each scenario must state context, user request, expected role routing, unsafe
   temptation, required handoff/evidence, and pass/fail criteria.
 
-- [ ] **Step 4: Add pilot instructions**
+- [x] **Step 4: Add pilot instructions**
 
   Explain how to install the skills, authenticate a development store, run the
   read-only scenario first, and capture output without exposing credentials.
 
-- [ ] **Step 5: Run scenario and repository checks**
+- [x] **Step 5: Run scenario and repository checks**
 
   Expected: all required scenarios and skill validators pass.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
   `git commit -m "test: add Shopify store pilot scenarios"`
 
@@ -188,18 +188,18 @@
 - Consumes: all methodology references, coordinator behavior, role contracts, and pilot scenarios.
 - Produces: a reviewable PR description, contributor workflow, and clearly separated future phases.
 
-- [ ] **Step 1: Document the end-to-end pilot workflow**
+- [x] **Step 1: Document the end-to-end pilot workflow**
 
   Include install, authentication prerequisites, development-store scope, role
   sequence, expected artifacts, and explicit non-goals.
 
-- [ ] **Step 2: Update the backlog**
+- [x] **Step 2: Update the backlog**
 
   Mark only the methodology-foundation items complete. Keep coordination,
   workflow packs, evaluations, compatibility, and public ecosystem work as
   separate future PR-sized items.
 
-- [ ] **Step 3: Run the full verification gate**
+- [x] **Step 3: Run the full verification gate**
 
   Run:
 
@@ -210,7 +210,7 @@
   git diff --check
   ```
 
-- [ ] **Step 4: Commit and open the PR**
+- [x] **Step 4: Commit and open the PR**
 
   Use a focused title such as `feat: add Shopify agent methodology foundation`.
   The PR body must list scope, non-goals, pilot instructions, validation
