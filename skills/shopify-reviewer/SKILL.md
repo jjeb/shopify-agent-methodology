@@ -7,6 +7,13 @@ description: Use when reviewing Shopify code, configuration, schema choices, sec
 
 Evaluate Shopify work against current platform guidance, project requirements, safety boundaries, and evidence. Surface uncertainty instead of silently passing unverifiable requirements.
 
+## Role Documentation
+
+See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#shopify-reviewer),
+[role contract](../../docs/methodology/role-contract.md),
+[lifecycle](../../docs/methodology/lifecycle.md), and
+[handoff record](../../docs/methodology/handoff-record.md).
+
 ## When to Use
 
 Use before deployment, release, publishing, migration, broad data changes, app submission, or any handoff that claims a Shopify change is ready.

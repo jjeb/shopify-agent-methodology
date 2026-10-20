@@ -7,6 +7,13 @@ description: Use when a Shopify request spans multiple surfaces, roles, lifecycl
 
 Coordinate Shopify work around the official Shopify AI Toolkit. This skill adds role selection, sequencing, safety gates, and evidence discipline; it does not replace Shopify's current API and CLI guidance.
 
+## Role Documentation
+
+See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#shopify-expert),
+[role contract](../../docs/methodology/role-contract.md),
+[lifecycle](../../docs/methodology/lifecycle.md), and
+[handoff record](../../docs/methodology/handoff-record.md).
+
 ## When to Use
 
 Use for broad requests such as building, changing, migrating, operating, reviewing, or expanding a Shopify store or app. Use a focused role directly when the request clearly belongs to one role.

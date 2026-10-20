@@ -7,6 +7,13 @@ description: Use when implementing or changing Shopify apps, themes, storefronts
 
 Implement Shopify changes using the official toolkit, Shopify CLI, project conventions, and the smallest suitable platform surface. This is the MVP umbrella for app, storefront, extension, and integration engineering.
 
+## Role Documentation
+
+See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#shopify-developer),
+[role contract](../../docs/methodology/role-contract.md),
+[lifecycle](../../docs/methodology/lifecycle.md), and
+[handoff record](../../docs/methodology/handoff-record.md).
+
 ## When to Use
 
 Use for code, configuration, scaffolding, migrations, API operations, Liquid, Hydrogen, Polaris, Functions, webhooks, or extension work. Route to the future specialized app, storefront, or extension skill when it is available.
