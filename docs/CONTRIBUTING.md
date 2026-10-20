@@ -2,7 +2,7 @@
 
 ## Add or refine a skill
 
-1. Inspect the existing skills under `skills/` and the future-work prompt in `BACKLOG.md`.
+1. Inspect the existing skills under `skills/` and the future-work prompt in `docs/BACKLOG.md`.
 2. Keep each skill focused on one role and use the portable `skills/<name>/SKILL.md` layout.
 3. Use valid frontmatter with a `name` and a description beginning with `Use when`.
 4. Include `When to Use`, `Operating Rules`, and `Handoffs` sections.
@@ -47,7 +47,7 @@ review of role routing, safety boundaries, or handoffs.
 
 Before proposing a new role, run the relevant scenarios in
 `docs/evaluations/store-pilot-scenarios.md` and explain why the existing roles
-cannot cover the request. Keep future work in `BACKLOG.md` as a separate,
+cannot cover the request. Keep future work in `docs/BACKLOG.md` as a separate,
 reviewable PR-sized item.
 
-Update `README.md` and `BACKLOG.md` when adding a role or changing installation and routing behavior. Use focused commits on `main` and describe validation results in the commit or pull request.
+Update `README.md`, `docs/getting-started.md`, and `docs/BACKLOG.md` when adding a role or changing installation and routing behavior. Use focused commits on `main` and describe validation results in the commit or pull request.

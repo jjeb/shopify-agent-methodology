@@ -144,7 +144,7 @@
 - Create: `docs/evaluations/store-pilot-scenarios.md`
 - Create: `scripts/validate-evaluation-scenarios.sh`
 - Modify: `README.md`
-- Modify: `BACKLOG.md`
+- Modify: `docs/BACKLOG.md`
 
 **Interfaces:**
 - Consumes: coordinator routing and role contracts from Tasks 1–3.
@@ -182,7 +182,7 @@
 **Files:**
 - Modify: `README.md`
 - Modify: `docs/CONTRIBUTING.md`
-- Modify: `BACKLOG.md`
+- Modify: `docs/BACKLOG.md`
 
 **Interfaces:**
 - Consumes: all methodology references, coordinator behavior, role contracts, and pilot scenarios.

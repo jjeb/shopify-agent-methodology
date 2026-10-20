@@ -66,7 +66,7 @@ for coordinator_requirement in \
   fi
 done
 
-todo="$repo_root/BACKLOG.md"
+todo="$repo_root/docs/BACKLOG.md"
 for item in \
   'shopify-platform-engineer' \
   'shopify-commerce-strategist' \
@@ -75,7 +75,7 @@ for item in \
   'app-engineer' \
   'shopify-analytics'; do
   if [[ ! -f "$todo" ]] || ! grep -q "$item" "$todo"; then
-    echo "FAIL: BACKLOG.md does not track $item" >&2
+    echo "FAIL: docs/BACKLOG.md does not track $item" >&2
     failures=$((failures + 1))
   fi
 done
