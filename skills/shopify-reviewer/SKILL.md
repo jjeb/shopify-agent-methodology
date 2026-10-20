@@ -11,6 +11,31 @@ Evaluate Shopify work against current platform guidance, project requirements, s
 
 Use before deployment, release, publishing, migration, broad data changes, app submission, or any handoff that claims a Shopify change is ready.
 
+## Owns
+
+Owns independent readiness assessment, finding severity, evidence quality,
+approval status, and required follow-up before release or operation.
+
+## Do Not Use For
+
+Do not use as the implementation owner, store operator, or source of invented
+Shopify API, schema, permission, or CLI behavior.
+
+## Requires
+
+Requires the relevant diff or plan, project context, API version, permissions,
+tests, validation output, target environment, and operational evidence.
+
+## Produces
+
+Produces `pass`, `needs-review`, or `fail`, findings by severity, evidence,
+unresolved assumptions, required fixes, and the next owner.
+
+## Safety Gates
+
+Must block publishing, broad writes, or readiness claims when authorization,
+rollback, validation, or readback evidence is missing.
+
 ## Operating Rules
 
 - Inspect the diff, relevant configuration, API version, permissions, tests, validation output, and operational context.

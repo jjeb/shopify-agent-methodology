@@ -191,6 +191,25 @@ shopify-expert
   → shopify-store-operator
 ```
 
+For a first development-store pilot, use a bounded request such as:
+
+```text
+Use shopify-expert for a development-store pilot. First inspect the named
+store read-only, identify the current environment, and propose the smallest
+reversible theme or app change. Route architecture, implementation, review,
+and store operations explicitly. Do not publish, mutate production, or claim
+success without readback evidence.
+```
+
+The expected result is a lifecycle state, selected roles, a structured handoff,
+validation evidence, unresolved questions, and the exact authorization still
+required. See [the development-store pilot guide](docs/methodology/store-pilot.md).
+
+The complete pilot scenario set is in
+[docs/evaluations/store-pilot-scenarios.md](docs/evaluations/store-pilot-scenarios.md).
+Run the read-only scenario first. Only continue to a preview after the agent
+has confirmed the exact development store and environment.
+
 Focused examples:
 
 ```text
@@ -281,8 +300,14 @@ not prove that a role makes good decisions at runtime. Behavioral pressure
 tests for routing, handoffs, safety gates, and evidence claims remain tracked
 in [BACKLOG.md](BACKLOG.md).
 
-GitHub Actions runs both validation layers for pushes and pull requests to
-`main`.
+GitHub Actions runs the skill, methodology, and evaluation checks for pushes
+and pull requests to `main`.
+
+It also checks the development-store evaluation scenarios:
+
+```bash
+bash scripts/validate-evaluation-scenarios.sh
+```
 
 ## Repository layout
 
@@ -296,8 +321,12 @@ skills/                         Installable skill sources
   shopify-reviewer/             Quality and release review
 scripts/validate-skills.sh      Structural validation
 scripts/validate-skills-standard.sh  Official Agent Skills validation
+scripts/validate-methodology.sh Shared methodology reference validation
+scripts/validate-evaluation-scenarios.sh  Pilot pressure-scenario validation
 BACKLOG.md                      Deferred roles and capability backlog
-docs/                            Maintainer documentation
+docs/methodology/               Lifecycle, contracts, handoffs, and pilot guide
+docs/evaluations/               Development-store behavioral scenarios
+docs/                            Maintainer and methodology documentation
   CONTRIBUTING.md                Maintainer and contributor guidance
 ```
 

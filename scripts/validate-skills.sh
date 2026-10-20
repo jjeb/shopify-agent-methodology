@@ -46,6 +46,24 @@ for skill in "${required_skills[@]}"; do
       failures=$((failures + 1))
     fi
   done
+  for contract_heading in '## Owns' '## Do Not Use For' '## Requires' '## Produces' '## Safety Gates'; do
+    if ! grep -q "$contract_heading" "$file"; then
+      echo "FAIL: $file is missing contract heading: $contract_heading" >&2
+      failures=$((failures + 1))
+    fi
+  done
+done
+
+coordinator="$skills_root/shopify-expert/SKILL.md"
+for coordinator_requirement in \
+  'docs/methodology/lifecycle.md' \
+  'docs/methodology/role-contract.md' \
+  'docs/methodology/handoff-record.md' \
+  'explicit authorization'; do
+  if ! grep -Fqi "$coordinator_requirement" "$coordinator"; then
+    echo "FAIL: shopify-expert is missing coordinator requirement: $coordinator_requirement" >&2
+    failures=$((failures + 1))
+  fi
 done
 
 todo="$repo_root/BACKLOG.md"

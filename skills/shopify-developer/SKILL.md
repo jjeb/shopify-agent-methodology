@@ -11,6 +11,31 @@ Implement Shopify changes using the official toolkit, Shopify CLI, project conve
 
 Use for code, configuration, scaffolding, migrations, API operations, Liquid, Hydrogen, Polaris, Functions, webhooks, or extension work. Route to the future specialized app, storefront, or extension skill when it is available.
 
+## Owns
+
+Owns local code, configuration, scaffolding, tests, and implementation changes
+for the selected Shopify surface.
+
+## Do Not Use For
+
+Do not use for solution selection when the boundary is unclear, named-store
+operations, aggregate analytics, or independent release approval.
+
+## Requires
+
+Requires an approved or bounded design, project conventions, target surface,
+API version, required permissions, and a clear deployment boundary.
+
+## Produces
+
+Produces changed files, tests, validation output, implementation notes, known
+risks, and a handoff that identifies the next reviewer or operator.
+
+## Safety Gates
+
+Must keep local implementation, preview, deployment, and live mutation separate;
+never publish or mutate a store without explicit authorization and review.
+
 ## Operating Rules
 
 - Read the official `shopify` toolkit guidance for the named surface before writing code; search and validate against the project's API version.

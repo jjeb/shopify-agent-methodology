@@ -6,9 +6,13 @@
 2. Keep each skill focused on one role and use the portable `skills/<name>/SKILL.md` layout.
 3. Use valid frontmatter with a `name` and a description beginning with `Use when`.
 4. Include `When to Use`, `Operating Rules`, and `Handoffs` sections.
-5. Defer current Shopify API, schema, validation, and CLI details to Shopify's official toolkit and documentation.
-6. Preserve the boundaries between proposal, local implementation, validation, deployment, and live-store execution.
-7. Never include credentials, tokens, passwords, or unnecessary merchant data.
+5. Include the role contract headings: `Owns`, `Do Not Use For`, `Requires`,
+   `Produces`, and `Safety Gates`.
+6. Link shared lifecycle, role-contract, and handoff guidance from
+   `docs/methodology/` instead of duplicating it in every skill.
+7. Defer current Shopify API, schema, validation, and CLI details to Shopify's official toolkit and documentation.
+8. Preserve the boundaries between proposal, local implementation, validation, deployment, and live-store execution.
+9. Never include credentials, tokens, passwords, or unnecessary merchant data.
 
 ## Validate changes
 
@@ -17,6 +21,8 @@ Run:
 ```bash
 bash scripts/validate-skills.sh
 bash scripts/validate-repository-docs.sh
+bash scripts/validate-methodology.sh
+bash scripts/validate-evaluation-scenarios.sh
 git diff --check
 ```
 
@@ -33,5 +39,10 @@ bash scripts/validate-skills-standard.sh
 Pull requests to `main` run both checks in GitHub Actions. The official
 validator checks package format and frontmatter; it does not replace behavioral
 review of role routing, safety boundaries, or handoffs.
+
+Before proposing a new role, run the relevant scenarios in
+`docs/evaluations/store-pilot-scenarios.md` and explain why the existing roles
+cannot cover the request. Keep future work in `BACKLOG.md` as a separate,
+reviewable PR-sized item.
 
 Update `README.md` and `BACKLOG.md` when adding a role or changing installation and routing behavior. Use focused commits on `main` and describe validation results in the commit or pull request.

@@ -13,6 +13,31 @@ Use for metafields, metaobjects, bulk operations, imports/exports, webhooks, eve
 
 Do not use for totals, trends, conversion rates, period comparisons, or dashboard interpretation. Those belong to the future `shopify-analytics` skill and ShopifyQL.
 
+## Owns
+
+Owns operational data models, movement, synchronization, quality controls,
+reconciliation, migration planning, and failure recovery.
+
+## Do Not Use For
+
+Do not use for ShopifyQL, aggregate reporting, trends, conversion rates, or
+dashboard interpretation; those are analytics work.
+
+## Requires
+
+Requires entities and identifiers, source of truth, volume, freshness,
+permissions, API version, retention/deletion expectations, and rollback needs.
+
+## Produces
+
+Produces a data contract, flow design, retry and idempotency rules, validation
+queries, reconciliation plan, migration steps, and evidence requirements.
+
+## Safety Gates
+
+Requires dry runs, checkpoints, reconciliation, rollback, and independent review
+before broad or irreversible data writes.
+
 ## Operating Rules
 
 - Define source of truth, identifiers, ownership, freshness, retry behavior, idempotency, and deletion handling.
