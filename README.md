@@ -205,6 +205,44 @@ The expected result is a lifecycle state, selected roles, a structured handoff,
 validation evidence, unresolved questions, and the exact authorization still
 required. See [the development-store pilot guide](docs/methodology/store-pilot.md).
 
+### Collect pilot information
+
+For an evaluation run, include this prompt after the task description. It asks
+the agent to produce a small, sanitized run summary that can be saved in the
+client or store repository. It does not enable hidden telemetry or require a
+metrics service.
+
+```text
+Run this task in evaluation mode. At the end, provide a sanitized run summary
+using exactly these fields:
+
+Run ID:
+Date:
+Repository and branch:
+Store/environment:
+Request:
+Roles used and handoffs:
+Lifecycle state at start:
+Lifecycle state at end:
+Changes made:
+Validation performed:
+Readback performed:
+Review result: pass, needs-review, or fail
+Human corrections:
+Unresolved risks:
+Outcome: success, partial, blocked, or failed
+
+Do not include credentials, access tokens, customer data, full API responses,
+or unredacted private prompts. If a field was not applicable or not run, say
+so explicitly. Separate observed evidence from assumptions. Do not claim a
+live-store result without readback evidence.
+```
+
+Save the result locally, for example, as
+`.agent-methodology/runs/YYYY-MM-DD-short-name.md`. Start with manual summaries;
+structured JSONL collection and aggregate reporting can be added after several
+real pilot runs show that manual collection is insufficient.
+
 See the [Mermaid Shopify lifecycle workflow](docs/workflows/shopify-lifecycle.md)
 for the role sequence and [copy-ready examples](docs/examples/) for a
 development-store preview and the analytics/data-engineering boundary.
