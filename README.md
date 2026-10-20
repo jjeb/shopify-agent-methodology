@@ -257,7 +257,8 @@ skills/                         Installable skill sources
   shopify-reviewer/             Quality and release review
 scripts/validate-skills.sh      Structural validation
 BACKLOG.md                      Deferred roles and capability backlog
-docs/                            Design and implementation records
+docs/                            Maintainer documentation
+  CONTRIBUTING.md                Maintainer and contributor guidance
 ```
 
 Future roles and expansion tasks are tracked in [BACKLOG.md](BACKLOG.md), which also contains a copy-ready prompt for future agents.
