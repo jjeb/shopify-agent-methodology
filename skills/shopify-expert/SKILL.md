@@ -12,7 +12,8 @@ Coordinate Shopify work around the official Shopify AI Toolkit. This skill adds 
 See the [role and responsibility matrix](references/methodology/role-matrix.md#shopify-expert),
 [role contract](references/methodology/role-contract.md),
 [lifecycle](references/methodology/lifecycle.md), and
-[handoff record](references/methodology/handoff-record.md).
+[handoff record](references/methodology/handoff-record.md), and
+[multi-role coordination guide](references/methodology/coordination.md).
 Apply the shared [delivery-first guardrails](references/methodology/delivery-guardrails.md)
 to every broad workflow.
 
@@ -59,6 +60,22 @@ before publishing, broad writes, migrations, or release-readiness claims.
 8. Use the [role contract](references/methodology/role-contract.md) to keep ownership and exclusions clear.
 9. End every role transition with the [handoff record](references/methodology/handoff-record.md), including evidence, unresolved questions, and the next owner.
 10. Apply the [delivery-first guardrails](references/methodology/delivery-guardrails.md): allow at most one setup task before product progress, require an early vertical slice, stop recursive methodology work, and request a human checkpoint after two consecutive methodology-only tasks.
+
+## Coordination
+
+Use the [multi-role coordination guide](references/methodology/coordination.md)
+to select primary and supporting roles, record dependencies, and decide whether
+work is parallel-safe. Parallelize only independent, non-mutating tasks with
+distinct outputs. Use a join gate before advancing design, implementation,
+review, or operation.
+
+Every multi-role request starts with a coordination packet containing the target,
+primary role, supporting roles, dependencies, parallel-safe tasks, shared
+mutable targets, join gate, evidence, unresolved risks, and explicit
+authorization still required. Do not start a branch until its dependencies are
+satisfied. Do not advance a lifecycle state until required branches are
+complete or explicitly skipped with a reason. A conflicting or incomplete join
+returns `needs-review` rather than silently selecting a result.
 
 ## Routing and lifecycle
 

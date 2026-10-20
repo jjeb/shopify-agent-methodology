@@ -1,158 +1,24 @@
 # Shopify Agent Methodology
 
-Role-based agent methodology for building, operating, reviewing, and growing Shopify stores with the official Shopify AI Toolkit.
+Role-based agent methodology for building, operating, reviewing, and growing
+Shopify stores with the official Shopify AI Toolkit.
 
 Repository: [github.com/jjeb/shopify-agent-methodology](https://github.com/jjeb/shopify-agent-methodology)
 
-This project adds role coordination and development workflows around Shopify's toolkit; it does not replace Shopify's `shopify` skill, developer documentation, schema validation, or Shopify CLI.
+This project adds role coordination, safety boundaries, handoffs, and evidence
+requirements around Shopify's official tools. It does not replace Shopify's
+AI Toolkit, developer documentation, schema validation, or Shopify CLI.
 
-The source package uses the portable `skills/` layout. The `npx skills` installer copies or links these skills into the target agent's supported directory.
+## Quick start
 
-## What this package provides
-
-This package adds a practical team model around Shopify's platform capabilities. It helps an agent decide who should work on a request, what information is missing, what must be validated, and when a live-store action is safe to perform.
-
-It complements Shopify's official toolkit:
-
-- Shopify's toolkit supplies current API, schema, validation, migration, and CLI guidance.
-- These skills supply role boundaries, sequencing, handoffs, safety checks, and evidence requirements.
-- The skills do not copy Shopify API reference material, invent API fields, or replace Shopify CLI.
-
-## MVP skills
-
-- `shopify-expert`: coordinates a Shopify request across roles, selects the smallest useful workflow, and enforces handoffs, approvals, and evidence boundaries.
-- `shopify-architect`: owns discovery and solution design—choosing between apps, themes, Hydrogen, APIs, extensions, Functions, integrations, and store workflows before implementation begins.
-- `shopify-developer`: implements Shopify application and storefront changes, including app code, Liquid, Hydrogen, APIs, webhooks, extensions, Functions, Polaris, configuration, and CLI-managed projects.
-- `shopify-data-engineer`: designs operational data systems—metafields/metaobjects, imports, bulk operations, webhooks, synchronization, external databases, migrations, and reconciliation. It does not own ShopifyQL analytics.
-- `shopify-store-operator`: performs approved, authenticated store work such as read-only inspection, products/content workflows, theme previews, publishing, maintenance, and store-scoped CLI operations.
-- `shopify-reviewer`: independently evaluates code, schemas, configuration, permissions, security, performance, tests, Shopify requirements, release readiness, and evidence for live changes.
-
-## Requirements
-
-- An agent supported by the [`skills` CLI](https://github.com/vercel-labs/skills).
-- Node.js compatible with the installed `skills` CLI and Shopify CLI.
-- Shopify CLI when the task requires scaffolding, previewing, validation, deployment, or authenticated store operations.
-- The official Shopify AI Toolkit for current Shopify-specific documentation and validation.
-
-See Shopify's [AI Toolkit documentation](https://shopify.dev/docs/apps/build/ai-toolkit) and [Shopify CLI requirements](https://shopify.dev/docs/api/shopify-cli).
-
-## Setup prompt: install and authenticate
-
-Copy this prompt into an agent before asking it to perform authenticated Shopify work:
-
-```text
-Prepare this environment for Shopify development and authenticated store work.
-
-1. Check that Node.js, a package manager, and Shopify CLI are available. If
-   Shopify CLI is missing or outdated, install or upgrade it with the user's
-   package manager, then verify with:
-
-      shopify version
-
-2. Install this role package and Shopify's official toolkit if they are not
-   already available. Do not install duplicate copies unnecessarily.
-
-      npx skills add jjeb/shopify-agent-methodology --all
-      npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
-
-3. Ask me to confirm the Shopify account, organization, exact target store,
-   environment, and intended scope before using store credentials.
-
-4. Sign in to the intended Shopify or Partner account with:
-
-      shopify auth login
-
-5. For store-scoped CLI work, authenticate only the named store and request
-   only the required Admin API scopes:
-
-      shopify store auth --store <store>.myshopify.com \
-        --scopes <comma-separated-scopes>
-
-6. Verify the target with a read-only command before any write:
-
-      shopify store info --store <store>.myshopify.com
-
-7. Start with read-only queries, development themes, previews, or dry runs.
-   Do not run mutations unless I explicitly authorize the exact operation.
-   Shopify store execute mutations require --allow-mutations.
-
-8. Never print, commit, paste, or include passwords, access tokens, or secrets
-   in source files, logs, prompts, or reports. Do not claim authentication or
-   a store change succeeded without direct command output and readback evidence.
-
-9. If the account changes, stop and ask me to run shopify auth logout before
-   authenticating again. Explain any missing dependency, permission, scope,
-   or store context instead of guessing.
-```
-
-Authentication is context-dependent: account login, store authentication, app credentials, Theme Access passwords, and storefront public tokens are not interchangeable. See [Shopify auth login](https://shopify.dev/docs/api/shopify-cli/general-commands/auth-login), [store auth](https://shopify.dev/docs/api/shopify-cli/store/store-auth), and [store execute](https://shopify.dev/docs/api/shopify-cli/store/store-execute).
-
-## Installation
-
-### Local project installation
-
-From a checkout of this repository:
+Install the six MVP roles globally for your agent:
 
 ```bash
-npx skills add . --all
+npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a claude-code -y
+npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a pi -y
 ```
 
-Install from the public repository:
-
-```bash
-npx skills add jjeb/shopify-agent-methodology --all
-```
-
-Install one skill only from the current checkout:
-
-```bash
-npx skills add . --skill shopify-expert
-```
-
-Install all MVP skills specifically for Claude Code:
-
-```bash
-npx skills add . --all -a claude-code
-```
-
-Install all MVP skills specifically for Pi:
-
-```bash
-npx skills add . --all -a pi
-```
-
-### Global installation
-
-```bash
-npx skills add jjeb/shopify-agent-methodology --all -g
-```
-
-Install globally for Claude Code:
-
-```bash
-npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code
-```
-
-Install globally for Pi:
-
-```bash
-npx skills add jjeb/shopify-agent-methodology --all -g -a pi
-```
-
-The canonical public installation commands are:
-
-```bash
-npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code
-npx skills add jjeb/shopify-agent-methodology --all -g -a pi
-```
-
-Install into the current project instead of globally:
-
-```bash
-npx skills add jjeb/shopify-agent-methodology --all
-```
-
-Install Shopify's official toolkit separately when the agent does not already have it:
+Install Shopify's official toolkit separately when it is not already available:
 
 ```bash
 npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
@@ -224,13 +90,61 @@ bash scripts/validate-repository-docs.sh
 GitHub Actions runs this check so renamed repositories and stale installation
 commands are caught during pull requests.
 
-## How to work with the skills
-
-For broad work, ask the agent to use `shopify-expert`:
+Initialize the agent without authenticating or changing a store:
 
 ```text
-Use the Shopify Expert role system. Review this store and propose the safest way to add a subscription product flow. Do not change the live store yet.
+Initialize the Shopify Agent Methodology for this project. Confirm that the
+Shopify Expert, Architect, Developer, Data Engineer, Store Operator, and
+Reviewer roles are available. Confirm that the official Shopify skill is also
+available. Do not authenticate or change a store yet. Report missing skills or
+dependencies clearly.
 ```
+
+Then start with a read-only development-store request:
+
+```text
+Use shopify-expert for a development-store pilot. First inspect the named
+store read-only and confirm the exact environment. Then propose the smallest
+reversible theme or app change. Route architecture, implementation, review,
+and store operations explicitly. Do not publish, mutate production, or claim
+success without readback evidence.
+```
+
+See [Getting Started](docs/getting-started.md) for complete installation,
+initialization, authentication, and first-workflow instructions.
+
+See [Getting Started](docs/getting-started.md) for complete installation,
+initialization, authentication, and first-workflow instructions.
+
+## What this package provides
+
+The package helps an agent decide who should work on a request, what
+information is missing, what can run in parallel, what must be validated, and
+when a live-store action is safe to perform.
+
+| Role | Primary responsibility |
+| --- | --- |
+| `shopify-expert` | Coordinate requests, route roles, enforce lifecycle and evidence boundaries. |
+| `shopify-architect` | Define the solution boundary, Shopify surface, dependencies, scopes, and rollout. |
+| `shopify-developer` | Implement apps, themes, storefronts, APIs, webhooks, extensions, Functions, and configuration. |
+| `shopify-data-engineer` | Design operational data workflows, imports, bulk operations, synchronization, reconciliation, and rollback. |
+| `shopify-store-operator` | Perform approved named-store inspection, preview, maintenance, and store-scoped operations. |
+| `shopify-reviewer` | Independently review code, schemas, permissions, security, performance, tests, release readiness, and evidence. |
+
+The six-role MVP does not yet include dedicated analytics, platform, storefront,
+extension, app-specialist, or commerce-strategy roles. See the [backlog](docs/BACKLOG.md)
+for the deferred role roadmap.
+
+## Role routing examples
+
+| Request | Primary role | Supporting roles |
+| --- | --- | --- |
+| New app or integration | `shopify-developer` | Architect, Reviewer |
+| Theme or storefront change | `shopify-developer` | Architect, Reviewer, Store Operator |
+| Bulk import or synchronization | `shopify-data-engineer` | Reviewer, Store Operator |
+| Read-only store inspection | `shopify-store-operator` | Expert, Reviewer when making a readiness claim |
+| Release or safety decision | `shopify-reviewer` | Relevant implementation and operator roles |
+| ShopifyQL reporting | Future `shopify-analytics` role | Expert; keep separate from operational data engineering |
 
 The coordinator selects only the roles required by the current outcome. A
 typical sequence is conditional rather than automatic:
@@ -246,79 +160,22 @@ shopify-expert
 Skip roles whose boundary does not apply. Preserve the delivery brief and
 methodology-only task count in every [handoff record](docs/methodology/handoff-record.md).
 
-For a first development-store pilot, use a bounded request such as:
+Independent discovery or local preparation may run in parallel only when there
+are no shared mutable targets or unfinished dependencies. Publishing,
+destructive writes, migrations, conflicting theme edits, review, and readback
+remain coordinated and sequential. See the [coordination guide](docs/methodology/coordination.md).
 
-```text
-Use shopify-expert for a development-store pilot. First inspect the named
-store read-only, identify the current environment, and propose the smallest
-reversible theme or app change. Route architecture, implementation, review,
-and store operations explicitly. Do not publish, mutate production, or claim
-success without readback evidence.
-```
+## Evaluation and run summaries
 
-The expected result is a lifecycle state, selected roles, a structured handoff,
-validation evidence, unresolved questions, and the exact authorization still
-required. See [the development-store pilot guide](docs/methodology/store-pilot.md).
+For a first pilot, run the read-only scenario before any preview or mutation.
+Use the [evaluation scenarios](docs/evaluations/store-pilot-scenarios.md) and
+the [copy-ready run-log prompt](docs/evaluations/run-log.md) to collect a small,
+sanitized summary in the client/store repository.
 
-See the [Mermaid Shopify lifecycle workflow](docs/workflows/shopify-lifecycle.md)
-for the role sequence and [copy-ready examples](docs/examples/) for a
-development-store preview and the analytics/data-engineering boundary.
-
-The complete pilot scenario set is in
-[docs/evaluations/store-pilot-scenarios.md](docs/evaluations/store-pilot-scenarios.md).
-Run the read-only scenario first. Only continue to a preview after the agent
-has confirmed the exact development store and environment.
-
-Focused examples:
-
-```text
-Use shopify-architect to decide whether this needs a theme change, an app,
-a Checkout extension, or a Hydrogen storefront. List required APIs and permissions.
-```
-
-```text
-Use shopify-developer to implement this Admin GraphQL integration. Read the
-current toolkit guidance, use the project's API version, validate it, and do not deploy.
-```
-
-```text
-Use shopify-data-engineer to design a webhook and bulk synchronization pipeline
-for products and inventory. Define source of truth, idempotency, retries,
-reconciliation, and rollback. Do not execute writes.
-```
-
-```text
-Use shopify-store-operator to inspect the named development store, preview the
-theme change, and report before-and-after evidence. Do not publish.
-```
-
-```text
-Use shopify-reviewer to review this diff for Shopify schema correctness,
-permissions, security, performance, tests, and release readiness. Return
-pass, needs-review, or fail with actionable findings.
-```
-
-## Common workflows
-
-### Build a new app
-
-1. Architect defines the app surface, data ownership, scopes, webhooks, and rollout.
-2. Developer scaffolds and implements with Shopify CLI and the official toolkit.
-3. Data engineer designs custom data and synchronization when needed.
-4. Reviewer checks code, configuration, security, schemas, tests, and release readiness.
-5. Store operator performs approved named-store actions.
-
-### Change a theme or storefront
-
-Use the architect when the boundary between Liquid, a theme app extension, Storefront API, and Hydrogen is unclear. Use the developer for implementation, reviewer for Theme Check/performance/accessibility and diff review, and store operator for preview or publishing.
-
-### Migrate or synchronize data
-
-Use the data engineer for source of truth, bulk strategy, webhook behavior, retries, reconciliation, and rollback. Use the reviewer before broad writes. Use the store operator only for approved named-store execution.
-
-### Analyze store performance
-
-ShopifyQL reporting is not part of the current data-engineer role. Track it for the future `shopify-analytics` skill in [BACKLOG.md](BACKLOG.md). Keep analysis separate from record-level mutations.
+The methodology currently uses manual, local summaries rather than hidden
+telemetry. Measure role routing, handoff completeness, safety-gate compliance,
+human corrections, validation, readback, and final outcome before investing in
+structured metrics collection.
 
 ## Safety boundaries
 
@@ -330,21 +187,33 @@ ShopifyQL reporting is not part of the current data-engineer role. Track it for 
 - Credentials, access tokens, and unnecessary customer data must not appear in source, logs, prompts, or handoffs.
 - Unverified requirements should be marked `needs-review`, not silently passed.
 
+## Documentation
+
+- [Getting Started](docs/getting-started.md): install, initialize, authenticate, and run the first safe workflow.
+- [Role matrix](docs/methodology/role-matrix.md): responsibilities and boundaries for each MVP role.
+- [Lifecycle](docs/methodology/lifecycle.md): proposal through operation and evidence expectations.
+- [Coordination](docs/methodology/coordination.md): routing, parallel-safe work, join gates, and coordination packets.
+- [Development-store pilot](docs/methodology/store-pilot.md): safe pilot boundaries.
+- [Workflow diagram](docs/workflows/shopify-lifecycle.md): Mermaid lifecycle and role flow.
+- [Examples](docs/examples/): copy-ready role and workflow examples.
+- [Evaluation scenarios](docs/evaluations/): behavioral pressure tests and run-log guidance.
+- [Backlog](docs/BACKLOG.md): mission, vision, deferred roles, and future work.
+
 ## Validation
 
-Run the repository checks first:
+Run the repository checks before proposing changes:
 
 ```bash
 bash scripts/validate-skills.sh
+bash scripts/validate-repository-docs.sh
+bash scripts/validate-methodology.sh
+bash scripts/validate-evaluation-scenarios.sh
+bash scripts/validate-role-documentation.sh
+bash scripts/validate-coordination.sh
+git diff --check
 ```
 
-This checks that all six MVP skills exist, have the repository's required
-sections, use matching directory and frontmatter names, and that the future-role
-backlog remains present. If `skills-ref` is installed, it also runs the official
-Agent Skills validator automatically.
-
-For explicit validation against the Agent Skills specification, install the
-official reference validator in a virtual environment and run:
+For the official Agent Skills specification check:
 
 ```bash
 python -m venv .venv
@@ -353,45 +222,28 @@ python -m venv .venv
 bash scripts/validate-skills-standard.sh
 ```
 
-The official validator checks each `skills/<name>/` directory's `SKILL.md`
-frontmatter, naming rules, supported fields, and required structure. It does
-not prove that a role makes good decisions at runtime. Behavioral pressure
-tests for routing, handoffs, safety gates, and evidence claims remain tracked
-in [BACKLOG.md](BACKLOG.md).
-
-GitHub Actions runs the skill, methodology, and evaluation checks for pushes
-and pull requests to `main`.
-
-It also checks the development-store evaluation scenarios:
-
-```bash
-bash scripts/validate-evaluation-scenarios.sh
-```
+GitHub Actions runs the validation and documentation checks for pushes and
+pull requests to `main`.
 
 ## Repository layout
 
 ```text
 skills/                         Installable skill sources
-  shopify-expert/SKILL.md       Coordinator
-  shopify-architect/SKILL.md    Solution design
-  shopify-developer/SKILL.md    Implementation
-  shopify-data-engineer/        Operational data systems
-  shopify-store-operator/       Named-store operations
-  shopify-reviewer/             Quality and release review
-scripts/validate-skills.sh      Structural validation
-scripts/validate-skills-standard.sh  Official Agent Skills validation
-scripts/validate-methodology.sh Shared methodology reference validation
-scripts/validate-evaluation-scenarios.sh  Pilot pressure-scenario validation
-scripts/validate-role-documentation.sh  Role responsibility-link validation
-BACKLOG.md                      Deferred roles and capability backlog
-docs/methodology/               Lifecycle, contracts, handoffs, and pilot guide
-docs/evaluations/               Development-store behavioral scenarios
+docs/getting-started.md         Installation, initialization, and authentication
+docs/methodology/               Lifecycle, contracts, handoffs, and coordination
 docs/workflows/                 Mermaid lifecycle and role workflows
 docs/examples/                  Copy-ready role and workflow examples
+docs/evaluations/               Development-store scenarios and run logs
+docs/BACKLOG.md                 Mission, vision, deferred roles, and future work
 docs/specs/                     Product and methodology design specifications
 docs/plans/                     Implementation plans
-docs/                            Maintainer and methodology documentation
-  CONTRIBUTING.md                Maintainer and contributor guidance
+scripts/                        Repository and skill validation scripts
 ```
 
-Future roles and expansion tasks are tracked in [BACKLOG.md](BACKLOG.md), which also contains a copy-ready prompt for future agents.
+## Shopify references
+
+- [Shopify AI Toolkit](https://shopify.dev/docs/apps/build/ai-toolkit)
+- [Shopify CLI](https://shopify.dev/docs/api/shopify-cli)
+- [Shopify auth login](https://shopify.dev/docs/api/shopify-cli/general-commands/auth-login)
+- [Shopify store auth](https://shopify.dev/docs/api/shopify-cli/store/store-auth)
+- [Shopify store execute](https://shopify.dev/docs/api/shopify-cli/store/store-execute)

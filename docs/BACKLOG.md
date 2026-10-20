@@ -34,6 +34,57 @@ role system where each role has a clear boundary, useful handoffs, and enough
 Shopify context to work independently while remaining aligned with the official
 platform guidance.
 
+## Position-support model
+
+The project should support the people and positions that run a Shopify
+organization, rather than recreate the company's org chart as one agent skill
+per job title. A human position is the business context; an agent skill is a
+reusable capability that helps that person perform a responsibility safely.
+
+The intended model is:
+
+```text
+Human position
+  -> business responsibilities
+  -> Shopify access and permissions
+  -> supporting agent capabilities
+  -> repeatable workflows
+  -> evidence and approval gates
+```
+
+Keep these concepts distinct:
+
+- **Company position:** the person accountable for a business outcome, such as
+  ecommerce manager, merchandiser, warehouse manager, or developer.
+- **Shopify access role:** a permission bundle assigned to a user at the
+  organization, store, or POS level.
+- **Agent skill:** a capability such as architecture, implementation,
+  analytics, store operation, or review.
+- **Workflow:** the bounded sequence that combines skills, permissions,
+  evidence, and human approval.
+
+Initial position-support mappings should cover at least:
+
+- Ecommerce manager: coordination, commerce strategy, analytics, and review.
+- Merchandiser or content manager: catalog, product, content, pricing, and
+  performance workflows.
+- Store administrator: store operation, permissions, settings, and review.
+- Developer: architecture, implementation, platform, and review.
+- Warehouse or fulfillment manager: orders, inventory, fulfillment, and data
+  reconciliation.
+- Customer support or order manager: customer, order, refund, privacy, and
+  escalation workflows.
+- Finance or accounting manager: payouts, reconciliation, reporting, and
+  sensitive-permission controls.
+- Marketing or growth manager: campaigns, content, analytics, and experiment
+  review.
+- Organization administrator: multi-store governance, user access, billing,
+  security, and separation of duties.
+
+Do not create a dedicated skill for every position automatically. Add a new
+skill only when repeated workflows show a meaningful capability, routing, or
+accountability boundary that the existing skills cannot cover.
+
 ## Product principles
 
 - **Complement the platform:** defer current API, schema, CLI, and policy facts
@@ -87,6 +138,27 @@ These items are intentionally deferred from the MVP. Keep them visible and promo
 
 ## Capability backlog
 
+- [ ] Build the organization position-support model: catalog common Shopify
+  company positions, map each position's responsibilities to Shopify access
+  roles and agent capabilities, define human ownership versus agent support,
+  document sensitive permissions and separation of duties, and add
+  position-specific workflows and routing scenarios. Keep the model separate
+  from the technical skill catalog and preserve safe fallback behavior when a
+  specialized capability is not installed.
+- [ ] Add an evidence-driven role-specificity process. Track when an MVP role
+  becomes too broad for reliable decisions, identify the repeated Shopify
+  surface or responsibility boundary, and split only when pilot evidence
+  justifies it. Each specialization must define non-overlapping ownership,
+  routing signals, required references, handoffs, and pressure scenarios while
+  preserving a useful fallback when the specialized skill is not installed.
+- [ ] Add an explicit role-selection entrypoint so an agent can classify a
+  request and select the smallest appropriate skill set automatically instead
+  of requiring every user prompt to begin with `Use shopify-expert`. The
+  selector should identify the Shopify surface, lifecycle state, target
+  environment, permissions, and mutation risk; route directly to one role for
+  focused work; compose multiple roles when dependencies require it; and
+  escalate to `shopify-expert` only when coordination is needed. Add routing
+  scenarios and a clear fallback for ambiguous or unsafe requests.
 - [ ] Add explicit UCP and agent-commerce workflows when they become stable enough for a dedicated operating contract.
 - [ ] Keep ShopifyQL and aggregate analytics out of `shopify-data-engineer`; promote `shopify-analytics` when analytics work becomes a first-class workflow.
 - [ ] Add role-specific reference files only when repeated tasks exceed the useful size of `SKILL.md`.

@@ -44,5 +44,8 @@ jobs:
       - name: Validate role documentation links
         run: bash scripts/validate-role-documentation.sh
 
+      - name: Validate multi-role coordination
+        run: bash scripts/validate-coordination.sh
+
       - name: Check whitespace
         run: git diff --check

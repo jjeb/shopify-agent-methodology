@@ -14,7 +14,7 @@ the first project-specific guidance an agent should read before changing it.
 - Keep ShopifyQL, reporting, trends, and aggregate analytics separate from
   operational data engineering.
 - Do not add a new role merely to mirror a Shopify product area. Propose the
-  gap in `BACKLOG.md` first and demonstrate it with a pressure scenario.
+  gap in `docs/BACKLOG.md` first and demonstrate it with a pressure scenario.
 
 ## Source of truth
 
@@ -25,7 +25,7 @@ the first project-specific guidance an agent should read before changing it.
 - Delivery sequencing and methodology limits:
   `docs/methodology/delivery-guardrails.md`.
 - Public installation and usage: `README.md`.
-- Deferred work: `BACKLOG.md`.
+- Deferred work: `docs/BACKLOG.md`.
 - Contribution workflow: `docs/CONTRIBUTING.md`.
 
 When guidance overlaps, keep the role skill concise and link to the shared
@@ -81,7 +81,7 @@ change is not proof of a live-store result.
 - `docs/evaluations/`: pressure scenarios and evaluation guidance.
 - `docs/specs/`: approved design specifications.
 - `docs/plans/`: implementation plans.
-- `BACKLOG.md`: deferred capabilities and future roles.
+- `docs/BACKLOG.md`: deferred capabilities and future roles.
 
 Do not store project-specific client, store, or credential information in this
 public methodology repository.

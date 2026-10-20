@@ -25,13 +25,15 @@ METHODOLOGY_FILES = (
     "handoff-record.md",
     "delivery-guardrails.md",
 )
+EXPERT_ONLY_FILES = ("coordination.md",)
 
 
 def expected_files(repo_root: Path):
     canonical_root = repo_root / "docs" / "methodology"
     for role in ROLES:
         destination_root = repo_root / "skills" / role / "references" / "methodology"
-        for filename in METHODOLOGY_FILES:
+        filenames = METHODOLOGY_FILES + (EXPERT_ONLY_FILES if role == "shopify-expert" else ())
+        for filename in filenames:
             yield canonical_root / filename, destination_root / filename
 
 
