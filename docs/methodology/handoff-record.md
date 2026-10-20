@@ -12,6 +12,11 @@ Decision or work completed:
 Evidence:
 Files, commands, or links:
 Required permissions/scopes:
+Dependencies:
+Parallel branch status:
+Join outcome:
+Unresolved conflicts:
+Next-state evidence:
 Known risks and unresolved questions:
 Recommended next role:
 Explicit authorization still required:
@@ -27,3 +32,6 @@ Explicit authorization still required:
   customer data.
 - A handoff is incomplete when the next role cannot identify the target,
   current state, required permission, unresolved risk, or next action.
+- A multi-role handoff is incomplete when the recipient cannot reconstruct
+  dependencies, branch completion, join disposition, conflicts, or evidence
+  supporting the proposed next lifecycle state.

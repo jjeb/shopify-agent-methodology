@@ -3,6 +3,7 @@ set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 scenarios="$repo_root/docs/evaluations/store-pilot-scenarios.md"
+coordination_scenarios="$repo_root/docs/evaluations/coordination-scenarios.md"
 
 required_scenarios=(
   'Read-only store inspection'
@@ -20,6 +21,23 @@ fi
 for scenario in "${required_scenarios[@]}"; do
   if ! grep -Fq "## $scenario" "$scenarios"; then
     echo "FAIL: missing evaluation scenario: $scenario" >&2
+    exit 1
+  fi
+done
+
+if [[ ! -f "$coordination_scenarios" ]]; then
+  echo "FAIL: missing docs/evaluations/coordination-scenarios.md" >&2
+  exit 1
+fi
+
+for scenario in \
+  'Mixed app and operational-data change' \
+  'Unsafe parallel writes' \
+  'Conflicting join results' \
+  'Analytics with a conditional mutation' \
+  'Partial bulk failure'; do
+  if ! grep -Fq "## $scenario" "$coordination_scenarios"; then
+    echo "FAIL: missing coordination scenario: $scenario" >&2
     exit 1
   fi
 done
