@@ -52,6 +52,7 @@ if [[ -d "$repo_root/docs/superpowers" ]]; then
 fi
 
 for required_file in \
+  CONVENTIONS.md \
   docs/workflows/shopify-lifecycle.md \
   docs/examples/development-store-preview.md \
   docs/examples/analytics-and-operational-data.md; do

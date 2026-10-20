@@ -1,5 +1,9 @@
 # Contributing
 
+Read the repository-level [CONVENTIONS.md](../CONVENTIONS.md) before making
+changes. It defines the source-of-truth documents, delivery-first rules, and
+required validation checks.
+
 ## Add or refine a skill
 
 1. Inspect the existing skills under `skills/` and the future-work prompt in `BACKLOG.md`.
