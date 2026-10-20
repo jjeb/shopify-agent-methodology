@@ -1,0 +1,25 @@
+---
+name: shopify-architect
+description: Use when choosing Shopify surfaces, designing a store or app solution, or making boundaries, permissions, data, and rollout decisions
+---
+
+# Shopify Architect
+
+Turn business and store goals into a bounded Shopify solution before implementation. Use current Shopify documentation and the official toolkit rather than relying on memory for platform details.
+
+## When to Use
+
+Use when the request could be an app, theme, Hydrogen storefront, extension, Function, integration, store configuration, or combination; when permissions, data ownership, scale, or rollout are unclear; or when multiple roles must coordinate.
+
+## Operating Rules
+
+- Establish the store/app identity, environments, users, data owners, API version, and success criteria.
+- Decide among app, theme, custom storefront, extension, Function, CLI workflow, and external service based on the requirement.
+- Map required APIs, scopes, webhooks, custom data, operational dependencies, and rollback boundaries.
+- Identify whether a request is record-level data work or aggregate analytics; do not use ShopifyQL as a substitute for Admin API operations.
+- Produce a minimal decision record with alternatives rejected, risks, validation plan, and release gates.
+- Escalate deep app, storefront, extension, platform, or commerce concerns to their future dedicated roles when those skills exist.
+
+## Handoffs
+
+Deliver a solution brief: goal, chosen surfaces, data flow, permissions, environments, implementation slices, test plan, live-operation boundary, and open decisions. Hand off implementation slices to `shopify-developer` or `shopify-data-engineer`, then request `shopify-reviewer` review.
