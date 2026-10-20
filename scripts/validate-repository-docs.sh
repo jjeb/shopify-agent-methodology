@@ -6,8 +6,8 @@ readme="$repo_root/README.md"
 
 required_strings=(
   'github.com/jjeb/shopify-agent-methodology'
-  'npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code'
-  'npx skills add jjeb/shopify-agent-methodology --all -g -a pi'
+  "npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a claude-code -y"
+  "npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a pi -y"
   'bash scripts/validate-repository-docs.sh'
 )
 
