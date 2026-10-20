@@ -1,8 +1,10 @@
-# Shopify Expert Skills
+# Shopify Agent Methodology
 
-Role-based skills for building, operating, reviewing, and growing Shopify stores with the official Shopify AI Toolkit.
+Role-based agent methodology for building, operating, reviewing, and growing Shopify stores with the official Shopify AI Toolkit.
 
-This project adds role coordination around Shopify's toolkit; it does not replace Shopify's `shopify` skill, developer documentation, schema validation, or Shopify CLI.
+Repository: [github.com/jjeb/shopify-agent-methodology](https://github.com/jjeb/shopify-agent-methodology)
+
+This project adds role coordination and development workflows around Shopify's toolkit; it does not replace Shopify's `shopify` skill, developer documentation, schema validation, or Shopify CLI.
 
 The source package uses the portable `skills/` layout. The `npx skills` installer copies or links these skills into the target agent's supported directory.
 
@@ -50,7 +52,7 @@ Prepare this environment for Shopify development and authenticated store work.
 2. Install this role package and Shopify's official toolkit if they are not
    already available. Do not install duplicate copies unnecessarily.
 
-      npx skills add jjeb/shopify-consulting-roles --all
+      npx skills add jjeb/shopify-agent-methodology --all
       npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
 
 3. Ask me to confirm the Shopify account, organization, exact target store,
@@ -89,65 +91,65 @@ Authentication is context-dependent: account login, store authentication, app cr
 
 ### Local project installation
 
-From this repository:
+From a checkout of this repository:
 
 ```bash
-npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all
+npx skills add . --all
 ```
 
-Install one skill only:
+Install from the public repository:
 
 ```bash
-npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --skill shopify-expert
+npx skills add jjeb/shopify-agent-methodology --all
+```
+
+Install one skill only from the current checkout:
+
+```bash
+npx skills add . --skill shopify-expert
 ```
 
 Install all MVP skills specifically for Claude Code:
 
 ```bash
-npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all -a claude-code
+npx skills add . --all -a claude-code
 ```
 
 Install all MVP skills specifically for Pi:
 
 ```bash
-npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all -a pi
+npx skills add . --all -a pi
 ```
 
 ### Global installation
 
 ```bash
-npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all -g
+npx skills add jjeb/shopify-agent-methodology --all -g
 ```
 
 Install globally for Claude Code:
 
 ```bash
-npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all -g -a claude-code
+npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code
 ```
 
 Install globally for Pi:
 
 ```bash
-npx skills add /Users/juanjesparza/src/github.com/shopify-consulting-roles --all -g -a pi
+npx skills add jjeb/shopify-agent-methodology --all -g -a pi
 ```
 
-After this repository is public:
+The canonical public installation commands are:
 
 ```bash
-npx skills add <github-owner>/shopify-expert-skills --all -g
+npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code
+npx skills add jjeb/shopify-agent-methodology --all -g -a pi
 ```
 
-For this public repository, the commands will be:
+Install into the current project instead of globally:
 
 ```bash
-npx skills add jjeb/shopify-consulting-roles --all -g -a claude-code
-npx skills add jjeb/shopify-consulting-roles --all -g -a pi
-```
-
-Install the future public package into the current project instead:
-
-```bash
-npx skills add <github-owner>/shopify-expert-skills --all
+npx skills add jjeb/shopify-agent-methodology --all
 ```
 
 Install Shopify's official toolkit separately when the agent does not already have it:
@@ -157,6 +159,19 @@ npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
 ```
 
 The official toolkit and this package can be installed side by side. Role skills should defer to the official `shopify` skill for current Shopify-specific API details.
+
+### Keeping installation instructions current
+
+The repository name and public installation examples are canonical. Do not add
+personal absolute paths or placeholder repository names to this file. Run the
+documentation check before committing README changes:
+
+```bash
+bash scripts/validate-repository-docs.sh
+```
+
+GitHub Actions runs this check so renamed repositories and stale installation
+commands are caught during pull requests.
 
 ## How to work with the skills
 
