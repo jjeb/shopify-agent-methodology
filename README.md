@@ -191,6 +191,20 @@ shopify-expert
   → shopify-store-operator
 ```
 
+For a first development-store pilot, use a bounded request such as:
+
+```text
+Use shopify-expert for a development-store pilot. First inspect the named
+store read-only, identify the current environment, and propose the smallest
+reversible theme or app change. Route architecture, implementation, review,
+and store operations explicitly. Do not publish, mutate production, or claim
+success without readback evidence.
+```
+
+The expected result is a lifecycle state, selected roles, a structured handoff,
+validation evidence, unresolved questions, and the exact authorization still
+required. See [the development-store pilot guide](docs/methodology/store-pilot.md).
+
 Focused examples:
 
 ```text

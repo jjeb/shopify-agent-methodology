@@ -48,6 +48,18 @@ for skill in "${required_skills[@]}"; do
   done
 done
 
+coordinator="$skills_root/shopify-expert/SKILL.md"
+for coordinator_requirement in \
+  'docs/methodology/lifecycle.md' \
+  'docs/methodology/role-contract.md' \
+  'docs/methodology/handoff-record.md' \
+  'explicit authorization'; do
+  if ! grep -Fqi "$coordinator_requirement" "$coordinator"; then
+    echo "FAIL: shopify-expert is missing coordinator requirement: $coordinator_requirement" >&2
+    failures=$((failures + 1))
+  fi
+done
+
 todo="$repo_root/BACKLOG.md"
 for item in \
   'shopify-platform-engineer' \
