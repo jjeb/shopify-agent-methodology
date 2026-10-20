@@ -43,6 +43,12 @@ Each installable skill lives at `skills/<skill-name>/SKILL.md` and must:
 - use the official Shopify toolkit for current platform facts; and
 - state boundaries and exclusions clearly enough for routing decisions.
 
+Each skill's supporting methodology documents live under
+`skills/<skill-name>/references/methodology/` and are generated from
+`docs/methodology/`. Run `python3 scripts/sync-skill-references.py` after
+changing a canonical document, then commit the generated copies. Never use
+symlinks or repository-level `../../docs` links from an installable skill.
+
 Keep API fields, schema details, CLI flags, and other volatile Shopify facts in
 official documentation or the official `shopify` skill. Do not invent or
 duplicate them here.
@@ -90,6 +96,8 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
+python3 scripts/sync-skill-references.py --check
+python3 scripts/validate-skill-links.py
 git diff --check
 ```
 

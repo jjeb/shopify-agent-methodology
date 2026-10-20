@@ -160,6 +160,24 @@ npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
 
 The official toolkit and this package can be installed side by side. Role skills should defer to the official `shopify` skill for current Shopify-specific API details.
 
+### Package-local references
+
+Every installed role includes its required methodology references under
+`references/methodology/`. These are generated from the canonical files in
+`docs/methodology/` so an installed skill does not depend on the source
+repository or network access.
+
+When changing a canonical methodology document, regenerate and verify the
+committed copies:
+
+```bash
+python3 scripts/sync-skill-references.py
+python3 scripts/sync-skill-references.py --check
+python3 scripts/validate-skill-links.py
+```
+
+Do not edit generated reference copies manually.
+
 ## Delivery-first guardrails
 
 The role system is designed to help deliver a store or product outcome, not

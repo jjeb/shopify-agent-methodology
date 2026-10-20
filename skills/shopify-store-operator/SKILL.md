@@ -9,11 +9,11 @@ Operate a Shopify store with explicit scope, reversible steps, and readback evid
 
 ## Role Documentation
 
-See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#shopify-store-operator),
-[role contract](../../docs/methodology/role-contract.md),
-[lifecycle](../../docs/methodology/lifecycle.md), and
-[handoff record](../../docs/methodology/handoff-record.md).
-Use the shared [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md)
+See the [role and responsibility matrix](references/methodology/role-matrix.md#shopify-store-operator),
+[role contract](references/methodology/role-contract.md),
+[lifecycle](references/methodology/lifecycle.md), and
+[handoff record](references/methodology/handoff-record.md).
+Use the shared [delivery-first guardrails](references/methodology/delivery-guardrails.md)
 when deciding whether store work is the next safe step.
 
 ## When to Use

@@ -31,6 +31,8 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
+python3 scripts/sync-skill-references.py --check
+python3 scripts/validate-skill-links.py
 git diff --check
 ```
 

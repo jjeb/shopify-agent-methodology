@@ -9,11 +9,11 @@ Implement Shopify changes using the official toolkit, Shopify CLI, project conve
 
 ## Role Documentation
 
-See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#shopify-developer),
-[role contract](../../docs/methodology/role-contract.md),
-[lifecycle](../../docs/methodology/lifecycle.md), and
-[handoff record](../../docs/methodology/handoff-record.md).
-Follow the shared [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md)
+See the [role and responsibility matrix](references/methodology/role-matrix.md#shopify-developer),
+[role contract](references/methodology/role-contract.md),
+[lifecycle](references/methodology/lifecycle.md), and
+[handoff record](references/methodology/handoff-record.md).
+Follow the shared [delivery-first guardrails](references/methodology/delivery-guardrails.md)
 for implementation sequencing.
 
 ## When to Use
