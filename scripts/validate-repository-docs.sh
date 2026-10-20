@@ -28,4 +28,24 @@ if grep -Eq 'npx skills add (<github-owner>|/Users/|/home/)' "$readme"; then
   exit 1
 fi
 
+if [[ -d "$repo_root/docs/superpowers" ]]; then
+  echo "FAIL: docs/superpowers is an obsolete documentation nesting layer" >&2
+  exit 1
+fi
+
+for required_file in \
+  docs/workflows/shopify-lifecycle.md \
+  docs/examples/development-store-preview.md \
+  docs/examples/analytics-and-operational-data.md; do
+  if [[ ! -f "$repo_root/$required_file" ]]; then
+    echo "FAIL: missing required documentation example: $required_file" >&2
+    exit 1
+  fi
+done
+
+if ! grep -Fq '```mermaid' "$repo_root/docs/workflows/shopify-lifecycle.md"; then
+  echo "FAIL: lifecycle workflow must include a Mermaid diagram" >&2
+  exit 1
+fi
+
 echo "PASS: repository name and installation documentation are current"
