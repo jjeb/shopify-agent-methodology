@@ -34,51 +34,56 @@ It complements Shopify's official toolkit:
 
 See Shopify's [AI Toolkit documentation](https://shopify.dev/docs/apps/build/ai-toolkit) and [Shopify CLI requirements](https://shopify.dev/docs/api/shopify-cli).
 
-## Setup TODO: install and authenticate
+## Setup prompt: install and authenticate
 
-Complete this checklist before asking an agent to perform authenticated Shopify work:
+Copy this prompt into an agent before asking it to perform authenticated Shopify work:
 
-- [ ] Install a supported Node.js version and package manager.
-- [ ] Install or update Shopify CLI:
+```text
+Prepare this environment for Shopify development and authenticated store work.
 
-  ```bash
-  npm install -g @shopify/cli@latest
-  shopify version
-  ```
+1. Check that Node.js, a package manager, and Shopify CLI are available. If
+   Shopify CLI is missing or outdated, install or upgrade it with the user's
+   package manager, then verify with:
 
-- [ ] Install this role package locally or globally using the commands below.
-- [ ] Install Shopify's official toolkit if it is not already available:
+      shopify version
 
-  ```bash
-  npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
-  ```
+2. Install this role package and Shopify's official toolkit if they are not
+   already available. Do not install duplicate copies unnecessarily.
 
-- [ ] Sign in to the Shopify account or Partner account used for development:
+      npx skills add jjeb/shopify-consulting-roles --all
+      npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
 
-  ```bash
-  shopify auth login
-  ```
+3. Ask me to confirm the Shopify account, organization, exact target store,
+   environment, and intended scope before using store credentials.
 
-- [ ] Confirm the correct account, organization, permissions, and target store before any store work.
-- [ ] For store-scoped CLI operations, authenticate the specific store and request only the scopes needed:
+4. Sign in to the intended Shopify or Partner account with:
 
-  ```bash
-  shopify store auth \
-    --store <store>.myshopify.com \
-    --scopes <comma-separated-scopes>
-  ```
+      shopify auth login
 
-- [ ] Verify the store context with a read-only command before writing:
+5. For store-scoped CLI work, authenticate only the named store and request
+   only the required Admin API scopes:
 
-  ```bash
-  shopify store info --store <store>.myshopify.com
-  ```
+      shopify store auth --store <store>.myshopify.com \
+        --scopes <comma-separated-scopes>
 
-- [ ] Start with read-only queries or previews. `shopify store execute` requires `--allow-mutations` before it can run mutations.
-- [ ] Never place passwords, access tokens, or secrets in this README, source code, prompts, logs, or committed files.
-- [ ] If switching accounts, use `shopify auth logout` and authenticate again.
+6. Verify the target with a read-only command before any write:
 
-Authentication is context-dependent: account login, store authentication, app credentials, Theme Access passwords, and storefront public tokens are not interchangeable. Use the authentication method required by the specific Shopify surface and follow the current official documentation. See [Shopify auth login](https://shopify.dev/docs/api/shopify-cli/general-commands/auth-login), [store auth](https://shopify.dev/docs/api/shopify-cli/store/store-auth), and [store execute](https://shopify.dev/docs/api/shopify-cli/store/store-execute).
+      shopify store info --store <store>.myshopify.com
+
+7. Start with read-only queries, development themes, previews, or dry runs.
+   Do not run mutations unless I explicitly authorize the exact operation.
+   Shopify store execute mutations require --allow-mutations.
+
+8. Never print, commit, paste, or include passwords, access tokens, or secrets
+   in source files, logs, prompts, or reports. Do not claim authentication or
+   a store change succeeded without direct command output and readback evidence.
+
+9. If the account changes, stop and ask me to run shopify auth logout before
+   authenticating again. Explain any missing dependency, permission, scope,
+   or store context instead of guessing.
+```
+
+Authentication is context-dependent: account login, store authentication, app credentials, Theme Access passwords, and storefront public tokens are not interchangeable. See [Shopify auth login](https://shopify.dev/docs/api/shopify-cli/general-commands/auth-login), [store auth](https://shopify.dev/docs/api/shopify-cli/store/store-auth), and [store execute](https://shopify.dev/docs/api/shopify-cli/store/store-execute).
 
 ## Installation
 
