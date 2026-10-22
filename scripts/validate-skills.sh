@@ -60,10 +60,10 @@ done
 
 coordinator="$skills_root/shopify-expert/SKILL.md"
 for coordinator_requirement in \
-  'docs/methodology/lifecycle.md' \
-  'docs/methodology/role-contract.md' \
-  'docs/methodology/handoff-record.md' \
-  'docs/methodology/delivery-guardrails.md' \
+  'references/methodology/lifecycle.md' \
+  'references/methodology/role-contract.md' \
+  'references/methodology/handoff-record.md' \
+  'references/methodology/delivery-guardrails.md' \
   'delivery brief' \
   'vertical slice' \
   'human checkpoint' \
