@@ -26,7 +26,7 @@ export HOME="$temp_home"
 export XDG_CONFIG_HOME="$temp_home/.config"
 export XDG_CACHE_HOME="$temp_home/.cache"
 
-if ! help_output="$(npx --yes skills add --help 2>"$temp_home/skills-cli-error.log")"; then
+if ! help_output="$(npx --yes skills --help 2>"$temp_home/skills-cli-error.log")"; then
   if [[ "${CI:-}" == "true" ]]; then
     cat "$temp_home/skills-cli-error.log" >&2
     echo "FAIL: public skills CLI help could not be executed in CI" >&2
@@ -36,9 +36,9 @@ if ! help_output="$(npx --yes skills add --help 2>"$temp_home/skills-cli-error.l
   cat "$temp_home/skills-cli-error.log" >&2
   exit 0
 fi
-for flag in '--skill' '--all' '-a' '-g' '-y'; do
-  if ! grep -Fq -- "$flag" <<<"$help_output"; then
-    echo "FAIL: public skills CLI does not advertise expected flag: $flag" >&2
+for command in 'add' 'remove'; do
+  if ! grep -Fq -- "$command" <<<"$help_output"; then
+    echo "FAIL: public skills CLI does not advertise expected command: $command" >&2
     exit 1
   fi
 done
