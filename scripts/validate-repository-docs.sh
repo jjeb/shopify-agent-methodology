@@ -68,6 +68,11 @@ if [[ -f "$repo_root/docs/BACKLOG.md" ]]; then
   exit 1
 fi
 
+if [[ -f "$repo_root/BACKLOG.md" ]]; then
+  echo "FAIL: BACKLOG.md is obsolete; deferred work belongs in GitHub Issues" >&2
+  exit 1
+fi
+
 if ! grep -Fq '```mermaid' "$repo_root/docs/workflows/shopify-lifecycle.md"; then
   echo "FAIL: lifecycle workflow must include a Mermaid diagram" >&2
   exit 1

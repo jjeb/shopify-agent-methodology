@@ -76,9 +76,7 @@ change is not proof of a live-store result.
 - `docs/evaluations/`: pressure scenarios and evaluation guidance.
 - `docs/specs/`: approved design specifications.
 - `docs/plans/`: implementation plans.
-- GitHub Issues: deferred capabilities and future roles; keep the existing
-  root `BACKLOG.md` only as migration source until the consolidated roadmap
-  issue is created.
+- GitHub Issues: deferred capabilities and future roles.
 
 Do not store project-specific client, store, or credential information in this
 public methodology repository.

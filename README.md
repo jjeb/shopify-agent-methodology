@@ -14,6 +14,20 @@ The source package uses the portable `skills/` layout. The `npx skills` installe
 
 This package adds a practical team model around Shopify's platform capabilities. It helps an agent decide who should work on a request, what information is missing, what must be validated, and when a live-store action is safe to perform.
 
+## Mission and vision
+
+The mission is to make Shopify development, operations, and growth more
+approachable without hiding platform complexity or encouraging unsafe live-store
+changes. The long-term vision is a dependable, installable team of bounded
+Shopify roles that can move work from a merchant goal through design,
+implementation, validation, safe operation, review, and measurement while
+remaining aligned with Shopify's official tools and documentation.
+
+The role system should remain coordinated rather than becoming one oversized
+skill: each role owns a clear boundary, produces useful handoffs, and preserves
+evidence, authorization, and unresolved questions. Deferred capabilities and
+future roles belong in the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues).
+
 It complements Shopify's official toolkit:
 
 - Shopify's toolkit supplies current API, schema, validation, migration, and CLI guidance.
@@ -367,7 +381,6 @@ scripts/validate-skills-standard.sh  Official Agent Skills validation
 scripts/validate-methodology.sh Shared methodology reference validation
 scripts/validate-evaluation-scenarios.sh  Pilot pressure-scenario validation
 scripts/validate-role-documentation.sh  Role responsibility-link validation
-BACKLOG.md                      Legacy local roadmap retained during GitHub migration
 docs/methodology/               Lifecycle, contracts, handoffs, and pilot guide
 docs/evaluations/               Development-store behavioral scenarios
 docs/workflows/                 Mermaid lifecycle and role workflows
@@ -378,4 +391,4 @@ docs/                            Maintainer and methodology documentation
   CONTRIBUTING.md                Maintainer and contributor guidance
 ```
 
-Future roles and expansion tasks are tracked in the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues). The legacy local `BACKLOG.md` is retained only as migration source until the consolidated roadmap issue is created.
+Future roles and expansion tasks are tracked in the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues); no local backlog file is maintained.
