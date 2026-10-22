@@ -99,10 +99,9 @@ Prepare this environment for Shopify development and authenticated store work.
       shopify version
 
 2. Install this role package and Shopify's official toolkit if they are not
-   already available. Do not install duplicate copies unnecessarily.
-
-      npx skills add jjeb/shopify-agent-methodology --all
-      npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
+   already available. Follow [Getting Started](docs/getting-started.md) for
+   the canonical installation commands, and do not install duplicate copies
+   unnecessarily.
 
 3. Ask me to confirm the Shopify account, organization, exact target store,
    environment, and intended scope before using store credentials.
@@ -138,70 +137,45 @@ Authentication is context-dependent: account login, store authentication, app cr
 
 ## Installation
 
-### Local project installation
+The detailed installation semantics live in [Getting Started](docs/getting-started.md).
+Use these concise commands as the canonical reference:
 
-From a checkout of this repository:
+### Local project installation
 
 ```bash
 npx skills add . --all
 ```
 
-Install from the public repository:
+Install the public package into the current project:
 
 ```bash
 npx skills add jjeb/shopify-agent-methodology --all
 ```
 
-Install one skill only from the current checkout:
-
-```bash
-npx skills add . --skill shopify-expert
-```
-
-Install all MVP skills specifically for Claude Code:
-
-```bash
-npx skills add . --all -a claude-code
-```
-
-Install all MVP skills specifically for Pi:
-
-```bash
-npx skills add . --all -a pi
-```
-
 ### Global installation
+
+Install all skills for all agents:
 
 ```bash
 npx skills add jjeb/shopify-agent-methodology --all -g
 ```
 
-Install globally for Claude Code:
+Install all skills for Claude Code only:
 
 ```bash
-npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code
+npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a claude-code -y
 ```
 
-Install globally for Pi:
+Install all skills for Pi only:
 
 ```bash
-npx skills add jjeb/shopify-agent-methodology --all -g -a pi
+npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a pi -y
 ```
 
-The canonical public installation commands are:
+`--all` installs all skills for all agents; use `--skill '*'` with `-a` when
+restricting a global installation to one agent.
 
-```bash
-npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code
-npx skills add jjeb/shopify-agent-methodology --all -g -a pi
-```
-
-Install into the current project instead of globally:
-
-```bash
-npx skills add jjeb/shopify-agent-methodology --all
-```
-
-Install Shopify's official toolkit separately when the agent does not already have it:
+Install Shopify's official toolkit separately when it is not already available:
 
 ```bash
 npx skills add Shopify/Shopify-AI-Toolkit --skill shopify
