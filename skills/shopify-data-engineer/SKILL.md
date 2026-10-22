@@ -9,10 +9,10 @@ Design and maintain operational data flows around Shopify. This role covers data
 
 ## Role Documentation
 
-See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#shopify-data-engineer),
-[role contract](../../docs/methodology/role-contract.md),
-[lifecycle](../../docs/methodology/lifecycle.md), and
-[handoff record](../../docs/methodology/handoff-record.md).
+See the [role and responsibility matrix](references/methodology/role-matrix.md#shopify-data-engineer),
+[role contract](references/methodology/role-contract.md),
+[lifecycle](references/methodology/lifecycle.md), and
+[handoff record](references/methodology/handoff-record.md).
 
 ## Capability maturity
 
@@ -26,7 +26,7 @@ See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#s
   separate analytics workflow; never upgrade them into operational data work
   by proximity to data.
 
-See the canonical [capability maturity model](../../docs/methodology/role-matrix.md#capability-maturity-model).
+See the canonical [capability maturity model](references/methodology/role-matrix.md#capability-maturity-model).
 
 ## When to Use
 

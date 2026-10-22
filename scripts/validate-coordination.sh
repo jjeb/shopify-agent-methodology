@@ -29,7 +29,7 @@ for required in 'Dependencies' 'Branch status' 'Join outcome' 'needs-review'; do
 done
 
 for required in \
-  '../../docs/methodology/coordination.md' \
+  'references/methodology/coordination.md' \
   'parallel-safe' \
   'join gate' \
   'dependencies' \

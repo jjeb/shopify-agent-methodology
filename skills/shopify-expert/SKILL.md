@@ -9,13 +9,13 @@ Coordinate Shopify work around the official Shopify AI Toolkit. This skill adds 
 
 ## Role Documentation
 
-See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#shopify-expert),
-[role contract](../../docs/methodology/role-contract.md),
-[lifecycle](../../docs/methodology/lifecycle.md), and
-[handoff record](../../docs/methodology/handoff-record.md).
-Use the shared [multi-role coordination guide](../../docs/methodology/coordination.md)
+See the [role and responsibility matrix](references/methodology/role-matrix.md#shopify-expert),
+[role contract](references/methodology/role-contract.md),
+[lifecycle](references/methodology/lifecycle.md), and
+[handoff record](references/methodology/handoff-record.md).
+Use the shared [multi-role coordination guide](references/methodology/coordination.md)
 for parallel-safe work, dependencies, and join gates.
-Apply the shared [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md)
+Apply the shared [delivery-first guardrails](references/methodology/delivery-guardrails.md)
 to every broad workflow.
 
 ## Capability maturity
@@ -28,8 +28,8 @@ to every broad workflow.
   operational data engineering; do not install or dispatch a future specialist
   merely because a platform surface exists.
 
-Use the canonical [capability maturity model](../../docs/methodology/role-matrix.md#capability-maturity-model)
-and [platform-surface coverage](../../docs/methodology/role-matrix.md#platform-surface-capability-coverage)
+Use the canonical [capability maturity model](references/methodology/role-matrix.md#capability-maturity-model)
+and [platform-surface coverage](references/methodology/role-matrix.md#platform-surface-capability-coverage)
 when assigning tags.
 
 ## When to Use
@@ -68,13 +68,13 @@ before publishing, broad writes, migrations, or release-readiness claims.
 1. Identify the store/app/project, environment, API version, and desired outcome.
 2. Select only the roles needed: architect, developer, data engineer, store operator, reviewer.
 3. Use the official `shopify` toolkit for current schemas, API guidance, validation, and CLI behavior.
-4. Record the current lifecycle state and the evidence required for the next state. See [the lifecycle reference](../../docs/methodology/lifecycle.md).
+4. Record the current lifecycle state and the evidence required for the next state. See [the lifecycle reference](references/methodology/lifecycle.md).
 5. Separate proposal, local edits, validation, deployment, and live-store execution.
 6. Require explicit named-store scope and explicit authorization before live mutations; never infer success from a command being issued.
 7. Keep ShopifyQL analytics separate from operational data engineering; route reporting requests to the future `shopify-analytics` role when available.
-8. Use the [role contract](../../docs/methodology/role-contract.md) to keep ownership and exclusions clear.
-9. End every role transition with the [handoff record](../../docs/methodology/handoff-record.md), including evidence, unresolved questions, and the next owner.
-10. Apply the [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md): allow at most one setup task before product progress, require an early vertical slice, stop recursive methodology work, and request a human checkpoint after two consecutive methodology-only tasks.
+8. Use the [role contract](references/methodology/role-contract.md) to keep ownership and exclusions clear.
+9. End every role transition with the [handoff record](references/methodology/handoff-record.md), including evidence, unresolved questions, and the next owner.
+10. Apply the [delivery-first guardrails](references/methodology/delivery-guardrails.md): allow at most one setup task before product progress, require an early vertical slice, stop recursive methodology work, and request a human checkpoint after two consecutive methodology-only tasks.
 
 ## Routing and lifecycle
 
@@ -102,7 +102,7 @@ winner silently.
 
 ## Handoffs
 
-Every handoff uses the [handoff record](../../docs/methodology/handoff-record.md)
+Every handoff uses the [handoff record](references/methodology/handoff-record.md)
 and states: objective, context, lifecycle state, files or store, selected
 Shopify surface, completed evidence, unresolved risks, required permissions,
 explicit authorization still needed, and next owner. Typical flow: architect →

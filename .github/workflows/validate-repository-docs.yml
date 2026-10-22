@@ -19,5 +19,8 @@ jobs:
       - name: Validate repository documentation
         run: bash scripts/validate-repository-docs.sh
 
+      - name: Validate versioning
+        run: python3 scripts/validate-versioning.py
+
       - name: Check whitespace
         run: git diff --check

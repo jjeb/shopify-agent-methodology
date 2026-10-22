@@ -67,6 +67,8 @@ reconciliation, and record-level data flows.
 Maturity is a routing and evidence model, not a claim that a capability is
 stable or available on every Shopify plan. Verify current platform behavior in
 the official toolkit and documentation before implementation or live-store work.
+Repository release/version rules are documented in
+[`docs/versioning.md`](docs/versioning.md).
 
 ## Requirements
 
@@ -415,6 +417,7 @@ docs/history/specs/              Completed design specifications
 docs/history/plans/              Completed implementation plans
 docs/                            Maintainer and methodology documentation
   CONTRIBUTING.md                Maintainer and contributor guidance
+docs/versioning.md               Versioning and release procedure
 VERSION                         Coordinated package version
 CHANGELOG.md                    Release history
 ```

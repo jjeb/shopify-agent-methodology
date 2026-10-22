@@ -79,6 +79,7 @@ if (( failures > 0 )); then
 fi
 
 python3 "$repo_root/scripts/sync-skill-references.py" --check
+python3 "$repo_root/scripts/validate-skill-links.py"
 
 echo "PASS: six MVP skills are present and structurally valid"
 

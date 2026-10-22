@@ -6,6 +6,10 @@ The project follows [Semantic Versioning](https://semver.org/). The package is
 versioned as one coordinated set of role skills; individual roles do not have
 independent release versions.
 
+## [Unreleased]
+
+Changes for the next release will be recorded here.
+
 ## [0.2.0] - 2026-10-21
 
 ### Added

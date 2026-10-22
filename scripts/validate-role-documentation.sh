@@ -31,7 +31,7 @@ fi
 
 for role in "${roles[@]}"; do
   skill="$skills_root/$role/SKILL.md"
-  anchor="../../docs/methodology/role-matrix.md#$role"
+  anchor="references/methodology/role-matrix.md#$role"
   if ! grep -Fq "$anchor" "$skill"; then
     echo "FAIL: $skill does not link to its role documentation" >&2
     exit 1
@@ -47,7 +47,7 @@ for role in "${roles[@]}"; do
 done
 
 for role in shopify-architect shopify-developer shopify-reviewer shopify-store-operator; do
-  if ! grep -Fq '../../docs/methodology/delivery-guardrails.md' "$skills_root/$role/SKILL.md"; then
+  if ! grep -Fq 'references/methodology/delivery-guardrails.md' "$skills_root/$role/SKILL.md"; then
     echo "FAIL: $skills_root/$role/SKILL.md does not link to delivery guardrails" >&2
     exit 1
   fi
