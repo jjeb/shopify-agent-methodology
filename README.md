@@ -66,6 +66,9 @@ Storefront API/Liquid/Hydrogen, Admin/Checkout/Customer Account/POS/theme
 extensions, Shopify Functions, webhooks/events, Shopify CLI/theme/app
 workflows, ShopifyQL, and subscriptions/Markets/B2B/payments. The detailed
 evidence brief is [roadmap issue #20](https://github.com/jjeb/shopify-agent-methodology/issues/20).
+Machine-readable role and platform tags live in
+[`docs/methodology/capability-maturity.json`](docs/methodology/capability-maturity.json)
+and are checked against the human-readable matrix by the repository validator.
 It does not add installable roles. Keep ShopifyQL and aggregate analytics
 separate from operational data engineering; the latter owns synchronization,
 reconciliation, and record-level data flows.
@@ -274,6 +277,9 @@ The complete pilot scenario set is in
 Run the read-only scenario first. Only continue to a preview after the agent
 has confirmed the exact development store and environment.
 
+For the 0.2.0 to 0.3.0 role-name migration, including upgrade and uninstall
+guidance, see the [migration guide](docs/migrations/2026-10-22-data-integration-engineer-role-rename.md).
+
 Focused examples:
 
 ```text
@@ -373,6 +379,13 @@ It also checks the development-store evaluation scenarios:
 bash scripts/validate-evaluation-scenarios.sh
 ```
 
+Capability metadata and public installation semantics are checked with:
+
+```bash
+python3 scripts/validate-capability-maturity.py
+bash scripts/validate-installation-smoke.sh
+```
+
 ## Repository layout
 
 ```text
@@ -388,6 +401,8 @@ scripts/validate-skills-standard.sh  Official Agent Skills validation
 scripts/validate-methodology.sh Shared methodology reference validation
 scripts/validate-evaluation-scenarios.sh  Pilot pressure-scenario validation
 scripts/validate-role-documentation.sh  Role responsibility-link validation
+scripts/validate-capability-maturity.py  Machine-readable maturity validation
+scripts/validate-installation-smoke.sh  Public skills CLI smoke validation
 docs/methodology/               Lifecycle, contracts, handoffs, and pilot guide
 docs/evaluations/               Development-store behavioral scenarios
 docs/workflows/                 Mermaid lifecycle and role workflows

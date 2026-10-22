@@ -19,6 +19,7 @@ required validation checks.
    `experimental`, `research-needed`, or `future-specialist`. Future
    specialists are candidates only; do not add an installable role without a
    roadmap issue and evidence.
+   Keep `methodology/capability-maturity.json` synchronized with the matrix.
 8. Put workflow diagrams and copy-ready usage examples in `docs/workflows/`
    and `docs/examples/`; keep completed design specifications and
    implementation plans in `docs/history/specs/` and `docs/history/plans/`.
@@ -41,6 +42,8 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
+python3 scripts/validate-capability-maturity.py
+bash scripts/validate-installation-smoke.sh
 python3 scripts/sync-skill-references.py --check
 git diff --check
 ```

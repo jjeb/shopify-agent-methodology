@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "capability_tags": [
+    "core",
+    "supported",
+    "experimental",
+    "research-needed",
+    "future-specialist"
+  ],
+  "role_tags": {
+    "shopify-expert": ["core"],
+    "shopify-architect": ["core"],
+    "shopify-developer": ["core"],
+    "shopify-data-integration-engineer": ["core"],
+    "shopify-store-operator": ["core"],
+    "shopify-reviewer": ["core"]
+  },
+  "role_capability_tags": {
+    "shopify-expert": ["core", "supported", "research-needed", "future-specialist"],
+    "shopify-architect": ["core", "supported", "experimental", "research-needed", "future-specialist"],
+    "shopify-developer": ["core", "supported", "experimental", "future-specialist"],
+    "shopify-data-integration-engineer": ["core", "supported", "experimental"],
+    "shopify-store-operator": ["core", "supported", "experimental", "research-needed"],
+    "shopify-reviewer": ["core", "supported", "experimental", "research-needed", "future-specialist"]
+  },
+  "platform_surfaces": [
+    {"name": "GraphQL Admin API and app backends", "capability_tag": "supported"},
+    {"name": "Storefront API, Liquid, and Hydrogen", "capability_tag": "supported"},
+    {"name": "Admin, Checkout, Customer Account, POS, and theme extensions", "capability_tag": "experimental"},
+    {"name": "Shopify Functions", "capability_tag": "experimental"},
+    {"name": "Webhooks and events", "capability_tag": "supported"},
+    {"name": "Shopify CLI, theme, and app workflows", "capability_tag": "supported"},
+    {"name": "ShopifyQL and aggregate analytics", "capability_tag": "research-needed"},
+    {"name": "Subscriptions, Markets, B2B, and payments", "capability_tag": "research-needed"}
+  ],
+  "analytics_boundary": "ShopifyQL and aggregate analytics remain separate from operational data engineering."
+}

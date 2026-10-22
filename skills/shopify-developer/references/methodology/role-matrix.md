@@ -4,6 +4,10 @@ This is the canonical responsibility reference for the six installable MVP
 roles. Each role's `SKILL.md` provides operating instructions; this matrix
 defines the ownership boundary and expected handoff.
 
+The machine-readable companion is `docs/methodology/capability-maturity.json`.
+The validator compares its role and platform tags with this human-readable
+matrix.
+
 ## Capability maturity model
 
 The role tag describes the lifecycle of a role; the capability tag describes
@@ -115,7 +119,8 @@ the required reviewer or operator action.
 
 ## shopify-data-integration-engineer
 
-**Role tag:** `core`; **Capability tags:** `core`, `supported`, `experimental`;
+**Role tag:** `core`; **Capability tags:** `core`, `supported`, `experimental`
+
 ShopifyQL and aggregate analytics remain `research-needed` outside this role.
 
 **Owns:** operational data models, movement, synchronization, quality controls,

@@ -20,7 +20,9 @@ the first project-specific guidance an agent should read before changing it.
 ## Source of truth
 
 - Role ownership: `docs/methodology/role-matrix.md`.
-- Capability maturity and platform coverage: `docs/methodology/role-matrix.md`.
+- Human-readable capability maturity and platform coverage:
+  `docs/methodology/role-matrix.md`; machine-readable metadata:
+  `docs/methodology/capability-maturity.json`.
 - Shared role contract: `docs/methodology/role-contract.md`.
 - Lifecycle states: `docs/methodology/lifecycle.md`.
 - Handoffs: `docs/methodology/handoff-record.md`.
@@ -103,6 +105,8 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
+python3 scripts/validate-capability-maturity.py
+bash scripts/validate-installation-smoke.sh
 git diff --check
 ```
 
