@@ -1,8 +1,12 @@
 # Contributing
 
+Read the repository-level [CONVENTIONS.md](../CONVENTIONS.md) before making
+changes. It defines the source-of-truth documents, delivery-first rules, and
+required validation checks.
+
 ## Add or refine a skill
 
-1. Inspect the existing skills under `skills/` and the future-work prompt in `docs/BACKLOG.md`.
+1. Inspect the existing skills under `skills/` and the deferred-work items in the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues).
 2. Keep each skill focused on one role and use the portable `skills/<name>/SKILL.md` layout.
 3. Use valid frontmatter with a `name` and a description beginning with `Use when`.
 4. Include `When to Use`, `Operating Rules`, and `Handoffs` sections.
@@ -27,7 +31,6 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
-bash scripts/validate-coordination.sh
 git diff --check
 ```
 
@@ -47,7 +50,9 @@ review of role routing, safety boundaries, or handoffs.
 
 Before proposing a new role, run the relevant scenarios in
 `docs/evaluations/store-pilot-scenarios.md` and explain why the existing roles
-cannot cover the request. Keep future work in `docs/BACKLOG.md` as a separate,
-reviewable PR-sized item.
+cannot cover the request. Keep future work in GitHub Issues as a separate,
+reviewable issue-sized item.
 
-Update `README.md`, `docs/getting-started.md`, and `docs/BACKLOG.md` when adding a role or changing installation and routing behavior. Use focused commits on `main` and describe validation results in the commit or pull request.
+Update `README.md` and the relevant GitHub roadmap issue when adding a role or
+changing installation and routing behavior. Use focused commits on `main` and
+describe validation results in the commit or pull request.

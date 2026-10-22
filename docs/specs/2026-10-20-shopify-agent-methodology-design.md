@@ -90,7 +90,7 @@ The six MVP roles remain:
 | `shopify-reviewer` | Independently assess readiness and evidence | Does not approve its own unreviewed changes |
 
 Future roles are promoted only when repeated work creates a meaningful routing,
-depth, or accountability problem. The backlog currently tracks platform,
+depth, or accountability problem. The GitHub roadmap currently tracks platform,
 commerce strategy, storefront, extensions, apps, and analytics as candidates.
 
 ## Handoff protocol

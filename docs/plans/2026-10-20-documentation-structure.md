@@ -2,9 +2,9 @@
 
 > **For agentic workers:** Use the repository's execution workflow to implement this plan task-by-task.
 
-**Goal:** Make the README a concise entry point while moving installation, evaluation, and backlog details into focused documentation files.
+**Goal:** Make the README a concise entry point while moving installation and evaluation details into focused documentation files and moving deferred work to GitHub Issues.
 
-**Architecture:** Keep `README.md` focused on orientation, quick start, role routing, safety, and links. Put setup/authentication in `docs/getting-started.md`, evaluation run logging in `docs/evaluations/run-log.md`, and product direction in `docs/BACKLOG.md`. Update validators and contributor references so the new paths are authoritative.
+**Architecture:** Keep `README.md` focused on orientation, quick start, role routing, safety, and links. Put setup/authentication in `docs/getting-started.md`, evaluation run logging in `docs/evaluations/run-log.md`, and product direction in GitHub Issues. Update validators and contributor references so the external roadmap is authoritative.
 
 **Tech Stack:** Markdown, Bash validation scripts, GitHub Actions.
 
@@ -19,13 +19,13 @@
 
 - A new user can install and initialize the roles without reading the entire README.
 - Authentication remains explicit and does not imply that installation grants store access.
-- Moving `BACKLOG.md` does not leave stale links or validator paths.
+- Moving the backlog to GitHub Issues does not leave stale local links or validator paths.
 - Evaluation instructions remain copy-ready and privacy-safe.
 - The README still explains the six-role MVP boundary and ShopifyQL separation.
 
 ## Tasks
 
-- [x] Create focused setup, evaluation, and backlog documents.
+- [x] Create focused setup and evaluation documents; consolidate backlog content for GitHub Issues.
 - [x] Reduce README duplication and link to the focused documents.
-- [x] Update validators and contributor documentation for `docs/BACKLOG.md`.
+- [x] Update validators and contributor documentation for the GitHub Issues roadmap.
 - [x] Run repository documentation, skill, methodology, evaluation, and whitespace checks.

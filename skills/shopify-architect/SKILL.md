@@ -13,6 +13,8 @@ See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#s
 [role contract](../../docs/methodology/role-contract.md),
 [lifecycle](../../docs/methodology/lifecycle.md), and
 [handoff record](../../docs/methodology/handoff-record.md).
+Use the shared [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md)
+when sequencing design work.
 
 ## When to Use
 
@@ -36,7 +38,8 @@ success criteria, and known data or permission requirements.
 ## Produces
 
 Produces a solution brief with selected surfaces, rejected alternatives, data
-flow, permissions, implementation slices, validation plan, and release gates.
+flow, permissions, the smallest useful implementation slice, validation plan,
+and release gates.
 
 ## Safety Gates
 
@@ -50,6 +53,9 @@ before recommending deployment, publishing, or broad data changes.
 - Map required APIs, scopes, webhooks, custom data, operational dependencies, and rollback boundaries.
 - Identify whether a request is record-level data work or aggregate analytics; do not use ShopifyQL as a substitute for Admin API operations.
 - Produce a minimal decision record with alternatives rejected, risks, validation plan, and release gates.
+- Name the first visible implementation slice and the evidence that will make
+  the next architectural decision useful. Defer optional foundation work until
+  that slice has been exercised.
 - Escalate deep app, storefront, extension, platform, or commerce concerns to their future dedicated roles when those skills exist.
 
 ## Handoffs

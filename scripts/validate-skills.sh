@@ -59,23 +59,13 @@ for coordinator_requirement in \
   'docs/methodology/lifecycle.md' \
   'docs/methodology/role-contract.md' \
   'docs/methodology/handoff-record.md' \
+  'docs/methodology/delivery-guardrails.md' \
+  'delivery brief' \
+  'vertical slice' \
+  'human checkpoint' \
   'explicit authorization'; do
   if ! grep -Fqi "$coordinator_requirement" "$coordinator"; then
     echo "FAIL: shopify-expert is missing coordinator requirement: $coordinator_requirement" >&2
-    failures=$((failures + 1))
-  fi
-done
-
-todo="$repo_root/docs/BACKLOG.md"
-for item in \
-  'shopify-platform-engineer' \
-  'shopify-commerce-strategist' \
-  'storefront-engineer' \
-  'extension-engineer' \
-  'app-engineer' \
-  'shopify-analytics'; do
-  if [[ ! -f "$todo" ]] || ! grep -q "$item" "$todo"; then
-    echo "FAIL: docs/BACKLOG.md does not track $item" >&2
     failures=$((failures + 1))
   fi
 done
@@ -84,7 +74,7 @@ if (( failures > 0 )); then
   exit 1
 fi
 
-echo "PASS: six MVP skills and future-role backlog are present and structurally valid"
+echo "PASS: six MVP skills are present and structurally valid"
 
 if command -v skills-ref >/dev/null 2>&1; then
   echo "INFO: skills-ref found; running official Agent Skills validation"

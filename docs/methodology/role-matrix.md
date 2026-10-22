@@ -6,12 +6,13 @@ defines the ownership boundary and expected handoff.
 
 ## shopify-expert
 
-**Owns:** request framing, role selection, lifecycle coordination, safety gates,
-and cross-role handoff completeness.
+**Owns:** request framing, delivery sequencing, role selection, lifecycle
+coordination, safety gates, and cross-role handoff completeness.
 
-**Responsibilities:** identify the target, environment, outcome, and unknowns;
-select the smallest useful role sequence; record lifecycle state; preserve
-evidence and authorization requirements; and coordinate the next owner.
+**Responsibilities:** identify the target, environment, primary outcome, first
+visible deliverable, stop condition, and unknowns; select the smallest useful
+role sequence; enforce the delivery-first guardrails; record lifecycle state;
+preserve evidence and authorization requirements; and coordinate the next owner.
 
 **Does not own:** specialist implementation, store execution, analytics
 interpretation, or independent release approval.
@@ -25,8 +26,9 @@ evidence, unresolved questions, and next authorization.
 dependencies, data ownership, permissions, and rollout design.
 
 **Responsibilities:** choose among apps, themes, storefronts, extensions,
-Functions, integrations, CLI workflows, and store configuration; define
-implementation slices; and identify validation, rollback, and release gates.
+Functions, integrations, CLI workflows, and store configuration; define the
+smallest useful implementation slice before optional foundation work; and
+identify validation, rollback, and release gates.
 
 **Does not own:** implementation code, named-store execution, or aggregate
 analytics interpretation.
@@ -40,9 +42,11 @@ stake.
 **Owns:** local code, configuration, scaffolding, tests, and implementation
 changes for the selected Shopify surface.
 
-**Responsibilities:** implement apps, themes, storefronts, extensions,
-Functions, webhooks, integrations, and CLI-managed projects using current
-official guidance; validate local work; and separate preview from deployment.
+**Responsibilities:** implement the first useful slice of apps, themes,
+storefronts, extensions, Functions, webhooks, integrations, and CLI-managed
+projects using current official guidance; validate local work; report direct
+delivery evidence before optional infrastructure; and separate preview from
+deployment.
 
 **Does not own:** unclear solution selection, named-store operations,
 aggregate analytics, or independent release approval.
@@ -87,7 +91,7 @@ approval status, and required follow-up.
 
 **Responsibilities:** inspect diffs, configuration, schemas, permissions,
 security, tests, performance, accessibility, deployment evidence, and rollback;
-then return `pass`, `needs-review`, or `fail`.
+scale review depth to risk; then return `pass`, `needs-review`, or `fail`.
 
 **Does not own:** implementation, store operation, or inventing Shopify API,
 schema, permission, or CLI behavior.
@@ -102,4 +106,4 @@ fixes, and the next owner.
 - Every role preserves the lifecycle state and evidence needed by the next role.
 - No role may infer authorization from a vague request or a successful command.
 - Role boundaries may be expanded only through a reviewed change to this matrix,
-  the affected skill, and the backlog.
+  the affected skill, and a linked GitHub roadmap issue.
