@@ -12,10 +12,25 @@ Coordinate Shopify work around the official Shopify AI Toolkit. This skill adds 
 See the [role and responsibility matrix](references/methodology/role-matrix.md#shopify-expert),
 [role contract](references/methodology/role-contract.md),
 [lifecycle](references/methodology/lifecycle.md), and
-[handoff record](references/methodology/handoff-record.md), and
-[multi-role coordination guide](references/methodology/coordination.md).
+[handoff record](references/methodology/handoff-record.md).
+Use the shared [multi-role coordination guide](references/methodology/coordination.md)
+for parallel-safe work, dependencies, and join gates.
 Apply the shared [delivery-first guardrails](references/methodology/delivery-guardrails.md)
 to every broad workflow.
+
+## Capability maturity
+
+- **Role tag:** `core`
+- **Capability tags:** `core` for routing, lifecycle, handoffs, and safety;
+  `supported` for researched platform-surface routing; `research-needed` for
+  unresolved specialist boundaries; `future-specialist` for candidates only.
+- **Boundary:** keep ShopifyQL and aggregate analytics separate from
+  operational data engineering; do not install or dispatch a future specialist
+  merely because a platform surface exists.
+
+Use the canonical [capability maturity model](references/methodology/role-matrix.md#capability-maturity-model)
+and [platform-surface coverage](references/methodology/role-matrix.md#platform-surface-capability-coverage)
+when assigning tags.
 
 ## When to Use
 
@@ -61,22 +76,6 @@ before publishing, broad writes, migrations, or release-readiness claims.
 9. End every role transition with the [handoff record](references/methodology/handoff-record.md), including evidence, unresolved questions, and the next owner.
 10. Apply the [delivery-first guardrails](references/methodology/delivery-guardrails.md): allow at most one setup task before product progress, require an early vertical slice, stop recursive methodology work, and request a human checkpoint after two consecutive methodology-only tasks.
 
-## Coordination
-
-Use the [multi-role coordination guide](references/methodology/coordination.md)
-to select primary and supporting roles, record dependencies, and decide whether
-work is parallel-safe. Parallelize only independent, non-mutating tasks with
-distinct outputs. Use a join gate before advancing design, implementation,
-review, or operation.
-
-Every multi-role request starts with a coordination packet containing the target,
-primary role, supporting roles, dependencies, parallel-safe tasks, shared
-mutable targets, join gate, evidence, unresolved risks, and explicit
-authorization still required. Do not start a branch until its dependencies are
-satisfied. Do not advance a lifecycle state until required branches are
-complete or explicitly skipped with a reason. A conflicting or incomplete join
-returns `needs-review` rather than silently selecting a result.
-
 ## Routing and lifecycle
 
 Start at `proposed`, then route the smallest useful sequence:
@@ -96,6 +95,10 @@ Start at `proposed`, then route the smallest useful sequence:
 
 Parallelize only independent discovery or review work. Keep implementation,
 approval, publishing, and live mutations sequential and explicit.
+For parallel work, record dependencies and a join gate; every branch must be
+complete or explicitly skipped with a reason before the lifecycle advances.
+Treat a conflicting or incomplete join as `needs-review` rather than choosing a
+winner silently.
 
 ## Handoffs
 

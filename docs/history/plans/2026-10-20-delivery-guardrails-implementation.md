@@ -8,7 +8,7 @@
 
 **Tech Stack:** Markdown skill documents, Bash validation scripts, GitHub Actions, shell-based evaluation scenario checks.
 
-**Spec:** `docs/specs/2026-10-20-shopify-agent-methodology-design.md`
+**Spec:** `docs/history/specs/2026-10-20-shopify-agent-methodology-design.md`
 
 ## Global Constraints
 
@@ -149,11 +149,11 @@ git add docs/evaluations/store-pilot-scenarios.md scripts/validate-evaluation-sc
 git commit -m "test: add delivery guardrail pressure scenarios"
 ```
 
-### Task 5: Document usage, status, and future backlog
+### Task 5: Document usage, status, and future roadmap
 
 **Files:**
 - Modify: `README.md`
-- Modify: `BACKLOG.md`
+- Update the GitHub Issues roadmap.
 - Modify: `scripts/validate-repository-docs.sh`
 
 **Interfaces:**
@@ -167,7 +167,7 @@ Require README references to the delivery guardrails, vertical slices, methodolo
 
 Add a short “delivery-first behavior” section, a copy-ready prompt that asks the coordinator to enforce the guardrails, and links to the detailed methodology and evaluation documents. Clarify that the rules apply to the agent workflow, not only to Shopify migration projects.
 
-- [ ] **Step 3: Update BACKLOG**
+- [ ] **Step 3: Update the GitHub roadmap**
 
 Record the guardrail system as completed foundation work and retain future improvements such as automated pressure tests, routing selection, role specificity, and upstream extraction without making them prerequisites for current use.
 
@@ -178,7 +178,7 @@ Run `bash scripts/validate-repository-docs.sh` and verify it passes.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add README.md BACKLOG.md scripts/validate-repository-docs.sh
+git add README.md scripts/validate-repository-docs.sh
 git commit -m "docs: explain delivery-first methodology usage"
 ```
 

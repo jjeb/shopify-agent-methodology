@@ -72,7 +72,7 @@ theme system, every content page, or release automation.
 
 Do not build or refine tools whose primary purpose is to validate the
 methodology, the validators, or the role package while a product outcome is
-waiting. Record the idea in the methodology backlog and continue delivery.
+waiting. Record the idea in the GitHub Issues roadmap and continue delivery.
 
 Stop only for an immediate risk involving credentials, data loss, production
 impact, unsafe authorization, or an inability to establish the target

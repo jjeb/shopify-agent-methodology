@@ -52,6 +52,10 @@ for skill in "${required_skills[@]}"; do
       failures=$((failures + 1))
     fi
   done
+  if ! grep -q '^## Capability maturity$' "$file"; then
+    echo "FAIL: $file is missing capability maturity tags" >&2
+    failures=$((failures + 1))
+  fi
 done
 
 coordinator="$skills_root/shopify-expert/SKILL.md"
@@ -70,20 +74,6 @@ for coordinator_requirement in \
   fi
 done
 
-todo="$repo_root/docs/BACKLOG.md"
-for item in \
-  'shopify-platform-engineer' \
-  'shopify-commerce-strategist' \
-  'storefront-engineer' \
-  'extension-engineer' \
-  'app-engineer' \
-  'shopify-analytics'; do
-  if [[ ! -f "$todo" ]] || ! grep -q "$item" "$todo"; then
-    echo "FAIL: docs/BACKLOG.md does not track $item" >&2
-    failures=$((failures + 1))
-  fi
-done
-
 if (( failures > 0 )); then
   exit 1
 fi
@@ -91,7 +81,7 @@ fi
 python3 "$repo_root/scripts/sync-skill-references.py" --check
 python3 "$repo_root/scripts/validate-skill-links.py"
 
-echo "PASS: six MVP skills and future-role backlog are present and structurally valid"
+echo "PASS: six MVP skills are present and structurally valid"
 
 if command -v skills-ref >/dev/null 2>&1; then
   echo "INFO: skills-ref found; running official Agent Skills validation"

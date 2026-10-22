@@ -8,7 +8,7 @@
 
 **Tech Stack:** Markdown skill files, Bash validation, GitHub Actions, `npx skills`, Shopify CLI, and the official Shopify AI Toolkit as the external source of current platform behavior.
 
-**Spec:** `docs/specs/2026-10-20-shopify-agent-methodology-design.md`
+**Spec:** `docs/history/specs/2026-10-20-shopify-agent-methodology-design.md`
 
 ## Global Constraints
 
@@ -144,7 +144,7 @@
 - Create: `docs/evaluations/store-pilot-scenarios.md`
 - Create: `scripts/validate-evaluation-scenarios.sh`
 - Modify: `README.md`
-- Modify: `docs/BACKLOG.md`
+- Update the GitHub Issues roadmap.
 
 **Interfaces:**
 - Consumes: coordinator routing and role contracts from Tasks 1–3.
@@ -182,7 +182,7 @@
 **Files:**
 - Modify: `README.md`
 - Modify: `docs/CONTRIBUTING.md`
-- Modify: `docs/BACKLOG.md`
+- Update the GitHub Issues roadmap.
 
 **Interfaces:**
 - Consumes: all methodology references, coordinator behavior, role contracts, and pilot scenarios.
@@ -193,7 +193,7 @@
   Include install, authentication prerequisites, development-store scope, role
   sequence, expected artifacts, and explicit non-goals.
 
-- [x] **Step 2: Update the backlog**
+- [x] **Step 2: Update the roadmap**
 
   Mark only the methodology-foundation items complete. Keep coordination,
   workflow packs, evaluations, compatibility, and public ecosystem work as

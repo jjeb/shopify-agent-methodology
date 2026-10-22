@@ -9,6 +9,7 @@ required_files=(
   docs/methodology/handoff-record.md
   docs/methodology/store-pilot.md
   docs/methodology/delivery-guardrails.md
+  docs/history/README.md
 )
 
 for relative_file in "${required_files[@]}"; do

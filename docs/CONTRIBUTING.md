@@ -6,7 +6,7 @@ required validation checks.
 
 ## Add or refine a skill
 
-1. Inspect the existing skills under `skills/` and the future-work prompt in `docs/BACKLOG.md`.
+1. Inspect the existing skills under `skills/` and the deferred-work items in the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues).
 2. Keep each skill focused on one role and use the portable `skills/<name>/SKILL.md` layout.
 3. Use valid frontmatter with a `name` and a description beginning with `Use when`.
 4. Include `When to Use`, `Operating Rules`, and `Handoffs` sections.
@@ -14,12 +14,19 @@ required validation checks.
    `Produces`, and `Safety Gates`.
 6. Link shared lifecycle, role-contract, and handoff guidance from
    `docs/methodology/` instead of duplicating it in every skill.
-7. Put workflow diagrams and copy-ready usage examples in `docs/workflows/`
-   and `docs/examples/`; keep design specifications in `docs/specs/` and
-   implementation plans in `docs/plans/`.
-8. Defer current Shopify API, schema, validation, and CLI details to Shopify's official toolkit and documentation.
-9. Preserve the boundaries between proposal, local implementation, validation, deployment, and live-store execution.
-10. Never include credentials, tokens, passwords, or unnecessary merchant data.
+7. Add or change capability ownership in the canonical [role matrix](methodology/role-matrix.md),
+   using the role tag `core` and capability tags `core`, `supported`,
+   `experimental`, `research-needed`, or `future-specialist`. Future
+   specialists are candidates only; do not add an installable role without a
+   roadmap issue and evidence.
+8. Put workflow diagrams and copy-ready usage examples in `docs/workflows/`
+   and `docs/examples/`; keep completed design specifications and
+   implementation plans in `docs/history/specs/` and `docs/history/plans/`.
+   Treat those files as historical records, not active roadmap items; use the
+   GitHub Issues roadmap and project for current deferred work.
+9. Defer current Shopify API, schema, validation, and CLI details to Shopify's official toolkit and documentation.
+10. Preserve the boundaries between proposal, local implementation, validation, deployment, and live-store execution.
+11. Never include credentials, tokens, passwords, or unnecessary merchant data.
 
 ## Validate changes
 
@@ -31,10 +38,7 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
-python3 scripts/validate-versioning.py
 python3 scripts/sync-skill-references.py --check
-python3 scripts/validate-skill-links.py
-bash scripts/validate-coordination.sh
 git diff --check
 ```
 
@@ -54,10 +58,9 @@ review of role routing, safety boundaries, or handoffs.
 
 Before proposing a new role, run the relevant scenarios in
 `docs/evaluations/store-pilot-scenarios.md` and explain why the existing roles
-cannot cover the request. Keep future work in `docs/BACKLOG.md` as a separate,
-reviewable PR-sized item.
+cannot cover the request. Keep future work in GitHub Issues as a separate,
+reviewable issue-sized item.
 
-Update `README.md`, `docs/getting-started.md`, and `docs/BACKLOG.md` when adding a role or changing installation and routing behavior. Use focused commits on `main` and describe validation results in the commit or pull request.
-
-For releases, follow [`docs/versioning.md`](versioning.md), update `VERSION`
-and `CHANGELOG.md` together, and use a matching `vX.Y.Z` tag.
+Update `README.md` and the relevant GitHub roadmap issue when adding a role or
+changing installation and routing behavior. Use focused commits on `main` and
+describe validation results in the commit or pull request.

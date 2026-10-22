@@ -10,6 +10,15 @@ independent release versions.
 
 Changes for the next release will be recorded here.
 
+## [0.2.0] - 2026-10-21
+
+### Added
+
+- Canonical capability-maturity tags for the six core roles.
+- Researched Shopify platform-surface coverage with explicit ownership,
+  evidence, and future-specialist boundaries.
+- Skill-local maturity sections and synchronized methodology reference copies.
+
 ## [0.1.0] - 2026-10-20
 
 ### Added
@@ -18,7 +27,5 @@ Changes for the next release will be recorded here.
   development, operational data, store operations, and review.
 - Delivery-first guardrails, role contracts, lifecycle guidance, handoff
   records, coordination guidance, and evaluation scenarios.
-- Self-contained skill-local methodology references with synchronization and
-  relative-link validation.
 - Installation, initialization, authentication, and development-store safety
   guidance.

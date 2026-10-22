@@ -16,6 +16,19 @@ See the [role and responsibility matrix](references/methodology/role-matrix.md#s
 Follow the shared [delivery-first guardrails](references/methodology/delivery-guardrails.md)
 for implementation sequencing.
 
+## Capability maturity
+
+- **Role tag:** `core`
+- **Capability tags:** `core` for local implementation; `supported` for app
+  backends, storefronts, webhooks, CLI workflows, and bounded commerce work;
+  `experimental` for extensions and Functions; `future-specialist` for
+  app, storefront, extension, or platform candidates that are not installable.
+- **Boundary:** do not treat ShopifyQL or aggregate analytics as operational
+  data engineering; route that work through the analytics workflow and the
+  evidence gates in the canonical model.
+
+See the canonical [capability maturity model](references/methodology/role-matrix.md#capability-maturity-model).
+
 ## When to Use
 
 Use for code, configuration, scaffolding, migrations, API operations, Liquid, Hydrogen, Polaris, Functions, webhooks, or extension work. Route to the future specialized app, storefront, or extension skill when it is available.

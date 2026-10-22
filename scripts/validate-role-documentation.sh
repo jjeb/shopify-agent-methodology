@@ -18,6 +18,17 @@ if [[ ! -f "$matrix" ]]; then
   exit 1
 fi
 
+for required_tag in core supported experimental research-needed future-specialist; do
+  if ! grep -Fq "\`$required_tag\`" "$matrix"; then
+    echo "FAIL: role matrix is missing capability tag: $required_tag" >&2
+    exit 1
+  fi
+done
+if ! grep -Fq '## Capability maturity model' "$matrix" || ! grep -Fq '## Platform-surface capability coverage' "$matrix"; then
+  echo "FAIL: role matrix is missing canonical maturity or platform coverage sections" >&2
+  exit 1
+fi
+
 for role in "${roles[@]}"; do
   skill="$skills_root/$role/SKILL.md"
   anchor="references/methodology/role-matrix.md#$role"
@@ -27,6 +38,10 @@ for role in "${roles[@]}"; do
   fi
   if ! grep -Fq "## $role" "$matrix"; then
     echo "FAIL: role matrix is missing the $role responsibility section" >&2
+    exit 1
+  fi
+  if ! grep -Fq '## Capability maturity' "$skill"; then
+    echo "FAIL: $skill is missing capability maturity documentation" >&2
     exit 1
   fi
 done

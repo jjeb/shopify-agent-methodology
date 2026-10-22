@@ -14,24 +14,31 @@ the first project-specific guidance an agent should read before changing it.
 - Keep ShopifyQL, reporting, trends, and aggregate analytics separate from
   operational data engineering.
 - Do not add a new role merely to mirror a Shopify product area. Propose the
-  gap in `docs/BACKLOG.md` first and demonstrate it with a pressure scenario.
+  gap in the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues)
+  first and demonstrate it with a pressure scenario.
 
 ## Source of truth
 
 - Role ownership: `docs/methodology/role-matrix.md`.
+- Capability maturity and platform coverage: `docs/methodology/role-matrix.md`.
 - Shared role contract: `docs/methodology/role-contract.md`.
 - Lifecycle states: `docs/methodology/lifecycle.md`.
 - Handoffs: `docs/methodology/handoff-record.md`.
 - Delivery sequencing and methodology limits:
   `docs/methodology/delivery-guardrails.md`.
 - Public installation and usage: `README.md`.
-- Package version and release policy: `VERSION`, `CHANGELOG.md`, and
-  `docs/versioning.md`.
-- Deferred work: `docs/BACKLOG.md`.
+- Deferred work: the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues).
 - Contribution workflow: `docs/CONTRIBUTING.md`.
 
 When guidance overlaps, keep the role skill concise and link to the shared
 source instead of copying the same rule into multiple files.
+
+Capability status is expressed with the canonical tags `core`, `supported`,
+`experimental`, `research-needed`, and `future-specialist`. The six
+installable roles remain `core`; future-specialist entries are candidates only
+and require evidence plus a GitHub roadmap issue before any new skill exists.
+Keep ShopifyQL and aggregate analytics separate from operational data
+engineering.
 
 ## Skill structure
 
@@ -44,12 +51,6 @@ Each installable skill lives at `skills/<skill-name>/SKILL.md` and must:
 - link to its role section in `docs/methodology/role-matrix.md`;
 - use the official Shopify toolkit for current platform facts; and
 - state boundaries and exclusions clearly enough for routing decisions.
-
-Each skill's supporting methodology documents live under
-`skills/<skill-name>/references/methodology/` and are generated from
-`docs/methodology/`. Run `python3 scripts/sync-skill-references.py` after
-changing a canonical document, then commit the generated copies. Never use
-symlinks or repository-level `../../docs` links from an installable skill.
 
 Keep API fields, schema details, CLI flags, and other volatile Shopify facts in
 official documentation or the official `shopify` skill. Do not invent or
@@ -81,9 +82,13 @@ change is not proof of a live-store result.
 - `docs/workflows/`: Mermaid diagrams and reusable workflow descriptions.
 - `docs/examples/`: sanitized copy-ready examples.
 - `docs/evaluations/`: pressure scenarios and evaluation guidance.
-- `docs/specs/`: approved design specifications.
-- `docs/plans/`: implementation plans.
-- `docs/BACKLOG.md`: deferred capabilities and future roles.
+- `docs/history/specs/`: completed design specifications kept as historical records.
+- `docs/history/plans/`: completed implementation plans kept as historical records.
+- `skills/*/references/methodology/`: generated copies of canonical methodology
+  documents; update them with `python3 scripts/sync-skill-references.py`.
+- Active roadmap and deferred work: the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues)
+  and [roadmap project](https://github.com/users/jjeb/projects/1).
+- GitHub Issues: deferred capabilities and future roles.
 
 Do not store project-specific client, store, or credential information in this
 public methodology repository.
@@ -98,9 +103,6 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
-python3 scripts/validate-versioning.py
-python3 scripts/sync-skill-references.py --check
-python3 scripts/validate-skill-links.py
 git diff --check
 ```
 
@@ -108,6 +110,7 @@ When available, also run:
 
 ```bash
 bash scripts/validate-skills-standard.sh
+python3 scripts/sync-skill-references.py --check
 ```
 
 The official `skills-ref` validator is required in CI but may need to be

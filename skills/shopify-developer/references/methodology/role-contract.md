@@ -3,6 +3,19 @@
 Each installable role is a specialist in a coordinated system. A role should
 make its boundary obvious before it starts work.
 
+## Capability maturity
+
+Every role contract uses the canonical maturity vocabulary in the [role
+matrix](role-matrix.md#capability-maturity-model). The six installable roles
+have the role tag `core`. Capability tags are `core`, `supported`,
+`experimental`, `research-needed`, and `future-specialist`. The last tag marks
+a candidate boundary only; it never authorizes a new installable role.
+
+Before routing a capability, record its current owner, maturity tag, evidence
+required to advance it, and the next review gate. Keep ShopifyQL and aggregate
+analytics separate from operational data engineering even when both involve
+data.
+
 Every role must answer these questions:
 
 ## Owns
