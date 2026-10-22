@@ -43,6 +43,31 @@ It complements Shopify's official toolkit:
 - `shopify-store-operator`: performs approved, authenticated store work such as read-only inspection, products/content workflows, theme previews, publishing, maintenance, and store-scoped CLI operations.
 - `shopify-reviewer`: independently evaluates code, schemas, configuration, permissions, security, performance, tests, Shopify requirements, release readiness, and evidence for live changes.
 
+## Capability maturity and platform coverage
+
+The canonical [role matrix](docs/methodology/role-matrix.md) assigns every
+installable role the role tag `core` and uses capability tags to distinguish
+current ownership from evidence gaps in its capability maturity model:
+
+- `core`: required baseline for the role;
+- `supported`: documented and routable through an existing role;
+- `experimental`: usable for bounded trials with limited evidence;
+- `research-needed`: requires more evidence before promotion; and
+- `future-specialist`: a non-installable candidate, never an automatic role.
+
+The matrix records researched coverage for Admin GraphQL and app backends,
+Storefront API/Liquid/Hydrogen, Admin/Checkout/Customer Account/POS/theme
+extensions, Shopify Functions, webhooks/events, Shopify CLI/theme/app
+workflows, ShopifyQL, and subscriptions/Markets/B2B/payments. The detailed
+evidence brief is [roadmap issue #20](https://github.com/jjeb/shopify-agent-methodology/issues/20).
+It does not add installable roles. Keep ShopifyQL and aggregate analytics
+separate from operational data engineering; the latter owns synchronization,
+reconciliation, and record-level data flows.
+
+Maturity is a routing and evidence model, not a claim that a capability is
+stable or available on every Shopify plan. Verify current platform behavior in
+the official toolkit and documentation before implementation or live-store work.
+
 ## Requirements
 
 - An agent supported by the [`skills` CLI](https://github.com/vercel-labs/skills).
@@ -390,6 +415,8 @@ docs/history/specs/              Completed design specifications
 docs/history/plans/              Completed implementation plans
 docs/                            Maintainer and methodology documentation
   CONTRIBUTING.md                Maintainer and contributor guidance
+VERSION                         Coordinated package version
+CHANGELOG.md                    Release history
 ```
 
 Future roles and expansion tasks are tracked in the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues); no local backlog file is maintained.

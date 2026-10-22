@@ -15,6 +15,9 @@ required_strings=(
   'store-pilot-scenarios.md'
   'github.com/jjeb/shopify-agent-methodology/issues'
   'docs/history/README.md'
+  'capability maturity'
+  'future-specialist'
+  'roadmap issue #20'
 )
 
 for required in "${required_strings[@]}"; do
@@ -23,6 +26,15 @@ for required in "${required_strings[@]}"; do
     exit 1
   fi
 done
+
+if [[ ! -f "$repo_root/VERSION" ]] || [[ "$(tr -d '[:space:]' < "$repo_root/VERSION")" != "0.2.0" ]]; then
+  echo "FAIL: VERSION must be 0.2.0" >&2
+  exit 1
+fi
+if [[ ! -f "$repo_root/CHANGELOG.md" ]] || ! grep -Fq '[0.2.0]' "$repo_root/CHANGELOG.md"; then
+  echo "FAIL: CHANGELOG.md is missing the 0.2.0 entry" >&2
+  exit 1
+fi
 
 if grep -Fq 'shopify-consulting-roles' "$readme"; then
   echo "FAIL: README.md still contains the old repository name" >&2

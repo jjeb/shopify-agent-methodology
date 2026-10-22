@@ -14,14 +14,19 @@ required validation checks.
    `Produces`, and `Safety Gates`.
 6. Link shared lifecycle, role-contract, and handoff guidance from
    `docs/methodology/` instead of duplicating it in every skill.
-7. Put workflow diagrams and copy-ready usage examples in `docs/workflows/`
+7. Add or change capability ownership in the canonical [role matrix](methodology/role-matrix.md),
+   using the role tag `core` and capability tags `core`, `supported`,
+   `experimental`, `research-needed`, or `future-specialist`. Future
+   specialists are candidates only; do not add an installable role without a
+   roadmap issue and evidence.
+8. Put workflow diagrams and copy-ready usage examples in `docs/workflows/`
    and `docs/examples/`; keep completed design specifications and
    implementation plans in `docs/history/specs/` and `docs/history/plans/`.
    Treat those files as historical records, not active roadmap items; use the
    GitHub Issues roadmap and project for current deferred work.
-8. Defer current Shopify API, schema, validation, and CLI details to Shopify's official toolkit and documentation.
-9. Preserve the boundaries between proposal, local implementation, validation, deployment, and live-store execution.
-10. Never include credentials, tokens, passwords, or unnecessary merchant data.
+9. Defer current Shopify API, schema, validation, and CLI details to Shopify's official toolkit and documentation.
+10. Preserve the boundaries between proposal, local implementation, validation, deployment, and live-store execution.
+11. Never include credentials, tokens, passwords, or unnecessary merchant data.
 
 ## Validate changes
 
@@ -33,6 +38,7 @@ bash scripts/validate-repository-docs.sh
 bash scripts/validate-methodology.sh
 bash scripts/validate-evaluation-scenarios.sh
 bash scripts/validate-role-documentation.sh
+python3 scripts/sync-skill-references.py --check
 git diff --check
 ```
 

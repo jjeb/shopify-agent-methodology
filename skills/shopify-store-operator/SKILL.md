@@ -16,6 +16,19 @@ See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#s
 Use the shared [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md)
 when deciding whether store work is the next safe step.
 
+## Capability maturity
+
+- **Role tag:** `core`
+- **Capability tags:** `core` for authorization, readback, and named-store
+  safety; `supported` for inspection, previews, CLI workflows, and approved
+  configuration; `experimental` for bounded extension, Functions, and commerce
+  operations; `research-needed` where plan or eligibility evidence is missing.
+- **Boundary:** this role executes approved store work; it does not own
+  ShopifyQL interpretation, operational data architecture, or a future
+  specialist's proposed boundary.
+
+See the canonical [capability maturity model](../../docs/methodology/role-matrix.md#capability-maturity-model).
+
 ## When to Use
 
 Use for store authentication, store metadata, products, catalogs, content, inventory-related workflows, theme previews/publishing, store-scoped GraphQL, bulk operations, or maintenance.

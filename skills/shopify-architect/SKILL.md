@@ -16,6 +16,19 @@ See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#s
 Use the shared [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md)
 when sequencing design work.
 
+## Capability maturity
+
+- **Role tag:** `core`
+- **Capability tags:** `core` for boundaries, permissions, and rollout;
+  `supported` for Admin, storefront, CLI, webhook, and commerce boundary
+  decisions; `experimental` for extension and Functions selection;
+  `research-needed` for analytics and unresolved commerce depth;
+  `future-specialist` for candidates only.
+- **Boundary:** classify ShopifyQL and aggregate analytics separately from
+  operational data engineering before assigning data ownership.
+
+See the canonical [capability maturity model](../../docs/methodology/role-matrix.md#capability-maturity-model).
+
 ## When to Use
 
 Use when the request could be an app, theme, Hydrogen storefront, extension, Function, integration, store configuration, or combination; when permissions, data ownership, scale, or rollout are unclear; or when multiple roles must coordinate.

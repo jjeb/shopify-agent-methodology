@@ -4,6 +4,16 @@ Use this guide when a request spans multiple Shopify surfaces or lifecycle
 stages. The coordinator owns routing and join points; specialist roles own
 their decisions and artifacts.
 
+## Capability maturity in routing
+
+Read the [canonical capability maturity model](role-matrix.md#capability-maturity-model)
+before routing a researched platform surface. `core` and `supported` work may
+follow the normal matrix. `experimental` work needs a bounded trial and
+reviewer evidence. `research-needed` work stays explicit in the handoff, and
+`future-specialist` is a candidate label only; it does not create or dispatch
+a new installable role. Route ShopifyQL and aggregate analytics separately from
+operational data engineering.
+
 ## Routing matrix
 
 | Request signal | Primary role | Supporting roles | Default order |

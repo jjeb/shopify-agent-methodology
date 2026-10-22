@@ -15,6 +15,19 @@ See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#s
 [handoff record](../../docs/methodology/handoff-record.md).
 Apply the shared [proportional review guardrails](../../docs/methodology/delivery-guardrails.md#proportional-review).
 
+## Capability maturity
+
+- **Role tag:** `core`
+- **Capability tags:** `core` for evidence, findings, and readiness;
+  `supported` for standard app, data, storefront, CLI, and store reviews;
+  `experimental` for extension and Functions review; `research-needed` for
+  analytics and commerce claims; `future-specialist` for candidates only.
+- **Boundary:** review does not create a specialist role. Confirm that
+  ShopifyQL/aggregate analytics remains distinct from operational data
+  engineering and return `needs-review` when maturity evidence is incomplete.
+
+See the canonical [capability maturity model](../../docs/methodology/role-matrix.md#capability-maturity-model).
+
 ## When to Use
 
 Use before deployment, release, publishing, migration, broad data changes, app submission, or any handoff that claims a Shopify change is ready.

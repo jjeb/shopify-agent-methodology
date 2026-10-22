@@ -52,6 +52,10 @@ for skill in "${required_skills[@]}"; do
       failures=$((failures + 1))
     fi
   done
+  if ! grep -q '^## Capability maturity$' "$file"; then
+    echo "FAIL: $file is missing capability maturity tags" >&2
+    failures=$((failures + 1))
+  fi
 done
 
 coordinator="$skills_root/shopify-expert/SKILL.md"
@@ -73,6 +77,8 @@ done
 if (( failures > 0 )); then
   exit 1
 fi
+
+python3 "$repo_root/scripts/sync-skill-references.py" --check
 
 echo "PASS: six MVP skills are present and structurally valid"
 

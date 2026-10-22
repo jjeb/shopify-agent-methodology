@@ -18,6 +18,20 @@ for parallel-safe work, dependencies, and join gates.
 Apply the shared [delivery-first guardrails](../../docs/methodology/delivery-guardrails.md)
 to every broad workflow.
 
+## Capability maturity
+
+- **Role tag:** `core`
+- **Capability tags:** `core` for routing, lifecycle, handoffs, and safety;
+  `supported` for researched platform-surface routing; `research-needed` for
+  unresolved specialist boundaries; `future-specialist` for candidates only.
+- **Boundary:** keep ShopifyQL and aggregate analytics separate from
+  operational data engineering; do not install or dispatch a future specialist
+  merely because a platform surface exists.
+
+Use the canonical [capability maturity model](../../docs/methodology/role-matrix.md#capability-maturity-model)
+and [platform-surface coverage](../../docs/methodology/role-matrix.md#platform-surface-capability-coverage)
+when assigning tags.
+
 ## When to Use
 
 Use for broad requests such as building, changing, migrating, operating, reviewing, or expanding a Shopify store or app. Use a focused role directly when the request clearly belongs to one role.

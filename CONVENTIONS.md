@@ -20,6 +20,7 @@ the first project-specific guidance an agent should read before changing it.
 ## Source of truth
 
 - Role ownership: `docs/methodology/role-matrix.md`.
+- Capability maturity and platform coverage: `docs/methodology/role-matrix.md`.
 - Shared role contract: `docs/methodology/role-contract.md`.
 - Lifecycle states: `docs/methodology/lifecycle.md`.
 - Handoffs: `docs/methodology/handoff-record.md`.
@@ -31,6 +32,13 @@ the first project-specific guidance an agent should read before changing it.
 
 When guidance overlaps, keep the role skill concise and link to the shared
 source instead of copying the same rule into multiple files.
+
+Capability status is expressed with the canonical tags `core`, `supported`,
+`experimental`, `research-needed`, and `future-specialist`. The six
+installable roles remain `core`; future-specialist entries are candidates only
+and require evidence plus a GitHub roadmap issue before any new skill exists.
+Keep ShopifyQL and aggregate analytics separate from operational data
+engineering.
 
 ## Skill structure
 
@@ -76,6 +84,8 @@ change is not proof of a live-store result.
 - `docs/evaluations/`: pressure scenarios and evaluation guidance.
 - `docs/history/specs/`: completed design specifications kept as historical records.
 - `docs/history/plans/`: completed implementation plans kept as historical records.
+- `skills/*/references/methodology/`: generated copies of canonical methodology
+  documents; update them with `python3 scripts/sync-skill-references.py`.
 - Active roadmap and deferred work: the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues)
   and [roadmap project](https://github.com/users/jjeb/projects/1).
 - GitHub Issues: deferred capabilities and future roles.
@@ -100,6 +110,7 @@ When available, also run:
 
 ```bash
 bash scripts/validate-skills-standard.sh
+python3 scripts/sync-skill-references.py --check
 ```
 
 The official `skills-ref` validator is required in CI but may need to be

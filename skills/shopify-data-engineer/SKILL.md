@@ -14,6 +14,20 @@ See the [role and responsibility matrix](../../docs/methodology/role-matrix.md#s
 [lifecycle](../../docs/methodology/lifecycle.md), and
 [handoff record](../../docs/methodology/handoff-record.md).
 
+## Capability maturity
+
+- **Role tag:** `core`
+- **Capability tags:** `core` for operational data models and recovery;
+  `supported` for synchronization, webhooks, bulk work, and reconciliation;
+  `experimental` for bounded platform-surface trials; `research-needed` for
+  boundaries that need evidence before promotion.
+- **Boundary:** ShopifyQL, aggregate analytics, trends, conversion rates, and
+  dashboard interpretation are not this role's capabilities. Keep them in the
+  separate analytics workflow; never upgrade them into operational data work
+  by proximity to data.
+
+See the canonical [capability maturity model](../../docs/methodology/role-matrix.md#capability-maturity-model).
+
 ## When to Use
 
 Use for metafields, metaobjects, bulk operations, imports/exports, webhooks, event pipelines, external databases, synchronization, data migrations, deduplication, or data quality.
