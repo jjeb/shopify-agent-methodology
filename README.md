@@ -39,9 +39,15 @@ It complements Shopify's official toolkit:
 - `shopify-expert`: coordinates a Shopify request across roles, selects the smallest useful workflow, and enforces handoffs, approvals, and evidence boundaries.
 - `shopify-architect`: owns discovery and solution design—choosing between apps, themes, Hydrogen, APIs, extensions, Functions, integrations, and store workflows before implementation begins.
 - `shopify-developer`: implements Shopify application and storefront changes, including app code, Liquid, Hydrogen, APIs, webhooks, extensions, Functions, Polaris, configuration, and CLI-managed projects.
-- `shopify-data-engineer`: designs operational data systems—metafields/metaobjects, imports, bulk operations, webhooks, synchronization, external databases, migrations, and reconciliation. It does not own ShopifyQL analytics.
+- `shopify-data-integration-engineer`: designs operational data systems—metafields/metaobjects, imports, bulk operations, webhooks, synchronization, external databases, migrations, and reconciliation. It does not own ShopifyQL analytics.
 - `shopify-store-operator`: performs approved, authenticated store work such as read-only inspection, products/content workflows, theme previews, publishing, maintenance, and store-scoped CLI operations.
 - `shopify-reviewer`: independently evaluates code, schemas, configuration, permissions, security, performance, tests, Shopify requirements, release readiness, and evidence for live changes.
+
+The operational-data role is canonically named `shopify-data-integration-engineer`.
+Existing prompts using `shopify-data-engineer` map to this role; see the
+[role migration guide](docs/migrations/2026-10-22-data-integration-engineer-role-rename.md).
+There is no legacy installable alias, so `--all` installs one operational-data
+role rather than two competing roles.
 
 ## Capability maturity and platform coverage
 
@@ -263,7 +269,7 @@ typical sequence is conditional rather than automatic:
 ```text
 shopify-expert
   → architect when the surface or permissions are unclear
-  → developer or data-engineer when implementation or data work is required
+  → developer or `shopify-data-integration-engineer` when implementation or data work is required
   → reviewer when the risk or readiness claim requires independent review
   → store-operator when a named-store inspection or approved operation is required
 ```
@@ -287,7 +293,7 @@ required. See [the development-store pilot guide](docs/methodology/store-pilot.m
 
 See the [Mermaid Shopify lifecycle workflow](docs/workflows/shopify-lifecycle.md)
 for the role sequence and [copy-ready examples](docs/examples/) for a
-development-store preview and the analytics/data-engineering boundary.
+development-store preview and the analytics/operational-data boundary.
 
 The complete pilot scenario set is in
 [docs/evaluations/store-pilot-scenarios.md](docs/evaluations/store-pilot-scenarios.md).
@@ -307,7 +313,7 @@ current toolkit guidance, use the project's API version, validate it, and do not
 ```
 
 ```text
-Use shopify-data-engineer to design a webhook and bulk synchronization pipeline
+Use shopify-data-integration-engineer to design a webhook and bulk synchronization pipeline
 for products and inventory. Define source of truth, idempotency, retries,
 reconciliation, and rollback. Do not execute writes.
 ```
@@ -339,11 +345,11 @@ Use the architect when the boundary between Liquid, a theme app extension, Store
 
 ### Migrate or synchronize data
 
-Use the data engineer for source of truth, bulk strategy, webhook behavior, retries, reconciliation, and rollback. Use the reviewer before broad writes. Use the store operator only for approved named-store execution.
+Use the data integration engineer for source of truth, bulk strategy, webhook behavior, retries, reconciliation, and rollback. Use the reviewer before broad writes. Use the store operator only for approved named-store execution.
 
 ### Analyze store performance
 
-ShopifyQL reporting is not part of the current data-engineer role. Track it in the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues) for the future `shopify-analytics` skill. Keep analysis separate from record-level mutations.
+ShopifyQL reporting is not part of the current `shopify-data-integration-engineer` role. Track it in the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues) for the future `shopify-analytics` skill. Keep analysis separate from record-level mutations.
 
 ## Safety boundaries
 
@@ -400,7 +406,7 @@ skills/                         Installable skill sources
   shopify-expert/SKILL.md       Coordinator
   shopify-architect/SKILL.md    Solution design
   shopify-developer/SKILL.md    Implementation
-  shopify-data-engineer/        Operational data systems
+  shopify-data-integration-engineer/        Operational data systems
   shopify-store-operator/       Named-store operations
   shopify-reviewer/             Quality and release review
 scripts/validate-skills.sh      Structural validation
@@ -415,6 +421,7 @@ docs/examples/                  Copy-ready role and workflow examples
 docs/history/README.md          Historical-document policy and roadmap boundary
 docs/history/specs/              Completed design specifications
 docs/history/plans/              Completed implementation plans
+docs/migrations/                 Compatibility and migration guidance
 docs/                            Maintainer and methodology documentation
   CONTRIBUTING.md                Maintainer and contributor guidance
 docs/versioning.md               Versioning and release procedure

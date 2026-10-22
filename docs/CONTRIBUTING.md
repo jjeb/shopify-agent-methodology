@@ -24,9 +24,12 @@ required validation checks.
    implementation plans in `docs/history/specs/` and `docs/history/plans/`.
    Treat those files as historical records, not active roadmap items; use the
    GitHub Issues roadmap and project for current deferred work.
-9. Defer current Shopify API, schema, validation, and CLI details to Shopify's official toolkit and documentation.
-10. Preserve the boundaries between proposal, local implementation, validation, deployment, and live-store execution.
-11. Never include credentials, tokens, passwords, or unnecessary merchant data.
+9. For an installable role rename, update the canonical directory/frontmatter,
+   all current routing references, generated references, validators, and add a
+   compatibility guide; do not retain a duplicate alias.
+10. Defer current Shopify API, schema, validation, and CLI details to Shopify's official toolkit and documentation.
+11. Preserve the boundaries between proposal, local implementation, validation, deployment, and live-store execution.
+12. Never include credentials, tokens, passwords, or unnecessary merchant data.
 
 ## Validate changes
 

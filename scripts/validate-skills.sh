@@ -7,7 +7,7 @@ required_skills=(
   shopify-expert
   shopify-architect
   shopify-developer
-  shopify-data-engineer
+  shopify-data-integration-engineer
   shopify-store-operator
   shopify-reviewer
 )
@@ -16,6 +16,11 @@ failures=0
 
 if [[ ! -d "$skills_root" ]]; then
   echo "FAIL: missing $skills_root" >&2
+  exit 1
+fi
+
+if [[ -d "$skills_root/shopify-data-engineer" ]]; then
+  echo "FAIL: legacy shopify-data-engineer alias must not be installable" >&2
   exit 1
 fi
 

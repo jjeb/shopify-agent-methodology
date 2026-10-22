@@ -20,7 +20,7 @@ operational data engineering.
 | --- | --- | --- | --- |
 | Unclear surface, scope, permissions, or rollout | `shopify-architect` | `shopify-expert`, `shopify-reviewer` | Expert → architect → reviewer |
 | App, theme, storefront, extension, Function, or integration code | `shopify-developer` | `shopify-architect`, `shopify-reviewer` | Architect → developer → reviewer |
-| Imports, exports, bulk operations, synchronization, or reconciliation | `shopify-data-engineer` | `shopify-architect`, `shopify-reviewer`, operator | Architect → data engineer → reviewer → operator |
+| Imports, exports, bulk operations, synchronization, or reconciliation | `shopify-data-integration-engineer` | `shopify-architect`, `shopify-reviewer`, operator | Architect → data integration engineer → reviewer → operator |
 | Named-store inspection or reversible preview | `shopify-store-operator` | `shopify-expert`, reviewer | Expert → operator → reviewer when readiness is claimed |
 | ShopifyQL, totals, trends, or conversion analysis | Analytics workflow | `shopify-expert`, future `shopify-analytics` | Expert → analytics workflow |
 | Publish, broad write, migration, or release claim | `shopify-reviewer` | owning implementer, operator | Implementer → reviewer → operator |

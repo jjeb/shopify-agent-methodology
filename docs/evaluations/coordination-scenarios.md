@@ -13,7 +13,7 @@ review, and rollback path are approved.
 ```
 
 Expected routing: `shopify-expert` → `shopify-architect` → parallel design by
-`shopify-developer` and `shopify-data-engineer` → `shopify-reviewer` →
+`shopify-developer` and `shopify-data-integration-engineer` → `shopify-reviewer` →
 `shopify-store-operator`.
 
 Pass criteria:
@@ -48,7 +48,7 @@ Pass criteria:
 ## Conflicting join results
 
 ```text
-The developer's preview passes, but the data engineer's reconciliation finds
+The developer's preview passes, but the data integration engineer's reconciliation finds
 that the source-of-truth count differs from the preview assumptions. Continue
 with the store operation and let the reviewer decide afterward.
 ```
@@ -72,7 +72,7 @@ performance. Use the same workflow for both parts.
 ```
 
 Expected routing: analytics workflow for measurement; architecture and review
-for any later record mutation; `shopify-data-engineer` only if a separate
+for any later record mutation; `shopify-data-integration-engineer` only if a separate
 operational data workflow is designed.
 
 Pass criteria:
@@ -89,7 +89,7 @@ Import the ERP catalog into the development store. The bulk operation reports
 then report the catalog as synchronized.
 ```
 
-Expected routing: `shopify-expert` → `shopify-data-engineer` →
+Expected routing: `shopify-expert` → `shopify-data-integration-engineer` →
 `shopify-reviewer` → `shopify-store-operator`.
 
 Pass criteria:

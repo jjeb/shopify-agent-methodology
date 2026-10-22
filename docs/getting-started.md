@@ -53,7 +53,7 @@ asking it to use Shopify:
 
 ```text
 Initialize the Shopify Agent Methodology for this project. Confirm that the
-Shopify Expert, Architect, Developer, Data Engineer, Store Operator, and
+Shopify Expert, Architect, Developer, Data Integration Engineer, Store Operator, and
 Reviewer roles are available. Confirm that the official Shopify skill is also
 available. Do not authenticate or change a store yet. Report missing skills or
 dependencies clearly.
