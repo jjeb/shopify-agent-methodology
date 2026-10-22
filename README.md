@@ -385,8 +385,9 @@ docs/methodology/               Lifecycle, contracts, handoffs, and pilot guide
 docs/evaluations/               Development-store behavioral scenarios
 docs/workflows/                 Mermaid lifecycle and role workflows
 docs/examples/                  Copy-ready role and workflow examples
-docs/specs/                     Product and methodology design specifications
-docs/plans/                     Implementation plans
+docs/history/README.md          Historical-document policy and roadmap boundary
+docs/history/specs/              Completed design specifications
+docs/history/plans/              Completed implementation plans
 docs/                            Maintainer and methodology documentation
   CONTRIBUTING.md                Maintainer and contributor guidance
 ```

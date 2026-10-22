@@ -8,7 +8,7 @@
 
 **Tech Stack:** Markdown skill documents, Bash validation scripts, GitHub Actions, shell-based evaluation scenario checks.
 
-**Spec:** `docs/specs/2026-10-20-shopify-agent-methodology-design.md`
+**Spec:** `docs/history/specs/2026-10-20-shopify-agent-methodology-design.md`
 
 ## Global Constraints
 

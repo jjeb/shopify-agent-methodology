@@ -74,8 +74,10 @@ change is not proof of a live-store result.
 - `docs/workflows/`: Mermaid diagrams and reusable workflow descriptions.
 - `docs/examples/`: sanitized copy-ready examples.
 - `docs/evaluations/`: pressure scenarios and evaluation guidance.
-- `docs/specs/`: approved design specifications.
-- `docs/plans/`: implementation plans.
+- `docs/history/specs/`: completed design specifications kept as historical records.
+- `docs/history/plans/`: completed implementation plans kept as historical records.
+- Active roadmap and deferred work: the [GitHub Issues roadmap](https://github.com/jjeb/shopify-agent-methodology/issues)
+  and [roadmap project](https://github.com/users/jjeb/projects/1).
 - GitHub Issues: deferred capabilities and future roles.
 
 Do not store project-specific client, store, or credential information in this

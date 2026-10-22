@@ -8,7 +8,7 @@
 
 **Tech Stack:** Markdown skill files, Bash validation, GitHub Actions, `npx skills`, Shopify CLI, and the official Shopify AI Toolkit as the external source of current platform behavior.
 
-**Spec:** `docs/specs/2026-10-20-shopify-agent-methodology-design.md`
+**Spec:** `docs/history/specs/2026-10-20-shopify-agent-methodology-design.md`
 
 ## Global Constraints
 

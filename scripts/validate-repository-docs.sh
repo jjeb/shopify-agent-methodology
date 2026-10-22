@@ -14,6 +14,7 @@ required_strings=(
   'methodology budget'
   'store-pilot-scenarios.md'
   'github.com/jjeb/shopify-agent-methodology/issues'
+  'docs/history/README.md'
 )
 
 for required in "${required_strings[@]}"; do
@@ -56,9 +57,17 @@ for required_file in \
   CONVENTIONS.md \
   docs/workflows/shopify-lifecycle.md \
   docs/examples/development-store-preview.md \
-  docs/examples/analytics-and-operational-data.md; do
+  docs/examples/analytics-and-operational-data.md \
+  docs/history/README.md; do
   if [[ ! -f "$repo_root/$required_file" ]]; then
     echo "FAIL: missing required documentation example: $required_file" >&2
+    exit 1
+  fi
+done
+
+for historical_dir in docs/plans docs/specs; do
+  if [[ -d "$repo_root/$historical_dir" ]] && find "$repo_root/$historical_dir" -type f -print -quit | grep -q .; then
+    echo "FAIL: $historical_dir contains active documents; move completed records under docs/history" >&2
     exit 1
   fi
 done
