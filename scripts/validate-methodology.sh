@@ -9,6 +9,7 @@ required_files=(
   docs/methodology/handoff-record.md
   docs/methodology/store-pilot.md
   docs/methodology/delivery-guardrails.md
+  docs/methodology/capability-maturity.json
   docs/history/README.md
 )
 
@@ -33,5 +34,7 @@ for required_field in \
     exit 1
   fi
 done
+
+python3 "$repo_root/scripts/validate-capability-maturity.py"
 
 echo "PASS: methodology references are present"

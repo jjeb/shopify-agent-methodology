@@ -4,6 +4,28 @@ The canonical installable role formerly named `shopify-data-engineer` is now
 named `shopify-data-integration-engineer`. This is a role-name clarification,
 not a new capability or a second role.
 
+## Upgrade from 0.2.0 to 0.3.0
+
+1. Remove the old installed role from each target agent using the installed
+   skills CLI. For a global Claude Code or Pi installation, use the matching
+   agent and global flags:
+
+   ```bash
+   npx skills remove shopify-data-engineer -g -a claude-code
+   npx skills remove shopify-data-engineer -g -a pi
+   ```
+
+   If the CLI version does not support those flags, run
+   `npx skills remove --help` and use its equivalent target-selection options;
+   do not leave both names installed.
+2. Install the replacement role package using the commands in
+   [`docs/getting-started.md`](../getting-started.md).
+3. Confirm that `shopify-data-integration-engineer` is present and that the
+   legacy alias is absent before starting work.
+
+The uninstall step removes the old role name from the agent environment; it
+does not delete project data, Shopify records, or operational integrations.
+
 ## Compatibility mapping
 
 Existing prompts that say:

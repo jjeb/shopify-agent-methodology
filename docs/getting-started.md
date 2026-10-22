@@ -46,6 +46,11 @@ The two packages are intended to work side by side. This repository supplies
 role boundaries and coordination; the official toolkit supplies current
 Shopify API, schema, validation, migration, and CLI guidance.
 
+When upgrading from version 0.2.0 to 0.3.0, follow the
+[role-name migration guide](migrations/2026-10-22-data-integration-engineer-role-rename.md)
+to replace `shopify-data-engineer` with
+`shopify-data-integration-engineer`; it includes upgrade and uninstall guidance.
+
 ## Initialize an agent
 
 After installation, ask the agent to confirm that it can see the skills before

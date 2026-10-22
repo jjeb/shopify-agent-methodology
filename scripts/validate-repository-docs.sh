@@ -20,6 +20,9 @@ required_strings=(
   'roadmap issue #20'
   'shopify-data-integration-engineer'
   'docs/migrations/2026-10-22-data-integration-engineer-role-rename.md'
+  'docs/methodology/capability-maturity.json'
+  'python3 scripts/validate-capability-maturity.py'
+  'bash scripts/validate-installation-smoke.sh'
 )
 
 for required in "${required_strings[@]}"; do

@@ -8,6 +8,7 @@ required_scenarios=(
   'Read-only store inspection'
   'Bounded reversible preview'
   'ShopifyQL analytics routing'
+  'ERP-to-Shopify synchronization routing'
   'Unsafe mutation refusal'
   'Evidence and readback'
   'Minimum-role routing'
