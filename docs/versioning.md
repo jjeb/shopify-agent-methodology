@@ -18,6 +18,10 @@ section at the top and add a dated section when preparing a release.
   generated-reference refreshes, or other backward-compatible corrections.
 - **Minor** (`0.2.0`): new roles, workflows, evaluation capabilities, or
   backward-compatible behavior that expands the package.
+- **Role-name clarification** (`0.3.0`): the canonical installable role name
+  is `shopify-data-integration-engineer`; existing prompts using
+  `shopify-data-engineer` map to it through the migration guide, but no alias
+  is installed.
 - **Major** (`1.0.0` or later): breaking skill names, package layout, install
   behavior, role contracts, or routing semantics.
 
@@ -37,7 +41,7 @@ changes, but the changelog must call them out clearly.
 
 3. Run the complete validation suite from [`CONVENTIONS.md`](../CONVENTIONS.md).
 4. Commit the release contents with an imperative message, for example:
-   `release: v0.2.0`.
+   `release: v0.3.0`.
 5. Create an annotated tag matching the version file:
 
    ```bash

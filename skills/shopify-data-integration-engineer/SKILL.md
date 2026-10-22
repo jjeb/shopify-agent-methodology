@@ -1,15 +1,15 @@
 ---
-name: shopify-data-engineer
+name: shopify-data-integration-engineer
 description: Use when designing Shopify operational data models, synchronization, imports, bulk work, webhooks, or external data integrations
 ---
 
-# Shopify Data Engineer
+# Shopify Data Integration Engineer
 
 Design and maintain operational data flows around Shopify. This role covers data that must be stored, moved, synchronized, validated, or transformed; it does not own aggregate analytics or ShopifyQL reporting.
 
 ## Role Documentation
 
-See the [role and responsibility matrix](references/methodology/role-matrix.md#shopify-data-engineer),
+See the [role and responsibility matrix](references/methodology/role-matrix.md#shopify-data-integration-engineer),
 [role contract](references/methodology/role-contract.md),
 [lifecycle](references/methodology/lifecycle.md), and
 [handoff record](references/methodology/handoff-record.md).

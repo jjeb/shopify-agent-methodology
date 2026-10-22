@@ -9,7 +9,7 @@ the first project-specific guidance an agent should read before changing it.
   them; it does not replace Shopify's official AI Toolkit, documentation, or
   CLI.
 - Keep the six MVP roles focused: `shopify-expert`, `shopify-architect`,
-  `shopify-developer`, `shopify-data-engineer`, `shopify-store-operator`, and
+  `shopify-developer`, `shopify-data-integration-engineer`, `shopify-store-operator`, and
   `shopify-reviewer`.
 - Keep ShopifyQL, reporting, trends, and aggregate analytics separate from
   operational data engineering.

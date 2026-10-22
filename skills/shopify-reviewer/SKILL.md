@@ -71,4 +71,4 @@ rollback, validation, or readback evidence is missing.
 
 ## Handoffs
 
-Return status (`pass`, `needs-review`, or `fail`), findings by severity, evidence links or commands, unresolved assumptions, required fixes, and the next owner. Send approved operational work to `shopify-store-operator`; send implementation defects to `shopify-developer` or `shopify-data-engineer`.
+Return status (`pass`, `needs-review`, or `fail`), findings by severity, evidence links or commands, unresolved assumptions, required fixes, and the next owner. Send approved operational work to `shopify-store-operator`; send implementation defects to `shopify-developer` or `shopify-data-integration-engineer`.

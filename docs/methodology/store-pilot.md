@@ -17,7 +17,7 @@ Shopify project before attempting production work.
 2. Let `shopify-architect` define the smallest suitable Shopify surface and
    rollout boundary.
 3. Use `shopify-developer` for local implementation or project inspection.
-4. Use `shopify-data-engineer` only for operational data movement, storage,
+4. Use `shopify-data-integration-engineer` only for operational data movement, storage,
    synchronization, imports, exports, or reconciliation.
 5. Use `shopify-store-operator` for approved, named-store read-only inspection
    or reversible preview work.

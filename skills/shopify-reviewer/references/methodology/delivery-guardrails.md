@@ -31,7 +31,7 @@ automatically require every role.
 - Add `shopify-architect` only when the Shopify surface, ownership,
   permissions, or rollout is unclear.
 - Add `shopify-developer` for local code or configuration.
-- Add `shopify-data-engineer` for operational data movement or reconciliation.
+- Add `shopify-data-integration-engineer` for operational data movement or reconciliation.
 - Add `shopify-store-operator` when a named store must be inspected or changed.
 - Add `shopify-reviewer` when the risk or claim requires independent review.
 

@@ -9,7 +9,7 @@ flowchart LR
     B --> C[shopify-architect\nchoose surface and rollout]
     C --> D{Work type}
     D -->|Code or configuration| E[shopify-developer\nimplement locally]
-    D -->|Operational data| F[shopify-data-engineer\ndesign flow and reconciliation]
+    D -->|Operational data| F[shopify-data-integration-engineer\ndesign flow and reconciliation]
     D -->|Store inspection or preview| G[shopify-store-operator\nread-only or reversible action]
     D -->|Analytics or ShopifyQL| H[Analytics workflow\nseparate from operational data]
     E --> I[Validate with official toolkit and CLI]

@@ -10,6 +10,17 @@ independent release versions.
 
 Changes for the next release will be recorded here.
 
+## [0.3.0] - 2026-10-22
+
+### Changed
+
+- Renamed the canonical installable role from `shopify-data-engineer` to
+  `shopify-data-integration-engineer`.
+- Added a migration and compatibility guide for existing prompts and routing
+  configuration.
+- Kept ShopifyQL, reporting, and aggregate analytics separate from operational
+  data integration; no duplicate legacy alias is installed.
+
 ## [0.2.0] - 2026-10-21
 
 ### Added

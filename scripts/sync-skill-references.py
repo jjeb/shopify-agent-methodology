@@ -14,7 +14,7 @@ ROLES = (
     "shopify-expert",
     "shopify-architect",
     "shopify-developer",
-    "shopify-data-engineer",
+    "shopify-data-integration-engineer",
     "shopify-store-operator",
     "shopify-reviewer",
 )

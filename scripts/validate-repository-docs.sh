@@ -6,8 +6,8 @@ readme="$repo_root/README.md"
 
 required_strings=(
   'github.com/jjeb/shopify-agent-methodology'
-  'npx skills add jjeb/shopify-agent-methodology --all -g -a claude-code'
-  'npx skills add jjeb/shopify-agent-methodology --all -g -a pi'
+  "npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a claude-code -y"
+  "npx skills add jjeb/shopify-agent-methodology --skill '*' -g -a pi -y"
   'bash scripts/validate-repository-docs.sh'
   'delivery-first guardrails'
   'vertical slice'
@@ -18,6 +18,8 @@ required_strings=(
   'capability maturity'
   'future-specialist'
   'roadmap issue #20'
+  'shopify-data-integration-engineer'
+  'docs/migrations/2026-10-22-data-integration-engineer-role-rename.md'
 )
 
 for required in "${required_strings[@]}"; do
@@ -27,12 +29,12 @@ for required in "${required_strings[@]}"; do
   fi
 done
 
-if [[ ! -f "$repo_root/VERSION" ]] || [[ "$(tr -d '[:space:]' < "$repo_root/VERSION")" != "0.2.0" ]]; then
-  echo "FAIL: VERSION must be 0.2.0" >&2
+if [[ ! -f "$repo_root/VERSION" ]] || [[ "$(tr -d '[:space:]' < "$repo_root/VERSION")" != "0.3.0" ]]; then
+  echo "FAIL: VERSION must be 0.3.0" >&2
   exit 1
 fi
-if [[ ! -f "$repo_root/CHANGELOG.md" ]] || ! grep -Fq '[0.2.0]' "$repo_root/CHANGELOG.md"; then
-  echo "FAIL: CHANGELOG.md is missing the 0.2.0 entry" >&2
+if [[ ! -f "$repo_root/CHANGELOG.md" ]] || ! grep -Fq '[0.3.0]' "$repo_root/CHANGELOG.md"; then
+  echo "FAIL: CHANGELOG.md is missing the 0.3.0 entry" >&2
   exit 1
 fi
 
@@ -70,7 +72,8 @@ for required_file in \
   docs/workflows/shopify-lifecycle.md \
   docs/examples/development-store-preview.md \
   docs/examples/analytics-and-operational-data.md \
-  docs/history/README.md; do
+  docs/history/README.md \
+  docs/migrations/2026-10-22-data-integration-engineer-role-rename.md; do
   if [[ ! -f "$repo_root/$required_file" ]]; then
     echo "FAIL: missing required documentation example: $required_file" >&2
     exit 1

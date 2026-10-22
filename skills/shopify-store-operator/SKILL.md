@@ -72,4 +72,4 @@ before writes and read back the affected resource after every approved change.
 
 ## Handoffs
 
-Return store domain, command or operation, before-state evidence, after-state evidence, affected identifiers/counts, warnings, and rollback status. Receive approved work from `shopify-reviewer`; escalate code or schema defects to `shopify-developer` and data-flow defects to `shopify-data-engineer`.
+Return store domain, command or operation, before-state evidence, after-state evidence, affected identifiers/counts, warnings, and rollback status. Receive approved work from `shopify-reviewer`; escalate code or schema defects to `shopify-developer` and data-flow defects to `shopify-data-integration-engineer`.

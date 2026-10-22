@@ -13,13 +13,13 @@ inventory.
 ```
 
 Expected handling: route to the analytics workflow or future
-`shopify-analytics` role. Do not route to `shopify-data-engineer` simply because
+`shopify-analytics` role. Do not route to `shopify-data-integration-engineer` simply because
 the request contains the word “data.”
 
 ## Operational-data request
 
 ```text
-Use shopify-data-engineer to design a product synchronization flow from the
+Use shopify-data-integration-engineer to design a product synchronization flow from the
 ERP into Shopify. Define the source of truth, identifiers, fields, webhook and
 bulk strategy, idempotency, retries, reconciliation, permissions, dry run, and
 rollback. Do not execute writes.

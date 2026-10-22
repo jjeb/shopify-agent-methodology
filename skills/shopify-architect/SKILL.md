@@ -73,4 +73,4 @@ before recommending deployment, publishing, or broad data changes.
 
 ## Handoffs
 
-Deliver a solution brief: goal, chosen surfaces, data flow, permissions, environments, implementation slices, test plan, live-operation boundary, and open decisions. Hand off implementation slices to `shopify-developer` or `shopify-data-engineer`, then request `shopify-reviewer` review.
+Deliver a solution brief: goal, chosen surfaces, data flow, permissions, environments, implementation slices, test plan, live-operation boundary, and open decisions. Hand off implementation slices to `shopify-developer` or `shopify-data-integration-engineer`, then request `shopify-reviewer` review.

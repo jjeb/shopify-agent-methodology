@@ -41,14 +41,14 @@ and evidence questions are tracked in [roadmap issue #20](https://github.com/jje
 
 | Platform surface | Current owner | Capability tag | Future-specialist candidate | Required evidence |
 | --- | --- | --- | --- | --- |
-| GraphQL Admin API and app backends | `shopify-developer`, with `shopify-architect` for boundaries and `shopify-data-engineer` for operational flows | `supported` | `shopify-app-engineer` | Repeated auth, scopes, versioning, backend reliability, and review burden |
+| GraphQL Admin API and app backends | `shopify-developer`, with `shopify-architect` for boundaries and `shopify-data-integration-engineer` for operational flows | `supported` | `shopify-app-engineer` | Repeated auth, scopes, versioning, backend reliability, and review burden |
 | Storefront API, Liquid, and Hydrogen | `shopify-developer`, with `shopify-architect` for channel selection | `supported` | `shopify-storefront-engineer` | Repeated storefront depth, performance, accessibility, and preview evidence |
 | Admin, Checkout, Customer Account, POS, and theme extensions | `shopify-developer`, `shopify-store-operator`, and `shopify-reviewer` at their existing boundaries | `experimental` | `shopify-extension-engineer` | Extension targets, plan limits, test/review failures, and maintenance burden |
 | Shopify Functions | `shopify-developer`, with architect selection and reviewer release gates | `experimental` | `shopify-extension-engineer` | Function targets, contracts, builds, dev-store tests, limits, and failures |
-| Webhooks and events | `shopify-developer` for endpoints; `shopify-data-engineer` for sync, reconciliation, and recovery | `supported` | `shopify-platform-engineer` | Event contracts, retries, idempotency, reconciliation incidents, and operational burden |
+| Webhooks and events | `shopify-developer` for endpoints; `shopify-data-integration-engineer` for sync, reconciliation, and recovery | `supported` | `shopify-platform-engineer` | Event contracts, retries, idempotency, reconciliation incidents, and operational burden |
 | Shopify CLI, theme, and app workflows | `shopify-developer`, `shopify-store-operator`, and `shopify-reviewer` | `supported` | `shopify-platform-engineer` | Version compatibility, CI/environment failures, secrets, release, and rollback evidence |
-| ShopifyQL and aggregate analytics | Analytics workflow, with `shopify-expert` routing; not `shopify-data-engineer` | `research-needed` | `shopify-analytics` | Sanitized questions, metric definitions, source/time range, correctness, and privacy |
-| Subscriptions, Markets, B2B, and payments | `shopify-architect` for boundaries; `shopify-developer`, `shopify-data-engineer`, and `shopify-store-operator` within existing contracts | `research-needed` | `shopify-commerce-strategist` or a payments specialist | Eligibility, plan constraints, repeated workflows, errors, business decisions, and review burden |
+| ShopifyQL and aggregate analytics | Analytics workflow, with `shopify-expert` routing; not `shopify-data-integration-engineer` | `research-needed` | `shopify-analytics` | Sanitized questions, metric definitions, source/time range, correctness, and privacy |
+| Subscriptions, Markets, B2B, and payments | `shopify-architect` for boundaries; `shopify-developer`, `shopify-data-integration-engineer`, and `shopify-store-operator` within existing contracts | `research-needed` | `shopify-commerce-strategist` or a payments specialist | Eligibility, plan constraints, repeated workflows, errors, business decisions, and review burden |
 
 The capability tags are routing and evidence markers, not product support
 claims. Verify current Shopify behavior in the official toolkit and docs before
@@ -90,7 +90,7 @@ identify validation, rollback, and release gates.
 analytics interpretation.
 
 **Handoff:** a solution brief for `shopify-developer` or
-`shopify-data-engineer`, with `shopify-reviewer` requested when readiness is at
+`shopify-data-integration-engineer`, with `shopify-reviewer` requested when readiness is at
 stake.
 
 ## shopify-developer
@@ -113,7 +113,7 @@ aggregate analytics, or independent release approval.
 **Handoff:** changed files, tests, commands, validation output, known risks, and
 the required reviewer or operator action.
 
-## shopify-data-engineer
+## shopify-data-integration-engineer
 
 **Role tag:** `core`; **Capability tags:** `core`, `supported`, `experimental`;
 ShopifyQL and aggregate analytics remain `research-needed` outside this role.

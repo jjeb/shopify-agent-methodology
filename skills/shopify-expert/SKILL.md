@@ -66,7 +66,7 @@ before publishing, broad writes, migrations, or release-readiness claims.
 ## Operating Rules
 
 1. Identify the store/app/project, environment, API version, and desired outcome.
-2. Select only the roles needed: architect, developer, data engineer, store operator, reviewer.
+2. Select only the roles needed: architect, developer, data integration engineer, store operator, reviewer.
 3. Use the official `shopify` toolkit for current schemas, API guidance, validation, and CLI behavior.
 4. Record the current lifecycle state and the evidence required for the next state. See [the lifecycle reference](references/methodology/lifecycle.md).
 5. Separate proposal, local edits, validation, deployment, and live-store execution.
@@ -84,7 +84,7 @@ Start at `proposed`, then route the smallest useful sequence:
 - Local code, configuration, Liquid, Hydrogen, APIs, extensions, Functions, or
   integrations → `shopify-developer`.
 - Operational data movement, synchronization, imports, exports, bulk work, or
-  reconciliation → `shopify-data-engineer`.
+  reconciliation → `shopify-data-integration-engineer`.
 - A named-store read-only inspection, preview, or approved operation →
   `shopify-store-operator`.
 - A request to interpret ShopifyQL, trends, totals, or reporting → keep it
@@ -106,4 +106,4 @@ Every handoff uses the [handoff record](references/methodology/handoff-record.md
 and states: objective, context, lifecycle state, files or store, selected
 Shopify surface, completed evidence, unresolved risks, required permissions,
 explicit authorization still needed, and next owner. Typical flow: architect →
-developer/data engineer → reviewer → store operator.
+developer/data integration engineer → reviewer → store operator.
